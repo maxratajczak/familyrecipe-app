@@ -29,6 +29,21 @@ app.get("/recipes", (req, res) => {
         res.send("<h1>No Results Returned</h1>")
     });
 });
+
+app.get("/addrecipe", (req, res) => {
+    res.sendFile(__dirname + "/views/addRecipe.html")
+});
+
+app.post("/addrecipe", (req, res) => {
+    dataHandler.addRecipe(req.body)
+    .then((recipe) => {
+        res.json(recipe)
+        console.log(recipe);
+    })
+    .catch(() => {
+
+    });
+});
 // ****************
 
 console.log(clc.notice("\n\n[Server] Listening...\n"));

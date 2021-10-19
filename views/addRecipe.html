@@ -4,14 +4,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
+        <title>Add Recipe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body>
-        <h1>Welcome to my server</h1>
-        <button><a href="/addrecipe">Add a Recipe</a></button>
-        <button><a href="/recipes">Go To Recipes</a></button>
+        <h1>Add a Recipe</h1>
+        <form action="/addrecipe" method="post">
+            <label for="desc">Add Desc:</label>
+            <input type="text" name="desc" id="desc"></input>
+            <input type="submit" value="Add">
+        </form>
     </body>
 </html>

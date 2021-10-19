@@ -36,5 +36,12 @@ module.exports = {
             if (recipes.length === 0) reject("[getAllRecipes] No results returned from recipes.");
             resolve(recipes);
         });
+    },
+
+    addRecipe: function(recipe) {
+        return new Promise((resolve, reject) => {
+            //console.log(recipe.desc);
+            resolve(recipe);
+        });
     }
 }

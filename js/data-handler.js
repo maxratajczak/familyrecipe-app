@@ -24,11 +24,17 @@ module.exports = {
 
     initializeRecipes: function() {
         return new Promise((resolve, reject) => {
-
             fileSystem.readFile(`./data/${this.recipeDataFile}`, 'utf8', (error, fileData) => {
                 if (error) reject((`[initializeRecipes] Failed reading from "${this.recipeDataFile}". Please create the file in the "./data" directory.`));              
                 resolve(fileData);
             });
+        });
+    },
+
+    getAllRecipes: function() {
+        return new Promise((resolve, reject) => {
+            if (recipes.length === 0) reject("[getAllRecipes] No results returned from recipes.");
+            resolve(recipes);
         });
     }
 }

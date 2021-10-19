@@ -1,6 +1,6 @@
 const express = require("express");
 const dataHandler = require("./js/data-handler.js");
-const clc = require("./js/cmdlinecolor.js")
+const clc = require("./js/cmdlinecolor.js");
 
 // Express Application Creation
 var app = express();
@@ -11,18 +11,27 @@ var PORT = process.env.PORT || 8080;
 
 // Application Start Function
 function onApplicationStart() {
-    console.log(clc.notice("\n[Server] Starting on port " + PORT + "...\n"));
-    console.log(clc.warn("Warning"));
-    console.log(clc.error("Error"));
+    console.log(clc.notice("\n[Server] Initialized. Starting on port " + PORT + "..."));
 }
 
 // Routing Handling
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
 });
+
+app.get("/recipes", (req, res) => {
+    dataHandler.getAllRecipes()
+    .then((recipes) => {
+        res.json(recipes);
+    })
+    .catch((error) => {
+        console.log(clc.warn(error));
+        res.send("<h1>No Results Returned</h1>")
+    });
+});
 // ****************
 
-console.log();
+console.log(clc.notice("\n\n[Server] Listening...\n"));
 app.listen(PORT, dataHandler.initializeRecipes()
     .then((fileData) => {
         console.log(clc.success(`[initializeRecipes] "${dataHandler.recipeDataFile}" was opened`));

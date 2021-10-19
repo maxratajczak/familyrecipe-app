@@ -4,7 +4,7 @@ module.exports = {
 
     error: clc.xterm(196),
     warn: clc.xterm(208),
-    success: clc.xterm(118),
+    success: clc.greenBright,
     notice: clc.xterm(39)
 
 }

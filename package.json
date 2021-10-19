@@ -1,0 +1,24 @@
+{
+  "name": "familyrecipes-app",
+  "version": "1.0.0",
+  "description": "A recipe sharing website for family members.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon -e js,html,css app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxratajczak/familyrecipes-app.git"
+  },
+  "author": "Max Ratajczak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxratajczak/familyrecipes-app/issues"
+  },
+  "homepage": "https://github.com/maxratajczak/familyrecipes-app#readme",
+  "dependencies": {
+    "cli-color": "^2.0.1",
+    "express": "^4.17.1"
+  }
+}

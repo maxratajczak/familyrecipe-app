@@ -12,6 +12,8 @@ var PORT = process.env.PORT || 8080;
 // Application Start Function
 function onApplicationStart() {
     console.log(clc.notice("\n[Server] Starting on port " + PORT + "...\n"));
+    console.log(clc.warn("Warning"));
+    console.log(clc.error("Error"));
 }
 
 // Routing Handling

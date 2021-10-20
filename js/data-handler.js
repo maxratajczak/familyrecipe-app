@@ -1,4 +1,7 @@
+const { json } = require("body-parser");
+const { resolveCaa } = require("dns");
 const fileSystem = require("fs");
+const { formatWithOptions } = require("util");
 
 var recipes = [];
 
@@ -18,7 +21,9 @@ module.exports = {
             obj.forEach(element => {
                 recipes.push(element);
             });
-            resolve(`[parseData] "${this.recipeDataFile}" was parsed`);
+            if (recipes.length === 0) resolve(["[parseData] Parsing successful, but no recipes in file", 0])
+
+            resolve([`[parseData] "${this.recipeDataFile}" was parsed`, recipes.length]);
         });
     },
 
@@ -40,8 +45,28 @@ module.exports = {
 
     addRecipe: function(recipe) {
         return new Promise((resolve, reject) => {
-            //console.log(recipe.desc);
+            recipes.push(recipe);
             resolve(recipe);
+        });
+    },
+
+    saveRecipe: function(recipe) {
+        return new Promise((resolve, reject) => {
+
+            // function formatRecipe(recipe) {
+                
+            //     var newRecipe = JSON.stringify(recipe, null, '\t');
+
+            //     return newRecipe;
+            // }
+
+            // var formattedRecipe = formatRecipe(recipe);
+            // console.log(formattedRecipe);
+
+            fileSystem.writeFile(`./data/${this.recipeDataFile}`, JSON.stringify(recipes, null, '\t') , function(error) {
+                if(error) reject("[saveRecipe] Could not save recipe to file.")
+                resolve("[saveRecipe] Recipe Saved.")
+            })
         });
     }
 }

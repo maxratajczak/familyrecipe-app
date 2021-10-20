@@ -1,10 +1,13 @@
 const express = require("express");
+const multer = require("multer");
+const bodyParser = require("body-parser")
 const dataHandler = require("./js/data-handler.js");
 const clc = require("./js/cmdlinecolor.js");
 
 // Express Application Creation
 var app = express();
 app.use(express.static('static/css'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Port Definition
 var PORT = process.env.PORT || 8080;
@@ -37,11 +40,17 @@ app.get("/addrecipe", (req, res) => {
 app.post("/addrecipe", (req, res) => {
     dataHandler.addRecipe(req.body)
     .then((recipe) => {
-        res.json(recipe)
-        console.log(recipe);
+        dataHandler.saveRecipe(recipe)
+        .then((message) => {
+            console.log(clc.success(message));
+            res.json(req.body)
+        })
+        .catch((error) => {
+              console.log(clc.error(error));
+        });
     })
-    .catch(() => {
-
+    .catch((error) => {
+        console.log(clc.error(error));
     });
 });
 // ****************
@@ -52,8 +61,9 @@ app.listen(PORT, dataHandler.initializeRecipes()
         console.log(clc.success(`[initializeRecipes] "${dataHandler.recipeDataFile}" was opened`));
 
         dataHandler.parseData(fileData)
-        .then((message) => {
-            console.log(clc.success(message));
+        .then(([message, length]) => {
+            if (length === 0) console.log(clc.warn(message));
+            else console.log(clc.success(message));
         })
         .catch((error) => {
             console.log(clc.error(error));

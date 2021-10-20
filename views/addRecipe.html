@@ -11,10 +11,21 @@
     </head>
     <body>
         <h1>Add a Recipe</h1>
-        <form action="/addrecipe" method="post">
-            <label for="desc">Add Desc:</label>
-            <input type="text" name="desc" id="desc"></input>
-            <input type="submit" value="Add">
+        <br>
+        <form method="post" action="/addrecipe">
+            <label for="id">Recipe ID:</label>
+            <input type="number" name="id">
+
+            <br>
+            <label for="name">Recipe Name:</label>
+            <input type="text" name="name"/>
+
+            <br>
+            <label for="desc">Recipe Description</label>
+            <input type="text" name="desc">
+
+            <br>
+            <input type="submit" value="Add Recipe">
         </form>
     </body>
 </html>

@@ -1,9 +1,13 @@
 const { json } = require("body-parser");
-const { resolveCaa } = require("dns");
 const fileSystem = require("fs");
 const { formatWithOptions } = require("util");
 
 var recipes = [];
+
+function generateRecipeId() {
+    var generatedId = Date.now();
+    return generatedId;
+}
 
 module.exports = {
 
@@ -38,6 +42,7 @@ module.exports = {
 
     getAllRecipes: function() {
         return new Promise((resolve, reject) => {
+            generateRecipeId();
             if (recipes.length === 0) reject("[getAllRecipes] No results returned from recipes.");
             resolve(recipes);
         });
@@ -45,21 +50,24 @@ module.exports = {
 
     addRecipe: function(recipe) {
         return new Promise((resolve, reject) => {
-            recipes.push(recipe);
-            resolve(recipe);
+            var newRecipe = recipe;
+            try {
+                newRecipe.recipeId = generateRecipeId();
+                recipes.push(newRecipe);
+            }
+            catch {
+                reject("[addRecipe] Could not add recipe.")
+            }
+            resolve(newRecipe);
         });
     },
 
     saveRecipe: function(recipe) {
         return new Promise((resolve, reject) => {
-
             // function formatRecipe(recipe) {
-                
             //     var newRecipe = JSON.stringify(recipe, null, '\t');
-
             //     return newRecipe;
             // }
-
             // var formattedRecipe = formatRecipe(recipe);
             // console.log(formattedRecipe);
 

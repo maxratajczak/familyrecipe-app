@@ -43,15 +43,11 @@ app.post("/addrecipe", (req, res) => {
         dataHandler.saveRecipe(recipe)
         .then((message) => {
             console.log(clc.success(message));
-            res.json(req.body)
+            res.redirect("/recipes")
         })
-        .catch((error) => {
-              console.log(clc.error(error));
-        });
+        .catch((error) => {console.log(clc.error(error))});
     })
-    .catch((error) => {
-        console.log(clc.error(error));
-    });
+    .catch((error) => {console.log(clc.error(error))});
 });
 // ****************
 
@@ -59,20 +55,13 @@ console.log(clc.notice("\n\n[Server] Listening...\n"));
 app.listen(PORT, dataHandler.initializeRecipes()
     .then((fileData) => {
         console.log(clc.success(`[initializeRecipes] "${dataHandler.recipeDataFile}" was opened`));
-
         dataHandler.parseData(fileData)
         .then(([message, length]) => {
             if (length === 0) console.log(clc.warn(message));
             else console.log(clc.success(message));
         })
-        .catch((error) => {
-            console.log(clc.error(error));
-        })
+        .catch((error) => {console.log(clc.error(error))})
     })
-    .catch((error) => {
-        console.log(clc.error(error));
-    })
-    .finally(() => {
-        onApplicationStart();
-    })
+    .catch((error) => {console.log(clc.error(error))})
+    .finally(() => {onApplicationStart()})
 );

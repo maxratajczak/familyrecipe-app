@@ -13,16 +13,20 @@
         <h1>Add a Recipe</h1>
         <br>
         <form method="post" action="/addrecipe">
-            <label for="id">Recipe ID:</label>
-            <input type="number" name="id">
+            <input type="number" name="recipeId" value="0" hidden>
+            
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" name="recipeName"/>
 
             <br>
-            <label for="name">Recipe Name:</label>
-            <input type="text" name="name"/>
+            <label for="recipeDescription">Recipe Description</label>
+            <input type="text" name="recipeDescription">
 
-            <br>
-            <label for="desc">Recipe Description</label>
-            <input type="text" name="desc">
+            <label for="recipeCategory">Recipe Description</label>
+            <input type="text" name="recipeCategory[]">
+
+            <label for="recipeCategory">Recipe Description</label>
+            <input type="text" name="recipeCategory[]">
 
             <br>
             <input type="submit" value="Add Recipe">

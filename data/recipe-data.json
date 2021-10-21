@@ -1,10 +1,18 @@
 [
 	{
-		"recipeId": "1",
+		"recipeId": 0,
 		"recipeName": "Soup",
 		"recipeDescription": "Chicken Noodle Soup",
-		"recipeCategory": ["Dinner", "Lunch"],
-		"ingredientList": ["Chicken Broth", "Noodles", "Carrots", "Chicken"],
+		"recipeCategory": [
+			"Dinner",
+			"Lunch"
+		],
+		"ingredientList": [
+			"Chicken Broth",
+			"Noodles",
+			"Carrots",
+			"Chicken"
+		],
 		"dateAdded": "",
 		"lastEditDate": "",
 		"addedBy": "Max Ratajczak"

@@ -3,10 +3,12 @@ const multer = require("multer");
 const bodyParser = require("body-parser")
 const dataHandler = require("./js/data-handler.js");
 const clc = require("./js/cmdlinecolor.js");
+//const bootstrap = require("bootstrap")
 
 // Express Application Creation
 var app = express();
 app.use(express.static('static/css'));
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Port Definition

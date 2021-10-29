@@ -4,8 +4,8 @@
 		"recipeName": "Soup",
 		"recipeDescription": "Chicken Noodle Soup",
 		"recipeCategory": [
-			"Dinner",
-			"Lunch"
+			"Appetizer",
+			"Main"
 		],
 		"ingredientList": [
 			"Chicken Broth",
@@ -18,9 +18,20 @@
 		"addedBy": "Max Ratajczak"
 	},
 	{
-		"recipeId": 1635020813785,
-		"recipeName": "333",
-		"recipeDescription": "",
+		"recipeId": 1635314207058,
+		"recipeName": "Hello",
+		"recipeDescription": "Hello",
 		"recipeCategory": "lunch"
+	},
+	{
+		"recipeId": 1635314913125,
+		"recipeName": "Helloooooo",
+		"recipeDescription": "",
+		"recipeCategory": [
+			"breakfast",
+			"lunch",
+			"dinner",
+			"dessert"
+		]
 	}
 ]

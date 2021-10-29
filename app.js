@@ -9,6 +9,7 @@ const clc = require("./js/cmdlinecolor.js");
 var app = express();
 app.use(express.static('static/css'));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Port Definition
@@ -45,7 +46,7 @@ app.post("/addrecipe", (req, res) => {
         dataHandler.saveRecipe(recipe)
         .then((message) => {
             console.log(clc.success(message));
-            res.redirect("/recipes")
+            res.redirect("/recipes");
         })
         .catch((error) => {console.log(clc.error(error))});
     })

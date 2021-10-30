@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +11,27 @@
         <link rel="stylesheet" href="/bootstrap.min.css">
         <link rel="stylesheet" href="/main.css">
         <link rel="stylesheet" href="/css/all.min.css">
-        <!-- <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
         <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/static/css/main.css"> -->
+        <link rel="stylesheet" href="/static/css/main.css">
     </head>
     <body>
-        <div class="container">
-            <nav id="navbar">
-                <span id="logoLink"><a href="/">famrecipes</a></span>
-                <ul id="navbar-links">
-                    <li><a href="/recipes">View Recipes</a></li>
-                    <li><a id="feedback-link" href="/recipes?recipe=3">Feedback</a></li>
-                </ul>
-            </nav>
+        <nav id="navbar" >
+            <span id="navbar-logo"><a href="/">famrecipes</a></span>
+            <ul id="navbar-links">
+                <li><a href="#" style="border-bottom: 2.5px solid var(--primary-cl); padding-bottom: 4px;">Home</a></li>
+                <li><a id="" href="#">Create Recipe</a></li>
+                <form id="navbar-searchbar" action="">
+                    <input id="navbar-searchbar-input" type="text" name="" id="" placeholder="Search recipes...">
+                    <button id="navbar-searchbar-icon"><i class="fas fa-search"></i></button>
+                </form>
+            </ul>
+        </nav>
+
+
+
+
+        <div class="container" style="margin-top: 200px;">
             <div id="search-box">
                 <img src="/static/images/brooke-lark-kXQ3J7_2fpc-unsplash.jpg" alt="">
                 <div id="img-overlay"></div>
@@ -35,9 +43,11 @@
                     </form>
                 </div>
             </div>
-            <div>
-                <h1 style="color: var(--primary-colour); font-size: 3.5rem;">Recently Added</h1>
-            </div>
         </div>
+
+
+
+
+        
     </body>
 </html>

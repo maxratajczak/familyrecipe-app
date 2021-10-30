@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap'); */
 
+@font-face {
+    font-family: source-serif-pro-bold;
+    src: url(/static/fonts/SourceSerifPro-Bold.ttf);
+}
 @font-face {
     font-family: futura-light;
     src: url(/static/fonts/futura-light-bt.ttf);
@@ -11,76 +14,131 @@
 }
 
 :root {
-    --bg-colour: rgb(248, 248, 248);
-    --primary-colour: #ff5400;
-    --primary-cl-hover: #f17436;
-}
+    --background-cl: #FFF9F5;
+    --primary-cl: #F57600;
+    --primary-hover-cl: black;
+    --font-cl: #434343;
+    --searchbar-landing-cl: #f1ece8;
+    --searchbar-placeholder: #b4b4b4;
 
+    --navbar-height: 200px;
+    --navbar-margin: 100px;
+    --navbar-links-margin: 30px;
+}
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 html {
     scroll-behavior: smooth;
     font-size: 62.50%;
 }
 body {
-    background-color: var(--bg-colour);
+    background-color: var(--background-cl);
 }
 h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
-    font-family: 'futura-medium','Roboto', sans-serif;
+    font-family: 'futura-medium', sans-serif;
 }
 
 #navbar {
     display: flex;
-    flex-wrap: wrap;
+    height: var(--navbar-height);
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 150px;
+    justify-content: space-between;
 }
-#logoLink {
-    color: var(--primary-colour);
-    font-size: 3.4em;
-    margin-right: 20vw;
-}
-#logoLink a {
+#navbar-logo *{
     text-decoration: none;
-    color: var(--primary-colour);
-    font-family: 'Source Serif Pro', serif;
+    color: var(--primary-cl);
+    font-family: source-serif-pro-bold, serif;
+    font-size: 4rem;
+    margin-left: var(--navbar-margin);
 }
+
 #navbar-links {
-    padding: 0;
-    margin: 0;
     display: flex;
+    margin: 0;
+    padding: 0;
     align-items: center;
+    margin-right: var(--navbar-margin);
 }
-
-#navbar-links li{
+#navbar-links li {
     list-style: none;
-    font-size: 2rem;
-    padding: 0 1.5vw;
+    margin: var(--navbar-links-margin);
 }
-#navbar-links li a{
+#navbar-links li a {
+    color: var(--primary-cl);
     text-decoration: none;
-    color: var(--primary-colour);
-}
-#navbar-links li a:hover{
-    color: var(--primary-cl-hover);
-
+    font-size: 2rem;
 }
 
-#feedback-link {
-    padding: 6px 18px;
-    border-radius: 50px;
-    background-color: var(--primary-colour);
-    color: var(--bg-colour) !important;
-    transition: background-color 200ms ease-in-out;
+#navbar-searchbar {
 }
-#feedback-link:hover {
-    background-color: var(--primary-cl-hover);
+#navbar-searchbar-input {
+    border: none;
+    background-color: var(--searchbar-landing-cl);
+    border-radius: 100px;
+    height: 50px;
+    width: 300px;
+    padding: 15px 20px;
+    font-size: 1.8rem;
+    color: var(--font-cl);
+    transition: outline 50ms ease;
+  
 }
+#navbar-searchbar-input::placeholder {
+    color: var(--searchbar-placeholder);
+}
+#navbar-searchbar-input:hover {
+    outline: 5px solid rgba(245, 118, 0, 0.192);
+}
+form:hover:before {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 300px;
+    outline: 1px solid var(--primary-cl); 
+    position: absolute;
+    border-radius: 100px;
+    z-index: -1;
+}
+#navbar-searchbar-input:focus {
+    outline: 5px solid rgba(245, 118, 0, 0.192);
+}
+/* WEBKIT AUTOFILL */
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--font-cl) !important;
+}
+input:-webkit-autofill::first-line {
+    font-family: 'futura-medium', sans-serif;
+    font-size: 2rem;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--searchbar-landing-cl) inset !important;
+}
+/* WEBKIT AUTOFILL END*/
+#navbar-searchbar-icon {
+    background: none;
+    border: none;
+    position: relative;
+    right: 50px;
+}
+#navbar-searchbar-icon i{
+    color: var(--primary-cl);
+    font-size: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 #search-box {
@@ -155,5 +213,5 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #mainSearchButton i{
     font-size: 2.5rem;
-    color: var(--primary-colour);
+    
 }

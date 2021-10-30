@@ -132,17 +132,17 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 
 /* WEBKIT AUTOFILL */
-input:-webkit-autofill{
+#navbar-searchbar-input:-webkit-autofill{
     -webkit-text-fill-color: var(--font-cl) !important;
 }
-input:-webkit-autofill::first-line {
+#navbar-searchbar-input:-webkit-autofill::first-line {
     font-family: 'futura-medium', sans-serif;
     font-size: 2rem;
 }
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active {
+#navbar-searchbar-input:-webkit-autofill,
+#navbar-searchbar-input:-webkit-autofill:hover, 
+#navbar-searchbar-input:-webkit-autofill:focus, 
+#navbar-searchbar-input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px var(--searchbar-landing-cl) inset !important;
     box-shadow: 0 0 0 30px var(--searchbar-landing-cl) inset !important;
 }

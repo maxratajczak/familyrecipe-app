@@ -87,10 +87,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     border-bottom: 2.5px solid var(--primary-cl);
     padding-bottom: 4px;
 }
-
-#navbar-searchbar {
-
-}
 #navbar-searchbar-input {
     border: none;
     background-color: var(--searchbar-landing-cl);

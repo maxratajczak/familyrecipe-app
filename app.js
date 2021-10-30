@@ -7,7 +7,7 @@ const clc = require("./js/cmdlinecolor.js");
 
 // Express Application Creation
 var app = express();
-app.use(express.static('static/css'));
+app.use(express.static('static'));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
 app.use(bodyParser.urlencoded({ extended: true }));

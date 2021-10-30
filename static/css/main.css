@@ -36,6 +36,9 @@
     --category-mains-cl: rgba(111, 74, 5, 0.3);
     --category-soups-cl: rgba(94, 50, 26, 0.3);
     --category-desserts-cl: rgba(67, 5, 54, 0.3);
+
+    --ra-card-bg-1: #ECE5E0;
+    --ra-card-bg-2: #FBFAF9;
 }
 * {
     box-sizing: border-box;
@@ -221,10 +224,27 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     margin-top: 10vw;
     display: flex;
     align-content: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 #recently-added-heading {
     font-size: 3.5rem;
     color: var(--font-cl);
     font-family: source-serif-pro-bold, serif;
+}
+
+#recently-added-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 var(--navbar-margin);
+}
+.ra-card {
+    width: 375px;
+    height: 500px;
+    background: linear-gradient(210deg, var(--ra-card-bg-1) 0%, var(--ra-card-bg-2) 100%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    flex: 0 0 375px;
+    margin: 50px 50px;
 }

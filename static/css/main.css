@@ -137,7 +137,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #navbar-searchbar-input:-webkit-autofill::first-line {
     font-family: 'futura-medium', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 #navbar-searchbar-input:-webkit-autofill,
 #navbar-searchbar-input:-webkit-autofill:hover, 
@@ -214,4 +214,17 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #cat-desserts {
     background-color: var(--category-desserts-cl);
+}
+
+
+#recently-added {
+    margin-top: 10vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#recently-added-heading {
+    font-size: 3.5rem;
+    color: var(--font-cl);
+    font-family: source-serif-pro-bold, serif;
 }

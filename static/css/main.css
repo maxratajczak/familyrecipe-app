@@ -15,18 +15,27 @@
 
 :root {
     --background-cl: #FFF9F5;
-    --primary-cl: #F57600;
+    --primary-cl: #ff6600;
     --primary-hover-cl: black;
     --font-cl: #434343;
     --searchbar-landing-cl: #f1ece8;
-    --searchbar-placeholder: #b4b4b4;
+    --searchbar-placeholder: #c5c5c5;
 
     --navbar-height: 200px;
     --navbar-margin: 100px;
     --navbar-links-margin: 30px;
 
+    --category-border-radius: 30px;
     --categories-margin: 70px;
     --categories-spacing: 20px;
+    --categorycard-height: 280px;
+    --categorycard-width: 220px;
+
+    --category-breakfast-cl: rgba(55, 82, 102, 0.3);
+    --category-appetizers-cl: rgba(33, 67, 17, 0.3);
+    --category-mains-cl: rgba(111, 74, 5, 0.3);
+    --category-soups-cl: rgba(94, 50, 26, 0.3);
+    --category-desserts-cl: rgba(67, 5, 54, 0.3);
 }
 * {
     box-sizing: border-box;
@@ -67,7 +76,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #navbar-links li {
     list-style: none;
-    margin: 0 var(--navbar-links-margin);
+    margin-right: var(--navbar-links-margin);
 }
 #navbar-links li a {
     color: var(--primary-cl);
@@ -154,100 +163,58 @@ input:-webkit-autofill:active{
     margin: -2px -55px 0 0;
 }
 
+
+#landing-categories a{
+    text-decoration: none;
+}
 #landing-categories {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 0 var(--categories-margin);
 }
-#landing-categories div{
-    width: 220px;
-    height: 280px;
-    border-radius: 30px;
+#landing-categories .category-card{
+    width: var(--categorycard-width);
+    height: var(--categorycard-height);
+    border-radius: var(--category-border-radius);
     background-color: black;
     /* margin: 0 var(--categories-spacing); */
 }
-
-
-
-
-
-
-
-
-
-/* OLD */
-#search-box {
-    width: 100%;
-    height: 25vw;
-    margin: 0 auto;
-    max-height: 450px;
-}
-#search-box #img-overlay {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    opacity: 0%;
-    border-radius: 3.5vw;
-    position: relative;
-    top: -80%;
-    /* display: none; */
-}
-#search-box img {
+#landing-categories .category-card img {
     object-fit: cover;
     width: 100%;
-    height: 80%;
-    border-radius: 3.5vw;
-    object-position: 0 -70px;
+    height: 100%;
+    border-radius: var(--category-border-radius)
 }
-
-#img-content {
+.category-image-filter {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(54, 54, 54, 0.507); */
+    border-radius: var(--category-border-radius);
     position: relative;
-    top: -180%;
+    top: -100%;
+    margin-bottom: calc(var(--categorycard-height) - var(--categorycard-height) - var(--categorycard-height));
     display: flex;
-    flex-flow: column;
-    text-align: center;
-    align-content: center;
-}
-
-#mainSearchTitle {
-    font-family: 'Source Serif Pro', serif;
-    font-size: 5rem;
-    color: #1d2938;
-    margin-top: 2vw;
-    text-shadow: 2px 3px 0px white;
-}
-
-#landingSearchForm {
-    position: relative;
-    left: 15px;
-    margin-top: 8vmin;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
-
-#mainSearchInput {
-    width: 60%;
-    height: 45px;
-    font-size: 2em;
-    border-radius: 15px;
-    border: 2.5px solid var(--primary-colour);
-    background-color: rgba(255, 255, 255, 0.801);
-    padding: 10px;
-    margin-right: 5px;
-}
-#mainSearchInput:focus {
-    outline: none;
-}
-
-#mainSearchButton {
-    background: none;
-    border: none;
+.category-image-filter span {
+    font-size: 4rem;
+    color: var(--background-cl);
     position: relative;
-    right: 50px;
+    margin-top: 35%;
 }
-#mainSearchButton i{
-    font-size: 2.5rem;
-    
+#cat-breakfast {
+    background-color: var(--category-breakfast-cl);
+}
+#cat-appetizers {
+    background-color: var(--category-appetizers-cl);
+}
+#cat-mains {
+    background-color: var(--category-mains-cl);
+}
+#cat-soups {
+    background-color: var(--category-soups-cl);
+}
+#cat-desserts {
+    background-color: var(--category-desserts-cl);
 }

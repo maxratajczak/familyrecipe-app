@@ -12,7 +12,7 @@
 }
 
 :root {
-    --background: #fdf5ef;
+    --background: #fff9f5;
     --primary: #E17817;
     --font-colour: #4A4A4A;
 
@@ -33,7 +33,7 @@ html {
     font-size: 62.50%;
 }
 body {
-    background-color: var(--background-cl);
+    background-color: var(--background);
 }
 h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-family: 'futura-medium', sans-serif;

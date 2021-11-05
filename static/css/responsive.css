@@ -1,0 +1,46 @@
+/* LANDING.HTML */
+@media (max-width: 2560px) {
+    #navbar {
+        /* background-color: rgb(255, 214, 255); */
+    }
+}
+@media (max-width: 1440px) {
+    #navbar {
+        /* background-color: rgb(213, 213, 255); */
+    }
+
+}
+@media (max-width: 1007px) {
+    :root {
+        --navbar-margin: 20vw;
+    }
+    #navbar {
+        /* background-color: rgb(216, 255, 216); */
+    }
+    #navbar-links {
+        display: none;
+    }
+    #navbar-search {
+        display: none;
+    }
+    #hamburger-button {
+        display: block;
+    }
+}
+@media (max-width: 600px) {
+    #navbar {
+        /* background-color: rgb(255, 176, 176); */
+    }
+}
+@media (max-width: 440px) {
+    :root {
+        --navbar-margin: 15vw;
+    }
+    html {
+        font-size: 0.55rem;
+    }
+    #navbar {
+        /* background-color: rgb(255, 255, 213); */
+    }
+}
+/* LANDING.HTML */

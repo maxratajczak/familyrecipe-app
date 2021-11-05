@@ -104,5 +104,20 @@
 			"lunch"
 		],
 		"ingredients": "Grean Beans"
+	},
+	{
+		"recipeId": 1635955233137,
+		"recipeName": "Pasta",
+		"recipeDescription": "Basic Marinara Pasta",
+		"recipeCategory": [
+			"lunch",
+			"dinner"
+		],
+		"ingredients": [
+			"1/2 Bunch Pasta",
+			"1 Cup Marinara Sauce",
+			"Basil Leaves",
+			"Parmesan Cheese"
+		]
 	}
 ]

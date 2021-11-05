@@ -12,7 +12,7 @@
 }
 
 :root {
-    --background: #FFF9F5;
+    --background: #fdf5ef;
     --primary: #E17817;
     --font-colour: #4A4A4A;
 
@@ -67,15 +67,14 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #navbar-links li a {
     text-decoration: none;
     color: var(--primary);
-    /* transition: color 1s ease; */
     transition: color 400ms;
 }
 #navbar-links li a:hover{
-    color: var(--navbar-link-hover)
+    color: var(--navbar-link-hover);
 }
 .navbar-selected {
-    box-shadow: 0 1.5px 0 0px var(--primary);
-    padding-bottom: 4px;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
 }
 /* SEARCH BAR */
 #navbar-search {
@@ -90,6 +89,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     padding: 10px 20px 10px 45px;
     font-size: 1.7rem;
     transition: box-shadow 400ms ease;
+    color: var(--font-colour)
 }
 #navbar-search-input::placeholder {
     color: var(--nav-search-placeholder);
@@ -114,7 +114,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     color: var(--primary);
 }
 /* WEBKIT AUTOFILL */
-#navbar-search-input:-webkit-autofill{
+/* #navbar-search-input:-webkit-autofill{
     -webkit-text-fill-color: var(--font-colour) !important;
 }
 #navbar-search-input:-webkit-autofill::first-line {
@@ -127,7 +127,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #navbar-search-input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
-}
+} */
 /* HAMBURGER MENU */
 #hamburger-button {
     background: none;

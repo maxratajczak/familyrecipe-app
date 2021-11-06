@@ -4,9 +4,33 @@
         /* background-color: rgb(255, 214, 255); */
     }
 }
-@media (max-width: 1440px) {
+@media (max-width: 1920px) {
     #navbar {
         /* background-color: rgb(213, 213, 255); */
+    }
+
+}
+@media (max-width: 1792px) {
+    #navbar {
+        /* background-color: rgb(213, 213, 255); */
+    }
+
+}
+@media (max-width: 1680px) {
+    #navbar {
+        /* background-color: rgb(121, 121, 201); */
+    }
+
+}
+@media (max-width: 1600px) {
+    #navbar {
+        /* background-color: rgb(121, 121, 201); */
+    }
+
+}
+@media (max-width: 1440px) {
+    #navbar {
+        /* background-color: rgb(121, 121, 201); */
     }
 
 }

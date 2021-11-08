@@ -1,45 +1,49 @@
 /* LANDING.HTML */
-@media (max-width: 2560px) {
+@media (min-width: 2049px) {
+    html {
+        font-size: 70%;
+    }
+    #navbar-search-input {
+        width: 350px;
+        height: 55px;
+    }
     #navbar {
-        /* background-color: rgb(255, 214, 255); */
+        background-color: rgb(255, 204, 204);
     }
 }
-@media (max-width: 1920px) {
+@media (max-width: 2048px) {
     #navbar {
-        /* background-color: rgb(213, 213, 255); */
+        background-color: rgb(196, 196, 255);
     }
-
 }
-@media (max-width: 1792px) {
+@media (max-width: 1280px) {
+    html {
+        font-size: 60%;
+    }
     #navbar {
-        /* background-color: rgb(213, 213, 255); */
+        background-color: rgb(255, 186, 255);
     }
-
 }
-@media (max-width: 1680px) {
+@media (max-width: 1024px) {
+    :root {
+        --navbar-margin: 4vw;
+    }
+    html {
+        font-size: 56%;
+    }
+    #navbar-search-input {
+        width: 250px;
+    }
     #navbar {
-        /* background-color: rgb(121, 121, 201); */
+        background-color: rgb(205, 255, 238);
     }
-
 }
-@media (max-width: 1600px) {
-    #navbar {
-        /* background-color: rgb(121, 121, 201); */
-    }
-
-}
-@media (max-width: 1440px) {
-    #navbar {
-        /* background-color: rgb(121, 121, 201); */
-    }
-
-}
-@media (max-width: 1007px) {
+@media (max-width: 768px) {
     :root {
         --navbar-margin: 20vw;
     }
     #navbar {
-        /* background-color: rgb(216, 255, 216); */
+        background-color:rgb(255, 198, 198);
     }
     #navbar-links {
         display: none;
@@ -51,9 +55,9 @@
         display: block;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     #navbar {
-        /* background-color: rgb(255, 176, 176); */
+        background-color: rgb(255, 241, 221);
     }
 }
 @media (max-width: 440px) {
@@ -61,10 +65,10 @@
         --navbar-margin: 15vw;
     }
     html {
-        font-size: 0.55rem;
+        font-size: 55%;
     }
     #navbar {
-        /* background-color: rgb(255, 255, 213); */
+        background-color:rgb(235, 255, 215);
     }
 }
 /* LANDING.HTML */

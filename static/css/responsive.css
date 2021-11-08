@@ -29,16 +29,16 @@
         --navbar-margin: 4vw;
     }
     html {
-        font-size: 56%;
+        font-size: 58%;
     }
-    #navbar-search-input {
+    /* #navbar-search-input {
         width: 250px;
-    }
+    } */
     #navbar {
         background-color: rgb(205, 255, 238);
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     :root {
         --navbar-margin: 20vw;
     }

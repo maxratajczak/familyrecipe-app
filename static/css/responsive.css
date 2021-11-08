@@ -18,7 +18,7 @@
 }
 @media (max-width: 1280px) {
     html {
-        font-size: 60%;
+        /* font-size: 60%; */
     }
     #navbar {
         background-color: rgb(255, 186, 255);
@@ -29,7 +29,7 @@
         --navbar-margin: 4vw;
     }
     html {
-        font-size: 58%;
+        /* font-size: 58%; */
     }
     /* #navbar-search-input {
         width: 250px;
@@ -65,7 +65,7 @@
         --navbar-margin: 15vw;
     }
     html {
-        font-size: 55%;
+        /* font-size: 55%; */
     }
     #navbar {
         background-color:rgb(235, 255, 215);

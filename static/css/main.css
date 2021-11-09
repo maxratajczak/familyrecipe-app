@@ -76,6 +76,34 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     border-bottom: 2px solid var(--primary);
     padding-bottom: 5px;
 }
+#landing-dropdown{
+    position: relative;
+}
+#landing-dropdown ul{
+    position: absolute;
+    background-color: rgb(250, 244, 240);
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.151);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: -15px;
+    opacity: 0%;
+    transition: opacity 250ms ease-in-out;
+    pointer-events: none;
+}
+#landing-dropdown ul li{
+    padding: 18px 5px;
+}
+#recipe-dropdown:hover + ul{
+    opacity: 100%;
+    pointer-events: all;
+}
+#recipe-dropdown {
+    cursor: pointer;
+}
 /* SEARCH BAR */
 #navbar-search {
     margin-right: var(--navbar-margin);
@@ -89,16 +117,16 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     padding: 10px 20px 10px 45px;
     font-size: 1.7rem;
     transition: box-shadow 400ms ease;
-    color: var(--font-colour)
+    color: var(--font-colour);
 }
 #navbar-search-input::placeholder {
     color: var(--nav-search-placeholder);
 }
 #navbar-search-input:hover {
-    box-shadow: 0 0 0 1.5px var(--nav-search-placeholder);
+    box-shadow: 0 0 0 1.5px rgba(128, 128, 128, 0.418);
 }
 #navbar-search-input:focus {
-    box-shadow: 0 0 0 3px #e9710070;
+    box-shadow: 0 0 5px 1.5px #e26d009a;
     outline: none;
 }
 #navbar-search-icon {

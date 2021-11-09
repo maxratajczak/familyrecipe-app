@@ -22,7 +22,16 @@
             <span id="navbar-logo"><a href="#">famrecipes</a></span>
             <ul id="navbar-links">
                 <li><a class="navbar-selected" href="#">Home</a></li>
-                <li><a id="recipe-dropdown" href="#">Recipes</a></li>
+                <div id="landing-dropdown">
+                    <li id="recipe-dropdown"><a>Recipes</a></li>
+                    <ul>
+                        <li><a href="">Breakfast</a></li>
+                        <li><a href="">Appetizers</a></li>
+                        <li><a href="">Mains</a></li>
+                        <li><a href="">Soups</a></li>
+                        <li><a href="">Dessert</a></li>
+                    </ul>
+                </div>
                 <li><a href="#">Create Recipe</a></li>
             </ul>
             <form id="navbar-search" action="">
@@ -31,7 +40,6 @@
             </form>
             <button id="hamburger-button" type="submit"><i class="fas fa-bars"></i></button>
         </nav>
-
-        <script src="/js/nav-dropdown.js"></script>
+        
     </body>
 </html>

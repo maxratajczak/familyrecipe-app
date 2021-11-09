@@ -12,7 +12,9 @@
 
 }
 @media (max-width: 1280px) {
-
+    .flex-space {
+        flex: 0 0 50%;
+    }
 }
 @media (max-width: 1024px) {
     :root {
@@ -24,6 +26,7 @@
     #navbar-search-input {
         width: 270px;
     }
+    
 }
 @media (max-width: 900px) {
     :root {
@@ -37,6 +40,9 @@
     }
     #hamburger-button {
         display: block;
+    }
+    .flex-space {
+        flex: 0 0 100%;
     }
 }
 @media (max-width: 640px) {

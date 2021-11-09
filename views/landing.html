@@ -23,8 +23,9 @@
             <ul id="navbar-links">
                 <li><a class="navbar-selected" href="#">Home</a></li>
                 <div id="landing-dropdown">
-                    <li id="recipe-dropdown"><a>Recipes</a></li>
+                    <button id="recipe-dropdown"><li><a>Recipes</a></li></button>
                     <ul>
+                        <div id="arrow"></div>
                         <li><a href="">Breakfast</a></li>
                         <li><a href="">Appetizers</a></li>
                         <li><a href="">Mains</a></li>
@@ -33,13 +34,70 @@
                     </ul>
                 </div>
                 <li><a href="#">Create Recipe</a></li>
-            </ul>
+            </ul>   
             <form id="navbar-search" action="">
                 <button id="navbar-search-icon" type="submit"><i class="fas fa-search"></i></button>
                 <input id="navbar-search-input" type="text" name="" id="" placeholder="Search recipes..." autocomplete="off">
             </form>
             <button id="hamburger-button" type="submit"><i class="fas fa-bars"></i></button>
         </nav>
-        
+
+        <section>
+            <div id="landing-heading">
+                <h1>Recently Added</h1>
+            </div>
+            <div id="recently-added">
+                <div class="flex-space">
+                    <a href="">
+                        <div class="recently-added-card">
+                            <img src="/static/images/breakfast.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex-space">
+                    <a href="">
+                        <div class="recently-added-card">
+                            <img src="/static/images/appetizers.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex-space">
+                    <a href="">
+                        <div class="recently-added-card">
+                            <img src="/static/images/mains.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex-space">
+                    <a href="">
+                        <div class="recently-added-card">
+                            <img src="/static/images/soups.jpg" alt="">
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <div class="flex-space">
+                    <a href="">
+                        <div class="recently-added-card">
+                            <img src="/static/images/desserts.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex-space">
+                    <a href="">
+                        <div class="recently-added-card">
+                            <img src="/static/images/mains.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
     </body>
 </html>

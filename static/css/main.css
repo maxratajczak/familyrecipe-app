@@ -20,8 +20,11 @@
     --navbar-margin: 7vw;
     --navbar-link-space: 2vw;
     --navbar-link-hover: #b96618;
-    --nav-search-background: #F0EBE5;
+    --navbar-logo-font: 3.2rem;
+    --navbar-link-font: 1.6rem;
+    --nav-search-background: #f1eeea;
     --nav-search-placeholder: #B2B2B2;
+    --nav-dropdown-background: #f5f2ee;
 }
 * {
     box-sizing: border-box;
@@ -47,7 +50,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     justify-content: space-between;
 }
 #navbar-logo {
-    font-size: 3.5rem;
+    font-size: var(--navbar-logo-font);
     margin-left: var(--navbar-margin);  
 }
 #navbar-logo a{
@@ -58,7 +61,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #navbar-links {
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: var(--navbar-link-font);
 }
 #navbar-links li{
     list-style: none;
@@ -81,10 +84,10 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #landing-dropdown ul{
     position: absolute;
-    background-color: rgb(250, 244, 240);
+    background-color: var(--nav-dropdown-background);
     margin-top: 15px;
     border-radius: 15px;
-    box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.151);
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.116);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,16 +96,32 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     opacity: 0%;
     transition: opacity 250ms ease-in-out;
     pointer-events: none;
+   
 }
 #landing-dropdown ul li{
     padding: 18px 5px;
 }
-#recipe-dropdown:hover + ul{
+#recipe-dropdown {
+    font-size: var(--navbar-link-font);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    z-index: 100;
+}
+#recipe-dropdown:focus + ul{
     opacity: 100%;
     pointer-events: all;
 }
-#recipe-dropdown {
-    cursor: pointer;
+#arrow {
+    width: 17px;
+    height: 17px;
+    background-color: var(--nav-dropdown-background);
+    opacity: 100%;
+    transform: rotate(45deg);
+    position: relative;
+    bottom: 7px;
+    margin-bottom: -17px;
 }
 /* SEARCH BAR */
 #navbar-search {
@@ -112,10 +131,10 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     background-color: var(--nav-search-background);
     border: none;
     border-radius: 100px;
-    height: 50px;
+    height: 48px;
     width: 285px;
-    padding: 10px 20px 10px 45px;
-    font-size: 1.7rem;
+    padding: 10px 20px 10px 50px;
+    font-size: var(--navbar-link-font);
     transition: box-shadow 400ms ease;
     color: var(--font-colour);
 }
@@ -126,7 +145,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     box-shadow: 0 0 0 1.5px rgba(128, 128, 128, 0.418);
 }
 #navbar-search-input:focus {
-    box-shadow: 0 0 5px 1.5px #e26d009a;
+    box-shadow: 0 0 2px 1.5px #e26d009a;
     outline: none;
 }
 #navbar-search-icon {
@@ -134,10 +153,10 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     border: none;
     position: relative;
     margin: 0 -40px 0 0;
-    top: 3px;
+    top: 2px;
 }
 #navbar-search-icon i{
-    font-size: 2.15rem;
+    font-size: 2rem;
     cursor: pointer;
     color: var(--primary);
 }
@@ -169,3 +188,51 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     color: var(--primary);
 }
 /* NAVBAR END */
+
+/* RECENTLY ADDED */
+#landing-heading {
+    display: flex;
+    justify-content: center;
+    margin-top: 4vw;
+    margin-bottom: 3vw;
+}
+#landing-heading h1{
+    font-size: 4rem;
+    color: var(--font-colour);
+    font-family: 'source-serif-pro-bold', serif;
+}
+#recently-added {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-space {
+    /* border: 1px dashed black; */
+    flex: 0 0 33.33%;
+    display: flex;
+    margin-bottom: 8vw;
+    justify-content: space-around;
+}
+.recently-added-card {
+    width: 370px;
+    height: 470px;
+    background-color: grey;
+    border-radius: 30px;
+    background: linear-gradient(210.01deg, rgba(236, 229, 224, 0.1) 0%, rgba(251, 250, 249, 0.1) 100%);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
+    margin-left: 50px;
+    position: relative;
+    
+}
+.recently-added-card img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 30px;
+    filter: drop-shadow(7px 7px 15px rgba(0, 0, 0, 0.25));
+    position: relative;
+    bottom: 40px;
+    right: 40px;
+}
+
+/* RECENTLY ADDED END */

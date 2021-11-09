@@ -96,10 +96,11 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     opacity: 0%;
     transition: opacity 250ms ease-in-out;
     pointer-events: none;
-   
+    z-index: 100;
 }
 #landing-dropdown ul li{
     padding: 18px 5px;
+    z-index: 100;
 }
 #recipe-dropdown {
     font-size: var(--navbar-link-font);
@@ -133,7 +134,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     border-radius: 100px;
     height: 48px;
     width: 285px;
-    padding: 10px 20px 10px 50px;
+    padding: 0.5em 1.5em 0.5em 3em;
     font-size: var(--navbar-link-font);
     transition: box-shadow 400ms ease;
     color: var(--font-colour);
@@ -217,11 +218,13 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     height: 470px;
     background-color: grey;
     border-radius: 30px;
-    background: linear-gradient(210.01deg, rgba(236, 229, 224, 0.1) 0%, rgba(251, 250, 249, 0.1) 100%);
+    background: linear-gradient(210.01deg, rgba(219, 213, 207, 0.3) 0%, rgba(240, 238, 237, 0.3) 100%);
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     margin-top: 50px;
     margin-left: 50px;
     position: relative;
+    z-index: 50;
+    backdrop-filter: blur(10px);
     
 }
 .recently-added-card img{
@@ -233,6 +236,21 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     position: relative;
     bottom: 40px;
     right: 40px;
+    z-index: 50;
 }
 
 /* RECENTLY ADDED END */
+
+/* BACKGROUND BLOBS */
+#background-blobs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -75%;
+    z-index: 10;
+}
+#right-blob {
+    position: relative;
+    top: 50vh;
+}
+/* BACKGROUND BLOBS END*/

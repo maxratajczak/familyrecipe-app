@@ -1,0 +1,46 @@
+/* =================================== */
+/* Project: Nicole's Portfolio Website */
+/* Author: Max Ratajczak               */
+/* =================================== */
+
+:root{
+    --track-color: rgb(206, 206, 206);
+    --track-handle-color: rgb(139, 139, 139);
+    --track-hover-color: rgb(167, 167, 167);
+
+    --scroll-width: 12px;
+    --scroll-height: 12px;
+}
+
+/* GOOGLE CHROME */
+::-webkit-scrollbar{
+    width: var(--scroll-width);
+    height: var(--scroll-height);
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--track-handle-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--track-hover-color);
+}
+
+::-webkit-scrollbar-corner{
+    background-color: var(--track-color);
+}
+/* ************* */
+
+
+/* FIREFOX */
+*{
+    scrollbar-width: var(--scroll-width);
+    scrollbar-color: var(--track-handle-color) var(--track-color);
+    -ms-scrollbar-color: var(--track-handle-color) var(--track-color);
+    -ms-scrollbar-width: var(--scroll-width);
+}
+/* ******* */

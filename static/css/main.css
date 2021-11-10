@@ -3,13 +3,17 @@
     src: url(/static/fonts/SourceSerifPro-Bold.ttf);
 }
 @font-face {
+    font-family: source-serif-pro-semibold;
+    src: url(/static/fonts/SourceSerifPro-SemiBold.ttf);
+}
+@font-face {
     font-family: futura-light;
     src: url(/static/fonts/futura-light-bt.ttf);
 }
 @font-face {
     font-family: futura-medium;
     src: url(/static/fonts/futurabq-medium.otf);
-}
+} 
 
 :root {
     --background: #fff9f5;
@@ -18,13 +22,18 @@
 
     --navbar-height: 160px;
     --navbar-margin: 7vw;
-    --navbar-link-space: 2vw;
+    --navbar-link-space: 3vw;
     --navbar-link-hover: #b96618;
     --navbar-logo-font: 3.2rem;
     --navbar-link-font: 1.6rem;
     --nav-search-background: #f1eeea;
     --nav-search-placeholder: #B2B2B2;
     --nav-dropdown-background: #f5f2ee;
+
+    --landing-card-height: 480px;
+    --landing-card-width: 370px;
+    --landing-card-img-height: 300px;
+    --landing--card-img-width: 300px;
 }
 * {
     box-sizing: border-box;
@@ -196,14 +205,16 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 /* RECENTLY ADDED */
 #landing-heading {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 4vw;
     margin-bottom: 3vw;
+    margin-left: var(--navbar-margin);
 }
 #landing-heading h1{
     font-size: 4rem;
     color: var(--font-colour);
     font-family: 'source-serif-pro-bold', serif;
+    
 }
 #recently-added {
     display: flex;
@@ -216,33 +227,58 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     margin-bottom: 8vw;
     justify-content: space-around;
 }
+.flex-space a {
+    text-decoration: none;
+}
 .recently-added-card {
-    width: 370px;
-    height: 470px;
+    width: var(--landing-card-width);
+    height: var(--landing-card-height);
     background-color: grey;
     border-radius: 30px;
-    background: linear-gradient(210.01deg, rgba(219, 213, 207, 0.3) 0%, rgba(240, 238, 237, 0.3) 100%);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(210.01deg, rgba(219, 213, 207, 0.2) 0%, rgba(240, 238, 237, 0.2) 100%);
+    box-shadow: 3px 3px 25px 0 rgba(0, 0, 0, 0.116);
     margin-top: 50px;
     margin-left: 50px;
     position: relative;
     z-index: 50;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    
 }
 .recently-added-card img{
-    width: 300px;
-    height: 300px;
+    width: var(--landing--card-img-width);
+    height: var(--landing-card-img-height);
     object-fit: cover;
     border-radius: 30px;
-    filter: drop-shadow(7px 7px 15px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
     position: relative;
     bottom: 40px;
     right: 40px;
     z-index: 50;
+    margin-bottom: -40px;
 }
+.landing-card-content {
+    /* background-color: rgba(0, 0, 0, 0.315); */
+    width: 100%;
+    height: calc(100% - var(--landing-card-img-height) + 40px);
+    padding: 15px 25px;
+}
+.landing-card-header {
+    /* border: 2px solid black; */
+}
+.landing-card-header h1 {
+    font-size: 2.5rem;
+    color: var(--font-colour);
+    font-family: 'source-serif-pro-semibold', serif;
+    
+}
+.landing-card-body p{
+    font-size: 1.8rem;
+    color: var(--font-colour);
+    font-family: 'futura-medium', sans-serif;
+}
+.landing-card-footer {
 
+}
 /* RECENTLY ADDED END */
 
 /* BACKGROUND BLOBS */

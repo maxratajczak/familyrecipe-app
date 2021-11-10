@@ -235,7 +235,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     height: var(--landing-card-height);
     background-color: grey;
     border-radius: 30px;
-    background: linear-gradient(210.01deg, rgba(219, 213, 207, 0.2) 0%, rgba(240, 238, 237, 0.2) 100%);
+    background: linear-gradient(210.01deg, rgba(228, 222, 216, 0.4) 0%, rgba(243, 241, 240, 0.4) 100%);
     box-shadow: 3px 3px 25px 0 rgba(0, 0, 0, 0.116);
     margin-top: 50px;
     margin-left: 50px;
@@ -260,7 +260,11 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     /* background-color: rgba(0, 0, 0, 0.315); */
     width: 100%;
     height: calc(100% - var(--landing-card-img-height) + 40px);
-    padding: 15px 25px;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    justify-content: space-between;
 }
 .landing-card-header {
     /* border: 2px solid black; */
@@ -271,13 +275,24 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-family: 'source-serif-pro-semibold', serif;
     
 }
+.landing-card-body {
+    /* border: 2px solid black; */
+    position: relative;
+    bottom: 25px;
+}
 .landing-card-body p{
     font-size: 1.8rem;
     color: var(--font-colour);
     font-family: 'futura-medium', sans-serif;
+    padding-bottom: 5px;
 }
 .landing-card-footer {
-
+    /* border: 2px solid black; */
+}
+.landing-card-footer p{
+    font-size: 1.8rem;
+    color: var(--font-colour);
+    font-family: 'futura-light', sans-serif;
 }
 /* RECENTLY ADDED END */
 

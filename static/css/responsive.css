@@ -4,7 +4,7 @@
         font-size: 70%;
     }
     #navbar-search-input {
-        width: 350px;
+        width: 325px;
         height: 55px;
     }
 }
@@ -22,9 +22,6 @@
     }
     html {
         font-size: 58%;
-    }
-    #navbar-search-input {
-        width: 270px;
     }
     
 }

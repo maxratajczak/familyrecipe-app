@@ -209,10 +209,9 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 /* RECENTLY ADDED */
 #landing-heading {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     margin-top: 4vw;
     margin-bottom: 3vw;
-    margin-left: var(--navbar-margin);
 }
 #landing-heading h1{
     font-size: 4rem;
@@ -223,6 +222,9 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #recently-added {
     display: flex;
     flex-wrap: wrap;
+    margin-left: var(--navbar-margin);
+    margin-right: var(--navbar-margin);
+    justify-content: space-around;
 }
 .flex-space {
     /* border: 1px dashed black; */
@@ -230,6 +232,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     display: flex;
     margin-bottom: 8vw;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .flex-space a {
     text-decoration: none;

@@ -12,22 +12,25 @@
 
 }
 @media (max-width: 1280px) {
-    .flex-space {
+    /* .flex-space {
         flex: 0 0 50%;
-    }
+    } */
 }
 @media (max-width: 1024px) {
     :root {
         --navbar-margin: 4vw;
     }
-    html {
+    /* html {
         font-size: 58%;
-    }
+    } */
     
 }
 @media (max-width: 900px) {
     :root {
         --navbar-margin: 15vw;
+    }
+    #navbar {
+        justify-content: space-between;
     }
     #navbar-links {
         display: none;
@@ -38,24 +41,44 @@
     #hamburger-button {
         display: block;
     }
-    .flex-space {
+    /* .flex-space {
         flex: 0 0 100%;
-    }
+    } */
 }
 @media (max-width: 640px) {
+    :root {
+        --landing-card-height: 460px;
+        --landing-card-width: 350px;
+        --landing-card-img-height: 280px;
+        --landing--card-img-width: 280px;
+    }
+    html {
+            font-size: 55%;
+    }
 
 }
 @media (max-width: 440px) {
     :root {
-        --navbar-margin: 15vw;
+        --landing-card-height: 440px;
+        --landing-card-width: 330px;
+        --landing-card-img-height: 260px;
+        --landing--card-img-width: 260px;
     }
+    .recently-added-card {
+        box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.116);
+    }
+    .recently-added-card img{
+        filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+    }
+    
 }
 @media (max-width: 320px) {
     :root {
         --navbar-margin: 10vw;
-    }
-    html {
-        font-size: 55%;
+        --landing-card-height: 360px;
+        --landing-card-width: 250px;
+        --landing-card-img-height: 180px;
+        --landing--card-img-width: 180px;
     }
 }
 /* LANDING.HTML */

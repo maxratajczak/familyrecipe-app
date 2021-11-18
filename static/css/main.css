@@ -210,7 +210,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     display: flex;
     justify-content: center;
     margin-top: 4vw;
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
 }
 #landing-heading h1{
     font-size: 4rem;
@@ -241,8 +241,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     height: var(--landing-card-height);
     background-color: grey;
     border-radius: 30px;
-    background: linear-gradient(210.01deg, rgba(228, 222, 216, 0.4) 0%, rgba(243, 241, 240, 0.4) 100%);
-    box-shadow: 3px 3px 25px 0 rgba(0, 0, 0, 0.116);
+    background: linear-gradient(210.01deg, rgba(233, 227, 222, 0.35) 0%, rgba(243, 241, 240, 0.35) 100%);
+    box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.08);
     margin-top: 40px;
     margin-left: 40px;
     position: relative;
@@ -255,7 +255,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     height: var(--landing-card-img-height);
     object-fit: cover;
     border-radius: 30px;
-    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
     position: relative;
     bottom: 40px;
     right: 40px;
@@ -306,16 +306,29 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #background-blobs {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    /* margin-top: -75%; */
-    z-index: 10;
+    z-index: -100;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 30vh;
+}
+#left-blob {
+    z-index: -100;
 }
 #right-blob {
     position: relative;
     top: 50vh;
-    z-index: 10;
+    z-index: -100;
 }
-#left-blob {
-    z-index: 10;
+
+
+#additional-blobs {
+    display: none;
+    justify-content: space-between;
+    z-index: -100;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 250vh;
 }
 /* BACKGROUND BLOBS END*/

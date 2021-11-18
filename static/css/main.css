@@ -218,8 +218,9 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-size: 4rem;
     color: var(--font-colour);
     font-family: 'source-serif-pro-bold', serif;
-    font-style: normal;
-    font-weight: normal;
+    -moz-osx-font-smoothing: grayscale;   /* Firefox */
+    -webkit-font-smoothing: antialiased; /* WebKit  */
+
 }
 #recently-added {
     display: flex;

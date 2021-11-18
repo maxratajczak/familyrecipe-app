@@ -241,8 +241,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     height: var(--landing-card-height);
     background-color: grey;
     border-radius: 30px;
-    background: linear-gradient(210.01deg, rgba(233, 227, 222, 0.35) 0%, rgba(243, 241, 240, 0.35) 100%);
-    box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.08);
+    background: linear-gradient(210.01deg, rgba(233, 227, 222, 0.4) 0%, rgba(243, 241, 240, 0.4) 100%);
+    box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.08);
     margin-top: 40px;
     margin-left: 40px;
     position: relative;
@@ -266,7 +266,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     /* background-color: rgba(0, 0, 0, 0.315); */
     width: 100%;
     height: calc(100% - var(--landing-card-img-height) + 40px);
-    padding: 25px 25px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     /* border: 2px solid black; */
@@ -279,7 +279,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-size: 2.5rem;
     color: var(--font-colour);
     font-family: 'source-serif-pro-semibold', serif;
-    
 }
 .landing-card-body {
     /* border: 2px solid black; */

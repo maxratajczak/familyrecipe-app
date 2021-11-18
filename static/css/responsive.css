@@ -13,7 +13,7 @@
 }
 @media (max-width: 1440px) {
     :root {
-        /* --recently-added-margin: 1.5vw; */
+        --recently-added-margin: 5vw;
     }
 }
 @media (max-width: 1280px) {
@@ -21,7 +21,7 @@
         flex: 0 0 33.33%;
     } */
     :root {
-        --recently-added-margin: 1.5vw;
+        --recently-added-margin: 0vw;
 
         --landing-card-height: 420px;
         --landing-card-width: 310px;

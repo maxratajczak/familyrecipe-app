@@ -267,17 +267,12 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     margin-bottom: -40px;
 }
 .landing-card-content {
-    /* background-color: rgba(0, 0, 0, 0.315); */
     width: 100%;
     height: calc(100% - var(--landing-card-img-height) + 40px);
     padding: 25px;
     display: flex;
     flex-direction: column;
-    /* border: 2px solid black; */
     justify-content: space-between;
-}
-.landing-card-header {
-    /* border: 2px solid black; */
 }
 .landing-card-header h1 {
     font-size: 2.5rem;
@@ -285,7 +280,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-family: 'source-serif-pro-semibold', serif;
 }
 .landing-card-body {
-    /* border: 2px solid black; */
     position: relative;
     bottom: 25px;
 }
@@ -294,9 +288,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     color: var(--font-colour);
     font-family: 'futura-medium', sans-serif;
     padding-bottom: 5px;
-}
-.landing-card-footer {
-    /* border: 2px solid black; */
 }
 .landing-card-footer p{
     font-size: 1.8rem;
@@ -323,8 +314,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     top: 50vh;
     z-index: -100;
 }
-
-
 #additional-blobs {
     display: none;
     justify-content: space-between;

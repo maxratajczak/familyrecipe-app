@@ -16,6 +16,12 @@
     font-style: normal;
     font-weight: normal;
 }
+@font-face {
+    font-family: futura-medium;
+    src: url(/static/fonts/futurabq-medium.otf);
+    font-style: normal;
+    font-weight: normal;
+}
 
 :root {
     --background: #fff9f5;
@@ -286,7 +292,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 .landing-card-body {
     position: relative;
-    bottom: 25px;
+    bottom: 20px;
 }
 .landing-card-body p{
     font-size: 1.8rem;

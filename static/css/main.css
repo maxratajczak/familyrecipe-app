@@ -1,18 +1,26 @@
 @font-face {
     font-family: source-serif-pro-bold;
     src: url(/static/fonts/SourceSerifPro-Bold.ttf);
+    font-style: normal;
+    font-weight: normal;
 }
 @font-face {
     font-family: source-serif-pro-semibold;
     src: url(/static/fonts/SourceSerifPro-SemiBold.ttf);
+    font-style: normal;
+    font-weight: normal;
 }
 @font-face {
     font-family: futura-light;
     src: url(/static/fonts/futura-light-bt.ttf);
+    font-style: normal;
+    font-weight: normal;
 }
 @font-face {
     font-family: futura-medium;
     src: url(/static/fonts/futurabq-medium.otf);
+    font-style: normal;
+    font-weight: normal;
 } 
 
 :root {
@@ -277,6 +285,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-size: 2.5rem;
     color: var(--font-colour);
     font-family: 'source-serif-pro-semibold', serif;
+    font-style: normal;
+    font-weight: normal;
 }
 .landing-card-body {
     position: relative;

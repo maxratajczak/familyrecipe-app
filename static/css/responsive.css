@@ -21,7 +21,7 @@
         --recently-added-margin: 7vw;
     }
 }
-@media (max-width: 1440px) {
+@media (max-width: 1445px) {
     :root {
         --recently-added-margin: 5vw;
     }

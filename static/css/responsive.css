@@ -93,12 +93,13 @@
         padding: 5px;
     }
 }
+@media (max-width: 762px) {
+    #additional-blobs {
+        display: flex;
+    }
+}
 @media (max-width: 721px) {
     :root {
-        /* --landing-card-height: 380px;
-        --landing-card-width: 270px;
-        --landing-card-img-height: 200px;
-        --landing--card-img-width: 200px; */
         --landing-card-height: 460px;
         --landing-card-width: 320px;
         --landing-card-img-height: 260px;

@@ -1,5 +1,8 @@
 /* LANDING.HTML */
 @media (min-width: 2049px) {
+    :root {
+        --recently-added-margin: 15vw;
+    }
     html {
         font-size: 70%;
     }
@@ -9,7 +12,14 @@
     }
 }
 @media (max-width: 2048px) {
-
+    :root {
+        --recently-added-margin: 13vw;
+    }
+}
+@media (max-width: 1800px) {
+    :root {
+        --recently-added-margin: 7vw;
+    }
 }
 @media (max-width: 1440px) {
     :root {

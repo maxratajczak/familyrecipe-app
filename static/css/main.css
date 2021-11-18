@@ -323,4 +323,14 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     position: absolute;
     top: 250vh;
 }
-/* BACKGROUND BLOBS END*/
+/* BACKGROUND BLOBS END */
+
+/* FOOTER */
+footer p {
+    font-family: 'futura-light', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+/* FOOTER END */

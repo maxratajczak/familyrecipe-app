@@ -2,7 +2,7 @@
     font-family: source-serif-pro-bold;
     src: url(/static/fonts/SourceSerifPro-Bold.ttf);
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
 }
 @font-face {
     font-family: source-serif-pro-semibold;

@@ -11,25 +11,36 @@
 @media (max-width: 2048px) {
 
 }
+@media (max-width: 1430px) {
+    :root {
+        --recently-added-margin: 1.5vw;
+    }
+}
 @media (max-width: 1280px) {
     /* .flex-space {
         flex: 0 0 33.33%;
     } */
     :root {
+        --recently-added-margin: 1.5vw;
+
         --landing-card-height: 420px;
         --landing-card-width: 310px;
         --landing-card-img-height: 240px;
         --landing--card-img-width: 240px;
     }
-    #recently-added {
-        margin-left: 4vw;
-        margin-right: 4vw;
+
+}
+@media (max-width: 1175px) {
+    :root {
+        --recently-added-margin: 10vw;
     }
 
 }
 @media (max-width: 1024px) {
     :root {
         --navbar-margin: 4vw;
+
+        --recently-added-margin: 2vw;
     }
     /* html {
         font-size: 58%;
@@ -58,23 +69,49 @@
     #landing-heading {
         margin-bottom: 6vw;
     }
+    #landing-heading h1 {
+        font-size: 3.5rem;
+    }
     #background-blobs {
         top: 20vw;
     }
     #right-blob {
         top: 80vh;
     }
+    /* #additional-blobs {
+        display: flex;
+    } */
+
+}
+@media (max-width: 795px) {
+    :root {
+        --recently-added-margin: 0vw;
+    }
+    .flex-space {
+        padding: 5px;
+    }
+}
+@media (max-width: 721px) {
+    :root {
+        /* --landing-card-height: 380px;
+        --landing-card-width: 270px;
+        --landing-card-img-height: 200px;
+        --landing--card-img-width: 200px; */
+        --landing-card-height: 460px;
+        --landing-card-width: 320px;
+        --landing-card-img-height: 260px;
+        --landing--card-img-width: 260px;
+    }
     #additional-blobs {
         display: flex;
     }
-
 }
 @media (max-width: 640px) {
     :root {
-        --landing-card-height: 460px;
-        --landing-card-width: 350px;
-        --landing-card-img-height: 280px;
-        --landing--card-img-width: 280px;
+        /* --landing-card-height: 360px;
+        --landing-card-width: 250px;
+        --landing-card-img-height: 180px;
+        --landing--card-img-width: 180px; */
     }
     html {
         font-size: 55%;
@@ -104,7 +141,7 @@
         padding: 20px 10px 20px 20px;
     }
     #background-blobs {
-        top: 2vw;
+        top: -15vw;
     }
     #right-blob {
         

@@ -50,6 +50,8 @@
 @media (max-width: 900px) {
     :root {
         --navbar-margin: 15vw;
+
+        --recently-added-margin: 0vw;
     }
     #navbar {
         justify-content: space-between;
@@ -85,7 +87,7 @@
 }
 @media (max-width: 795px) {
     :root {
-        --recently-added-margin: 0vw;
+        --recently-added-margin: 2vw;
     }
     .flex-space {
         padding: 5px;

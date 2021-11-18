@@ -279,6 +279,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-size: 2.5rem;
     color: var(--font-colour);
     font-family: 'source-serif-pro-semibold', serif;
+    font-style: normal;
+    font-weight: normal;
 }
 .landing-card-body {
     position: relative;

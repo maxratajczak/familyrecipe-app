@@ -227,7 +227,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     justify-content: space-around;
 }
 .flex-space {
-    /* border: 1px dashed black; */
+    border: 1px dashed black;
     flex: 0 0 33.33%;
     display: flex;
     margin-bottom: 8vw;

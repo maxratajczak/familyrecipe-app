@@ -103,6 +103,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #landing-dropdown{
     position: relative;
+    z-index: 100;
 }
 #landing-dropdown ul{
     position: absolute;
@@ -116,7 +117,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     justify-content: center;
     align-items: center;
     left: -15px;
-    opacity: 0%;
+    opacity: 0;
     transition: opacity 250ms ease-in-out;
     pointer-events: none;
     z-index: 100;
@@ -133,12 +134,12 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     text-align: center;
     z-index: 100;
 }
-#recipe-dropdown:focus{
+#recipe-dropdown:focus {
     outline: 0;
 }
-#recipe-dropdown:focus + ul{
-    opacity: 100%;
+#recipe-dropdown:focus + ul {
     pointer-events: all;
+    opacity: 1;
 }
 #arrow {
     width: 17px;

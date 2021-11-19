@@ -1,28 +1,43 @@
 const express = require("express");
 const multer = require("multer");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const dataHandler = require("./js/data-handler.js");
 const clc = require("./js/cmdlinecolor.js");
-//const bootstrap = require("bootstrap")
+const livereload = require("livereload");
+const connectLiveReload = require("connect-livereload");
+const exphbs = require("express-handlebars");
 
-// Express Application Creation
 var app = express();
+
+// Live reload for frontend & backend refresh with nodemon
+app.use(connectLiveReload());
+var liveReloadServer = livereload.createServer();
+liveReloadServer.watch(__dirname + "/static");
+liveReloadServer.watch(__dirname + "/views");
+liveReloadServer.server.once("connection", () => {
+    setTimeout(() => {
+        liveReloadServer.refresh("/");
+    }, 100);
+    
+})
+
+// Handlebar setup
+app.engine(".hbs", exphbs.engine({ extname: ".hbs", defaultLayout: false }));
+app.set("view engine", ".hbs");
+
 app.use(express.static('static'));
-app.use(express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Port Definition
 var PORT = process.env.PORT || 8080;
 
-// Application Start Function
 function onApplicationStart() {
     console.log(clc.notice("\n[Server] Initialized. Starting on port " + PORT + "..."));
 }
 
 // Routing Handling
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/views/landing.html");
+    res.render(__dirname + "/views/landing.hbs");
 });
 
 app.get("/recipes", (req, res) => {

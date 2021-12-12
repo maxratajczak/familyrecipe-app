@@ -51,8 +51,8 @@
     margin-left: 40px;
     position: relative;
     z-index: 50;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 .recently-added-card img{
     width: var(--landing--card-img-width);

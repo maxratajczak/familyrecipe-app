@@ -109,7 +109,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #landing-dropdown ul{
     position: absolute;
     background-color: rgba(247, 242, 236, 0.75);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
     margin-top: 15px;
     border-radius: 15px;
     box-shadow: 0 0 20px 5px rgba(53, 53, 53, 0.09);
@@ -242,8 +243,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     font-size: var(--navbar-link-font-mobile);
     flex-direction: row;
     background-color: #ece7e331;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     text-align: center;
 }
 #mobile-navbar-links li{

@@ -1,221 +1,150 @@
-<!DOCTYPE html>
+<link rel="stylesheet" href="/css/landing.css">
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>famrecipes | Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=320, initial-scale=1">
-        <meta name="theme-color" content="#fff9f5">
-        
-        <link rel="stylesheet" href="/css/all.min.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/landing.css">
-
-        <!-- <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="/static/css/main.css">
-        <link rel="stylesheet" href="/static/css/landing.css"> -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav id="navbar">
-                <span id="navbar-logo"><a href="/">famrecipes</a></span>
-                <div id="nav-content">
-                    <ul id="navbar-links">
-                        <li><a class="navbar-selected" href="/">Home</a></li>
-                        <div id="landing-dropdown">
-                            <button id="recipe-dropdown"><li><a>Recipes</a></li></button>
-                            <ul>
-                                <div id="arrow"></div>
-                                <li><a href="/">Breakfast</a></li>
-                                <li><a href="/">Appetizers</a></li>
-                                <li><a href="/">Mains</a></li>
-                                <li><a href="/">Soups</a></li>
-                                <li><a href="/">Dessert</a></li>
-                            </ul>
+<section>
+    <div id="landing-heading">
+        <h1>Recently Added</h1>
+    </div>
+    <div id="recently-added">
+        <div class="flex-space">
+            <a href="">
+                <div class="recently-added-card">
+                    <img src="/images/breakfast.jpg" alt="">
+                    <div class="landing-card-content">
+                        <div class="landing-card-header">
+                            <h1>Waffles & Parfait</h1>
                         </div>
-                        <li><a href="/">Login</a></li>
-                    </ul>   
-                    <form id="navbar-search" action="">
-                        <button id="navbar-search-icon" type="submit"><i class="fas fa-search"></i></button>
-                        <input id="navbar-search-input" type="text" name="" id="" placeholder="Search recipes..." autocomplete="off">
-                    </form>
+                        <div class="landing-card-body">
+                            <p>7 Ingredients</p>
+                            <p>8 Steps</p>
+                        </div>
+                        <div class="landing-card-footer">
+                            <p>Max Ratajczak</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-                    <button id="hamburger-button" type="button"><i class="fas fa-bars"></i></button>   
+        <div class="flex-space">
+            <a href="">
+                <div class="recently-added-card">
+                    <img src="/images/appetizers.jpg" alt="">
+                    <div class="landing-card-content">
+                        <div class="landing-card-header">
+                            <h1>Veggie Salad</h1>
+                        </div>
+                        <div class="landing-card-body">
+                            <p>8 Ingredients</p>
+                            <p>2 Steps</p>
+                        </div>
+                        <div class="landing-card-footer">
+                            <p>Ania Domagala</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <ul id="mobile-navbar-links">
-                    <li><a class="navbar-selected" href="/">Home</a></li>
-                    <li><a href="/">Login</a></li>
-                    <li><a href="/">Breakfast</a></li>
-                    <li><a href="/">Appetizers</a></li>
-                    <li><a href="/">Mains</a></li>
-                    <li><a href="/">Soups</a></li>
-                    <li><a href="/">Dessert</a></li>
-                    
-                </ul>
-            </nav>
-        </header>
-        <script>
-            $("#hamburger-button").on("click", () => {
-                $("#mobile-navbar-links").toggle()
-            })
-        </script>
-        
-        <main>
-            <section>
-                <div id="landing-heading">
-                    <h1>Recently Added</h1>
-                </div>
-                <div id="recently-added">
-                    <div class="flex-space">
-                        <a href="">
-                            <div class="recently-added-card">
-                                <img src="/images/breakfast.jpg" alt="">
-                                <div class="landing-card-content">
-                                    <div class="landing-card-header">
-                                        <h1>Waffles & Parfait</h1>
-                                    </div>
-                                    <div class="landing-card-body">
-                                        <p>7 Ingredients</p>
-                                        <p>8 Steps</p>
-                                    </div>
-                                    <div class="landing-card-footer">
-                                        <p>Max Ratajczak</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-    
-                    <div class="flex-space">
-                        <a href="">
-                            <div class="recently-added-card">
-                                <img src="/images/appetizers.jpg" alt="">
-                                <div class="landing-card-content">
-                                    <div class="landing-card-header">
-                                        <h1>Veggie Salad</h1>
-                                    </div>
-                                    <div class="landing-card-body">
-                                        <p>8 Ingredients</p>
-                                        <p>2 Steps</p>
-                                    </div>
-                                    <div class="landing-card-footer">
-                                        <p>Ania Domagala</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-    
-                    <div class="flex-space">
-                        <a href="">
-                            <div class="recently-added-card">
-                                <img src="/images/mains.jpg" alt="">
-                                <div class="landing-card-content">
-                                    <div class="landing-card-header">
-                                        <h1>Shrimp Rice Bowl</h1>
-                                    </div>
-                                    <div class="landing-card-body">
-                                        <p>5 Ingredients</p>
-                                        <p>10 Steps</p>
-                                    </div>
-                                    <div class="landing-card-footer">
-                                        <p>Nicole Ratajczak</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-    
-                    <div class="flex-space">
-                        <a href="">
-                            <div class="recently-added-card">
-                                <img src="/images/soups.jpg" alt="">
-                                <div class="landing-card-content">
-                                    <div class="landing-card-header">
-                                        <h1>Red Lentil Soup</h1>
-                                    </div>
-                                    <div class="landing-card-body">
-                                        <p>5 Ingredients</p>
-                                        <p>6 Steps</p>
-                                    </div>
-                                    <div class="landing-card-footer">
-                                        <p>Gabbie Ratajczak</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-    
-                    <div class="flex-space">
-                        <a href="">
-                            <div class="recently-added-card">
-                                <img src="/images/desserts.jpg" alt="">
-                                <div class="landing-card-content">
-                                    <div class="landing-card-header">
-                                        <h1>Double Fudge Brownies</h1>
-                                    </div>
-                                    <div class="landing-card-body">
-                                        <p>8 Ingredients</p>
-                                        <p>10 Steps</p>
-                                    </div>
-                                    <div class="landing-card-footer">
-                                        <p>Julia Morawska</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-    
-                    <div class="flex-space">
-                        <a href="">
-                            <div class="recently-added-card">
-                                <img src="/images/breakfast.jpg" alt="">
-                                <div class="landing-card-content">
-                                    <div class="landing-card-header">
-                                        <h1>Waffles and Fruit Bowls</h1>                                    
-                                    </div>
-                                    <div class="landing-card-body">
-                                        <p>4 Ingredients</p>
-                                        <p>2 Steps</p>
-                                    </div>
-                                    <div class="landing-card-footer">
-                                        <p>Gabbie Ratajczak</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            </section>
-    
-            <div id="background-blobs">
-                <svg id="left-blob" width="408" height="846" viewBox="0 0 408 846" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M334 151.119C288 -24.8808 90.1667 -11.5474 -3 17.1192V787.119C-3 797.453 11.4 822.919 69 842.119C141 866.119 202.5 770.119 334 583.619C465.5 397.119 391.5 371.119 334 151.119Z" fill="#FDF1E4"/>
-                </svg>
-                <svg id="right-blob" width="410" height="846" viewBox="0 0 410 846" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M73.4124 694.63C119.412 870.63 317.246 857.297 410.412 828.63V58.63C410.412 48.2967 396.012 22.83 338.412 3.63C266.412 -20.37 204.912 75.63 73.4124 262.13C-58.0876 448.63 15.9124 474.63 73.4124 694.63Z" fill="#FDF1E4"/>
-                </svg>
-            </div>
-    
-            <div id="additional-blobs">
-                <svg id="left-blob" width="408" height="846" viewBox="0 0 408 846" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M334 151.119C288 -24.8808 90.1667 -11.5474 -3 17.1192V787.119C-3 797.453 11.4 822.919 69 842.119C141 866.119 202.5 770.119 334 583.619C465.5 397.119 391.5 371.119 334 151.119Z" fill="#FDF1E4"/>
-                </svg>
-                <svg id="right-blob" width="410" height="846" viewBox="0 0 410 846" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M73.4124 694.63C119.412 870.63 317.246 857.297 410.412 828.63V58.63C410.412 48.2967 396.012 22.83 338.412 3.63C266.412 -20.37 204.912 75.63 73.4124 262.13C-58.0876 448.63 15.9124 474.63 73.4124 694.63Z" fill="#FDF1E4"/>
-                </svg>
-            </div>
-        </main>
-        
-        <footer>
-            <p>Designed and Created by Max Ratajczak</p>
-        </footer>
+            </a>
+        </div>
 
-    </body>
-    
-</html>
+        <div class="flex-space">
+            <a href="">
+                <div class="recently-added-card">
+                    <img src="/images/mains.jpg" alt="">
+                    <div class="landing-card-content">
+                        <div class="landing-card-header">
+                            <h1>Shrimp Rice Bowl</h1>
+                        </div>
+                        <div class="landing-card-body">
+                            <p>5 Ingredients</p>
+                            <p>10 Steps</p>
+                        </div>
+                        <div class="landing-card-footer">
+                            <p>Nicole Ratajczak</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="flex-space">
+            <a href="">
+                <div class="recently-added-card">
+                    <img src="/images/soups.jpg" alt="">
+                    <div class="landing-card-content">
+                        <div class="landing-card-header">
+                            <h1>Red Lentil Soup</h1>
+                        </div>
+                        <div class="landing-card-body">
+                            <p>5 Ingredients</p>
+                            <p>6 Steps</p>
+                        </div>
+                        <div class="landing-card-footer">
+                            <p>Gabbie Ratajczak</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="flex-space">
+            <a href="">
+                <div class="recently-added-card">
+                    <img src="/images/desserts.jpg" alt="">
+                    <div class="landing-card-content">
+                        <div class="landing-card-header">
+                            <h1>Double Fudge Brownies</h1>
+                        </div>
+                        <div class="landing-card-body">
+                            <p>8 Ingredients</p>
+                            <p>10 Steps</p>
+                        </div>
+                        <div class="landing-card-footer">
+                            <p>Julia Morawska</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="flex-space">
+            <a href="">
+                <div class="recently-added-card">
+                    <img src="/images/breakfast.jpg" alt="">
+                    <div class="landing-card-content">
+                        <div class="landing-card-header">
+                            <h1>Waffles and Fruit Bowls</h1>                                    
+                        </div>
+                        <div class="landing-card-body">
+                            <p>4 Ingredients</p>
+                            <p>2 Steps</p>
+                        </div>
+                        <div class="landing-card-footer">
+                            <p>Gabbie Ratajczak</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div id="background-blobs">
+    <svg id="left-blob" width="408" height="846" viewBox="0 0 408 846" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M334 151.119C288 -24.8808 90.1667 -11.5474 -3 17.1192V787.119C-3 797.453 11.4 822.919 69 842.119C141 866.119 202.5 770.119 334 583.619C465.5 397.119 391.5 371.119 334 151.119Z" fill="#FDF1E4"/>
+    </svg>
+    <svg id="right-blob" width="410" height="846" viewBox="0 0 410 846" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M73.4124 694.63C119.412 870.63 317.246 857.297 410.412 828.63V58.63C410.412 48.2967 396.012 22.83 338.412 3.63C266.412 -20.37 204.912 75.63 73.4124 262.13C-58.0876 448.63 15.9124 474.63 73.4124 694.63Z" fill="#FDF1E4"/>
+    </svg>
+</div>
+
+<div id="additional-blobs">
+    <svg id="left-blob" width="408" height="846" viewBox="0 0 408 846" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M334 151.119C288 -24.8808 90.1667 -11.5474 -3 17.1192V787.119C-3 797.453 11.4 822.919 69 842.119C141 866.119 202.5 770.119 334 583.619C465.5 397.119 391.5 371.119 334 151.119Z" fill="#FDF1E4"/>
+    </svg>
+    <svg id="right-blob" width="410" height="846" viewBox="0 0 410 846" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M73.4124 694.63C119.412 870.63 317.246 857.297 410.412 828.63V58.63C410.412 48.2967 396.012 22.83 338.412 3.63C266.412 -20.37 204.912 75.63 73.4124 262.13C-58.0876 448.63 15.9124 474.63 73.4124 694.63Z" fill="#FDF1E4"/>
+    </svg>
+</div>
+
+<footer>
+    <p>Designed and Created by Max Ratajczak</p>
+</footer>

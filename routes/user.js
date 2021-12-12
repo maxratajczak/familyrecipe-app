@@ -6,7 +6,7 @@ const router = express.Router();
 
 module.exports = router;
 
-router.route("/createRecipe")
+router.route("/createrecipe")
 .get((req, res) => {
     res.sendFile(path.join(__dirname , '..' , "views" , "addRecipe.html"));
 })

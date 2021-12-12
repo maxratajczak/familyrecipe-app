@@ -26,11 +26,12 @@ liveReloadServer.server.once("connection", () => {
 })
 
 // Express handlebars setup
-app.engine(".hbs", exphbs.engine({ extname: ".hbs", defaultLayout: false }));
 app.set("view engine", ".hbs");
+app.engine(".hbs", exphbs.engine({ extname: ".hbs"}));
 
 app.use(express.static('static'));
 app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
+app.use(express.static(__dirname + '/node_modules/animate.css/'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
@@ -41,7 +42,7 @@ app.use("/recipes", recipesRoute);
 app.use("/user", userRoute);
 
 app.get("*", (req, res) => {
-    res.send("<h1>Page 404</h1>");
+    res.render(__dirname + "/views/404.hbs");
 });
 
 console.log(clc.notice("\n\n[Server] Listening...\n"));

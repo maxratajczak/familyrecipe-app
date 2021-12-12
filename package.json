@@ -19,6 +19,7 @@
   "homepage": "https://github.com/maxratajczak/familyrecipes-app#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "animate.css": "^4.1.1",
     "body-parser": "^1.19.0",
     "cli-color": "^2.0.1",
     "connect-livereload": "^0.6.1",

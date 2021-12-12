@@ -1,0 +1,14 @@
+#page-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#page-content h1{
+    color: var(--font-colour);
+    font-size: 2.8rem;
+}
+#page-content h3{
+    color: var(--font-colour);
+    font-size: 2rem;
+}

@@ -33,6 +33,7 @@
     --navbar-link-space: 30px;
     --navbar-link-hover: #b96618;
     --navbar-link-font: 1.6rem;
+    --navbar-link-font-mobile: 2.5rem;
     --nav-search-background: #f1eeea;
     --nav-search-placeholder: #B2B2B2;
     --nav-dropdown-background: #f5f2ee;
@@ -61,7 +62,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 
 /* NAVBAR */
-#navbar {
+#desktop-nav {
     display: flex;
     height: var(--navbar-height);
     align-items: center;
@@ -117,10 +118,13 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     justify-content: center;
     align-items: center;
     left: -15px;
-    opacity: 0;
+    /* opacity: 0; */
     transition: opacity 250ms ease-in-out;
-    pointer-events: none;
+    /* pointer-events: none; */
     z-index: 100;
+    display: none;
+    text-align: center;
+    
 }
 #landing-dropdown ul li{
     padding: 18px 5px;
@@ -138,8 +142,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     outline: 0;
 }
 #recipe-dropdown:focus + ul {
-    pointer-events: all;
-    opacity: 1;
+    /* pointer-events: all;
+    opacity: 1; */
 }
 #arrow {
     width: 17px;
@@ -205,29 +209,46 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
 } */
+
 /* HAMBURGER MENU */
+#mobile-nav {
+    display: none;
+    min-height: var(--navbar-height);
+    /* justify-content: space-between; */
+    flex-direction: column;
+}
+#nav-top{
+    display: flex;
+    justify-content: space-between;
+    margin-left: var(--navbar-margin);
+    margin-right: var(--navbar-margin);
+    margin-top: calc((var(--navbar-height) / 2) - 3.3rem);
+}
+#nav-bottom {
+    margin-top: 20px;
+}
 #hamburger-button {
     background: none;
     border: none;
-    display: none;
 }
 #hamburger-button i{
     font-size: 3rem;
     cursor: pointer;
     color: var(--primary);
 }
-
 #mobile-navbar-links {
     display: none;
-}
-#mobile-navbar-links {
     align-items: center;
-    font-size: var(--navbar-link-font);
+    font-size: var(--navbar-link-font-mobile);
     flex-direction: row;
+    background-color: #ece7e331;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    text-align: center;
 }
 #mobile-navbar-links li{
     list-style: none;
-    margin: 0 var(--navbar-link-space);
+    padding: 10px 0;
 }
 #mobile-navbar-links li a {
     text-decoration: none;
@@ -236,6 +257,9 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #mobile-navbar-links li a:hover{
     color: var(--navbar-link-hover);
+}
+.nav-link-spacer {
+    border:  1px solid rgba(44, 44, 44, 0.075);
 }
 /* NAVBAR END */
 
@@ -309,14 +333,14 @@ footer p {
     #navbar {
         justify-content: space-between;
     }
-    #navbar-links {
+    #desktop-nav {
         display: none;
     }
-    #navbar-search {
-        display: none;
+    #mobile-nav {
+        display: flex;
     }
-    #hamburger-button {
-        display: block;
+    #navbar-logo {
+        margin-left: 0;
     }
 }
 @media (max-width: 640px) {

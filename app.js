@@ -6,28 +6,9 @@ const clc = require("./js/cmdlinecolor.js");
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const exphbs = require("express-handlebars");
-
+const userRoute = require("./routes/user.js");
+const recipesRoute = require("./routes/recipes.js");
 var app = express();
-
-// Live reload for frontend & backend refresh with nodemon
-app.use(connectLiveReload());
-var liveReloadServer = livereload.createServer();
-liveReloadServer.watch(__dirname + "/static");
-liveReloadServer.watch(__dirname + "/views");
-liveReloadServer.server.once("connection", () => {
-    setTimeout(() => {
-        liveReloadServer.refresh("/");
-    }, 100);
-    
-})
-
-// Handlebar setup
-app.engine(".hbs", exphbs.engine({ extname: ".hbs", defaultLayout: false }));
-app.set("view engine", ".hbs");
-
-app.use(express.static('static'));
-app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
-app.use(bodyParser.urlencoded({ extended: true }));
 
 var PORT = process.env.PORT || 8080;
 
@@ -35,39 +16,33 @@ function onApplicationStart() {
     console.log(clc.notice("\n[Server] Initialized. Starting on port " + PORT + "..."));
 }
 
-// Routing Handling
+// Live reload for frontend & backend refresh with nodemon
+app.use(connectLiveReload());
+var liveReloadServer = livereload.createServer();
+liveReloadServer.watch(__dirname + "/static");
+liveReloadServer.watch(__dirname + "/views");
+liveReloadServer.server.once("connection", () => {
+    setTimeout(() => { liveReloadServer.refresh("/") }, 100);
+})
+
+// Express handlebars setup
+app.engine(".hbs", exphbs.engine({ extname: ".hbs", defaultLayout: false }));
+app.set("view engine", ".hbs");
+
+app.use(express.static('static'));
+app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => {
     res.render(__dirname + "/views/landing.hbs");
 });
 
-app.get("/recipes", (req, res) => {
-    dataHandler.getAllRecipes()
-    .then((recipes) => {
-        res.json(recipes);
-    })
-    .catch((error) => {
-        console.log(clc.warn(error));
-        res.send("<h1>No Results Returned</h1>")
-    });
-});
+app.use("/recipes", recipesRoute);
+app.use("/user", userRoute);
 
-app.get("/addrecipe", (req, res) => {
-    res.sendFile(__dirname + "/views/addRecipe.html")
+app.get("*", (req, res) => {
+    res.send("<h1>Page 404</h1>");
 });
-
-app.post("/addrecipe", (req, res) => {
-    dataHandler.addRecipe(req.body)
-    .then((recipe) => {
-        dataHandler.saveRecipe(recipe)
-        .then((message) => {
-            console.log(clc.success(message));
-            res.redirect("/recipes");
-        })
-        .catch((error) => {console.log(clc.error(error))});
-    })
-    .catch((error) => {console.log(clc.error(error))});
-});
-// ****************
 
 console.log(clc.notice("\n\n[Server] Listening...\n"));
 app.listen(PORT, dataHandler.initializeRecipes()

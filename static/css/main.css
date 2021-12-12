@@ -208,13 +208,34 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 /* HAMBURGER MENU */
 #hamburger-button {
     background: none;
-    border: none;;
+    border: none;
     display: none;
 }
 #hamburger-button i{
     font-size: 3rem;
     cursor: pointer;
     color: var(--primary);
+}
+
+#mobile-navbar-links {
+    display: none;
+}
+#mobile-navbar-links {
+    align-items: center;
+    font-size: var(--navbar-link-font);
+    flex-direction: row;
+}
+#mobile-navbar-links li{
+    list-style: none;
+    margin: 0 var(--navbar-link-space);
+}
+#mobile-navbar-links li a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 400ms;
+}
+#mobile-navbar-links li a:hover{
+    color: var(--navbar-link-hover);
 }
 /* NAVBAR END */
 

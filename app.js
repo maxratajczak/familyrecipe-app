@@ -27,12 +27,17 @@ liveReloadServer.server.once("connection", () => {
 
 // Express handlebars setup
 app.set("view engine", ".hbs");
-app.engine(".hbs", exphbs.engine({ extname: ".hbs"}));
+app.engine(".hbs", exphbs.engine({
+    extname: ".hbs",
+    helpers : {
+
+    }
+}));
 
 app.use(express.static('static'));
 app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
 app.use(express.static(__dirname + '/node_modules/animate.css/'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));  
 
 app.get("/", (req, res) => {
     res.render(__dirname + "/views/landing.hbs");

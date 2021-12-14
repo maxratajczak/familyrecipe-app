@@ -242,10 +242,13 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     align-items: center;
     font-size: var(--navbar-link-font-mobile);
     flex-direction: row;
-    background-color: #ece7e331;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    /* background-color: #97979731; */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
     text-align: center;
+    position: absolute;
+    z-index: 200;
+    width: 100%;
 }
 #mobile-navbar-links li{
     list-style: none;

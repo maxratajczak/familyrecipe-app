@@ -16,7 +16,7 @@ router.route("/register")
 
 router.route("/login")
 .get((req, res) => {
-
+    res.render(path.join(__dirname, "..", "views", "login.hbs"));
 })
 .post((req, res) => {
 

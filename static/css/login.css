@@ -1,0 +1,21 @@
+#page-content {
+    display: flex;
+   justify-content: center;
+   margin-top: 50px;
+}
+#heading {
+    color: var(--font-colour);
+    font-size: 2.8rem;
+    margin: 20px 40px;
+}
+#card {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(125deg, rgba(255,255,255,0.8) 40%, rgba(243, 242, 242, 0.8) 100%);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 500px;
+    width: 500px;
+    box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.082);
+}

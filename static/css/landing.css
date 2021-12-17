@@ -42,10 +42,9 @@
 .recently-added-card {
     width: var(--landing-card-width);
     height: var(--landing-card-height);
-    background-color: grey;
     border-radius: 30px;
     /* background: linear-gradient(210.01deg, rgba(233, 227, 222, 0.4) 0%, rgba(243, 241, 240, 0.4) 100%); */
-    background-color: rgba(247, 247, 247, 0.25);
+    background-color: rgba(247, 247, 247, 0.30);
     box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.08);
     margin-top: 40px;
     margin-left: 40px;

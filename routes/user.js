@@ -8,7 +8,7 @@ module.exports = router;
 
 router.route("/register")
 .get((req, res) => {
-    
+    res.render(path.join(__dirname, "..", "views", "register.hbs"))
 })
 .post((req, res) => {
     

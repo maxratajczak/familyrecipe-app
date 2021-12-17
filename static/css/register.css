@@ -25,17 +25,21 @@
 #card-content {
     padding: 50px 30px;
 }
-#loginForm {
+#registerForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-.loginFieldset {
+.registerFieldset {
     border: none;
     margin: 20px 0 0 0;
 }
-.loginInput {
+.registerFieldset:nth-child(4) {
+    border: none;
+    margin: 40px 0 0 0;
+}
+.registerInput {
     width: var(--input-width);
     font-size: 1.8rem;
     padding: 8px 5px;
@@ -43,13 +47,13 @@
     border-bottom: 1px solid rgb(134, 134, 134);
     color: var(--font-colour);
     background-color: transparent;
-    border-radius: 0;
+    border-radius: 0 ;
 }
-.loginInput:focus {
+.registerInput:focus {
     border-bottom: 1px solid var(--primary);
     outline: none;
 }
-#loginButton {
+#registerButton {
     margin: 40px 0;
     width: var(--input-width);
     border: none;
@@ -61,21 +65,21 @@
     border-radius: 10px;
     transition: background-color 150ms;
 }
-#loginButton:hover {
+#registerButton:hover {
     background-color: #da7517;
 }
-#loginButton:focus {
+#registerButton:focus {
     background-color: #cf7016;
 }
-#loginFooter {
+#registerFooter {
     font-size: 1.45rem;
     cursor: default;
 }
-#loginFooter span a {
+#registerFooter span a {
     text-decoration: none;
     color: var(--primary);
 }
-#loginFooter span a:hover {
+#registerFooter span a:hover {
     color: #eb9d54;
 }
 @media (max-width: 380px) {

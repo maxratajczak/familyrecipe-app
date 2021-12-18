@@ -32,7 +32,7 @@ router.route("/logout")
 
 router.route("/createrecipe")
 .get((req, res) => {
-    res.sendFile(path.join(__dirname , '..' , "views" , "addRecipe.html"));
+    res.render(path.join(__dirname , '..' , "views" , "createRecipe.hbs"));
 })
 .post((req, res) => {
     dataHandler.addRecipe(req.body)

@@ -3,28 +3,32 @@
     src: url(/fonts/SourceSerifPro-Bold.ttf);
     font-style: normal;
     font-weight: normal;
+    -webkit-font-smoothing: antialiased;
 }
 @font-face {
     font-family: source-serif-pro-semibold;
     src: url(/fonts/SourceSerifPro-SemiBold.ttf);
     font-style: normal;
     font-weight: normal;
+    -webkit-font-smoothing: antialiased;
 }
 @font-face {
     font-family: futura-light;
     src: url(/fonts/futura-light-bt.ttf);
     font-style: normal;
     font-weight: normal;
+    -webkit-font-smoothing: antialiased;
 }
 @font-face {
     font-family: futura-medium;
     src: url(/fonts/futurabq-medium.otf);
     font-style: normal;
     font-weight: normal;
+    -webkit-font-smoothing: antialiased;
 }
-
 :root {
-    --background: #fff9f5;
+    --background: #fff4ed;
+    /* #fff9f5 */
     --primary: #E17817;
     --font-colour: #4A4A4A;
 
@@ -44,6 +48,14 @@
 
     --scroll-width: 12px;
     --scroll-height: 12px;
+}
+::selection {
+    color: var(--background);
+    background: var(--font-colour);
+}
+::-moz-selection {
+    color: var(--background);
+    background: var(--font-colour);
 }
 * {
     box-sizing: border-box;
@@ -167,7 +179,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     border-radius: 100px;
     height: 47px;
     width: 250px;
-    padding: 0.5em 1.5em 0.5em 3em;
+    padding: 0.4em 1.5em 0.5em 3em;
     font-size: var(--navbar-link-font);
     transition: box-shadow 400ms ease;
     color: var(--font-colour);
@@ -191,7 +203,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     top: 2px;
 }
 #navbar-search-icon i{
-    font-size: 2rem;
+    font-size: 1.9rem;
     cursor: pointer;
     color: var(--primary);
 }
@@ -270,6 +282,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 /* FOOTER */
 footer {
     height: 50px;
+    cursor: default;
 }
 footer p {
     font-family: 'futura-light', sans-serif;

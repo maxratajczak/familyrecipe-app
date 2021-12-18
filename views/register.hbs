@@ -1,41 +1,44 @@
 <link rel="stylesheet" href="/css/register.css">
 
 <div id="page-content">
-    <div id="card">
-        <div id="card-content">
-            <h1 id="heading">Create Account</h1>
-            <form action="/user/register" method="POST" id="registerForm">
+    <div>
+        <div id="card">
+            <div id="card-content">
+                <h1 id="heading">Create Account</h1>
+                <form action="/user/register" method="POST" id="registerForm">
 
-                <fieldset class="registerFieldset">
-                    <label for="firstName" hidden>First Name</label>
-                    <input type="" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" required>
-                </fieldset>
+                    <fieldset class="registerFieldset">
+                        <label for="firstName" hidden>First Name</label>
+                        <input type="" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" required>
+                    </fieldset>
 
-                <fieldset class="registerFieldset">
-                    <label for="lastName" hidden>Last Name</label>
-                    <input type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" required>
-                </fieldset>
+                    <fieldset class="registerFieldset">
+                        <label for="lastName" hidden>Last Name</label>
+                        <input type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" required>
+                    </fieldset>
 
-                <fieldset class="registerFieldset">
-                    <label for="email" hidden>Email</label>
-                    <input type="email" name="email" id="email" class="registerInput" placeholder="Email" required>
-                </fieldset>
+                    <fieldset class="registerFieldset">
+                        <label for="email" hidden>Email</label>
+                        <input type="email" name="email" id="email" class="registerInput" placeholder="Email" required>
+                    </fieldset>
 
-                <fieldset class="registerFieldset">
-                    <label for="password1" hidden>Password</label>
-                    <input type="password" name="password1" id="password1" class="registerInput" placeholder="Password" required>
-                </fieldset>
+                    <fieldset class="registerFieldset">
+                        <label for="password1" hidden>Password</label>
+                        <input type="password" name="password1" id="password1" class="registerInput" placeholder="Password" required>
+                    </fieldset>
 
-                <fieldset class="registerFieldset">
-                    <label for="password2" hidden>Confirm Password</label>
-                    <input type="password" name="password2" id="password2" class="registerInput" placeholder="Confirm Password" required>
-                </fieldset>
+                    <fieldset class="registerFieldset">
+                        <label for="password2" hidden>Confirm Password</label>
+                        <input type="password" name="password2" id="password2" class="registerInput" placeholder="Confirm Password" required>
+                    </fieldset>
 
-                <button type="submit" id="registerButton">Register</button>
-                <div id="registerFooter">
-                    <p>Already have an account? <span><a href="/user/login">Login</a></span></p>
-                </div>
-            </form>
+                    <button type="submit" id="registerButton">Register</button>
+                    <div id="registerFooter">
+                        <p>Already have an account? <span><a href="/user/login">Login</a></span></p>
+                    </div>
+                </form>
+            </div>
         </div>
+        <div id="card-background"></div>
     </div>
 </div>

@@ -1,26 +1,30 @@
 <link rel="stylesheet" href="/css/login.css">
 
 <div id="page-content">
-    <div id="card">
-        <div id="card-content">
-            <h1 id="heading">Login</h1>
-            <form action="/user/login" method="POST" id="loginForm">
+    <div>
+        <div id="card">
+            <div id="card-content">
+                <h1 id="heading">Login</h1>
+                <form action="/user/login" method="POST" id="loginForm">
 
-                <fieldset class="loginFieldset">
-                    <label for="email" hidden>Email</label>
-                    <input type="email" name="email" id="email" class="loginInput" placeholder="Email" autocomplete="off" required>
-                </fieldset>
+                    <fieldset class="loginFieldset">
+                        <label for="email" hidden>Email</label>
+                        <input type="email" name="email" id="email" class="loginInput" placeholder="Email" autocomplete="off" required>
+                    </fieldset>
 
-                <fieldset class="loginFieldset">
-                    <label for="password" hidden>Password</label>
-                    <input type="password" name="password" id="password" class="loginInput" placeholder="Password" required>
-                </fieldset>
-                
-                <button type="submit" id="loginButton">Login</button>
-                <div id="loginFooter">
-                    <p>Don't have an account? <span><a href="/user/register">Register</a></span></p>
-                </div>
-            </form>
+                    <fieldset class="loginFieldset">
+                        <label for="password" hidden>Password</label>
+                        <input type="password" name="password" id="password" class="loginInput" placeholder="Password" required>
+                    </fieldset>
+                    
+                    <button type="submit" id="loginButton">Login</button>
+                    <div id="loginFooter">
+                        <p>Don't have an account? <span><a href="/user/register">Register</a></span></p>
+                    </div>
+                </form>
+            </div>
         </div>
+        <div id="card-background"></div>
     </div>
+    
 </div>

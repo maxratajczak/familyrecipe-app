@@ -24,15 +24,20 @@
 
                     <fieldset class="registerFieldset">
                         <label for="password1" hidden>Password</label>
-                        <input type="password" name="password1" id="password1" class="registerInput" placeholder="Password" required>
+                        <input type="password" name="password1" id="password1" class="registerInput" placeholder="Password" minlength="5" required>
                     </fieldset>
 
                     <fieldset class="registerFieldset">
                         <label for="password2" hidden>Confirm Password</label>
-                        <input type="password" name="password2" id="password2" class="registerInput" placeholder="Confirm Password" required>
+                        <input type="password" name="password2" id="password2" class="registerInput" placeholder="Confirm Password" minlength="5" required>
                     </fieldset>
 
+                    <div id="passwordRequirements">
+                        <p>Password must be 5 or more characters in length</p>
+                    </div>
+
                     <button type="submit" id="registerButton">Register</button>
+
                     <div id="registerFooter">
                         <p>Already have an account? <span><a href="/user/login">Login</a></span></p>
                     </div>

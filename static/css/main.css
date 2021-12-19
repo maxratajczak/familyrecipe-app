@@ -154,11 +154,11 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #recipe-dropdown:focus {
     outline: 0;
 }
-#recipe-dropdown:focus + ul {
-    /* pointer-events: all;
-    opacity: 1; */
-}
-#arrow {
+/* #recipe-dropdown:focus + ul {
+    pointer-events: all;
+    opacity: 1;
+} */
+/* #arrow {
     width: 17px;
     height: 17px;
     background-color: var(--nav-dropdown-background);
@@ -167,7 +167,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     position: relative;
     bottom: 7px;
     margin-bottom: -17px;
-}
+} */
 
 /* SEARCH BAR */
 #navbar-search {

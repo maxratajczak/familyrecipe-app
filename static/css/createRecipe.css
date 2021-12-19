@@ -1,0 +1,44 @@
+:root {
+    --input-width: 300px;
+}
+#card {
+    border: 2px solid var(--font-colour);
+    /* margin: 30px var(--navbar-margin); */
+    padding: 40px;
+    border-radius: 30px;
+    width: fit-content;
+    margin: 0 auto;
+}
+#content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#heading {
+    font-size: 3.8rem;
+    color: var(--font-colour);
+}
+.createRecipeFieldset {
+    border: none;
+    margin-top: 40px;
+}
+#content h1 {
+    display: inline-block;
+}
+.inputField {
+    width: var(--input-width);
+    font-size: 2rem;
+    padding: 8px 5px;
+    border: none;
+    border-bottom: 1px solid var(--font-colour);
+    color: var(--font-colour);
+    background-color: transparent;
+    border-radius: 0;
+}
+.inputField:first-of-type {
+    margin-right: 40px;
+}
+.inputField:focus {
+    border-bottom: 1px solid var(--primary);
+    outline: none;
+}

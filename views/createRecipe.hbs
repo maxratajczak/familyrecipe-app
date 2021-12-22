@@ -3,13 +3,20 @@
 <div id="card">
     <div id="content">
         <h1 id="heading">Create Recipe</h1>
+        <div>
+            <p><span class="required">*</span> Required Field</p>
+        </div>
 
         <fieldset class="createRecipeFieldset">
-            <label for="name" hidden>Recipe Name</label>
-            <input type="text" name="name" id="name" class="inputField" placeholder="Recipe Name (Required)" autocomplete="off" required>
-
-            <label for="description" hidden>Recipe Description</label>
-            <input type="text" name="description" id="description" class="inputField" placeholder="Short Description" autocomplete="off" required>
+            <div>
+                <label for="name">Recipe Name <span class="required">*</span></label>
+                <input type="text" name="name" id="name" class="inputField" placeholder="Recipe Name" autocomplete="off" required>
+            </div>
+            
+            <div>
+                <label for="description">Recipe Description</label>
+                <input type="text" name="description" id="description" class="inputField" placeholder="Short Description" autocomplete="off" required>
+            </div>
         </fieldset>
     </div>
 </div>

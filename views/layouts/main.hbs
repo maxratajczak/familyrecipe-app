@@ -23,12 +23,12 @@
                     <div id="nav-content">
                         <ul id="navbar-links">
                             <li><a class="navbar-selected" href="/">Home</a></li>
-                            <div id="landing-dropdown">
-                                
+                            <li><a href="/user/login">Login</a></li>
+                            <div id="landing-dropdown"> 
                                 <button id="recipe-dropdown">
-                                <li><a>Recipes</a></li>
+                                <li><a>Recipes <i class="fas fa-caret-down"></i></a></li>
                                 </button>
-                                
+
                                 <ul id="dropdown-links">
                                 {{!-- <div id="arrow"></div> --}}
                                 <li><a href="/recipes/breakfast">Breakfast</a></li>
@@ -38,10 +38,10 @@
                                 <li><a href="/recipes/desserts">Desserts</a></li>
                                 </ul>
                             </div>
-                            <li><a href="/user/createrecipe">Create</a></li>
+                            
                         </ul>
                         <form id="navbar-search" action="">
-                            <button id="navbar-search-icon" type="submit"><i class="fas fa-search fa-4x"></i></button>
+                            <button id="navbar-search-icon" type="submit"><i class="fas fa-search"></i></button>
                             <input id="navbar-search-input" type="text" name="search" placeholder="Search recipes..." autocomplete="off">
                         </form>  
                     </div>
@@ -54,26 +54,26 @@
                     </div>
                     <div id="nav-bottom">
                         <ul id="mobile-navbar-links">
-                            <hr class="nav-link-spacer">
+                            {{!-- <hr class="nav-link-spacer"> --}}
                             <li>
-                                <form id="navbar-search" action="">
+                                <form id="navbar-search" class="search-mobile" action="">
                                     <button id="navbar-search-icon" type="submit"><i class="fas fa-search"></i></button>
-                                    <input id="navbar-search-input" type="text" name="search" placeholder="Search recipes..." autocomplete="off">
+                                    <input id="navbar-search-input" class="search-mobile-input" type="text" name="search" placeholder="Search recipes..." autocomplete="off">
                                 </form> 
                             </li>
                             <hr class="nav-link-spacer">
                             <li><a href="/">Home</a></li>
-                            <hr class="nav-link-spacer">
-                            <li><a href="/user/createrecipe">Create</a></li>
-                            <hr class="nav-link-spacer">
+                            <hr class="nav-link-spacer-light">
+                            <li><a href="/user/login">Login</a></li>
+                            <hr class="nav-link-spacer-light">
                             <li><a href="/recipes/breakfast">Breakfast</a></li>
-                            <hr class="nav-link-spacer">
+                            <hr class="nav-link-spacer-light">
                             <li><a href="/recipes/appetizers">Appetizers</a></li>
-                            <hr class="nav-link-spacer">
+                            <hr class="nav-link-spacer-light">
                             <li><a href="/recipes/mains">Mains</a></li>
-                            <hr class="nav-link-spacer">
+                            <hr class="nav-link-spacer-light">
                             <li><a href="/recipes/soups">Soups</a></li>
-                            <hr class="nav-link-spacer">
+                            <hr class="nav-link-spacer-light">
                             <li><a href="/recipes/desserts">Desserts</a></li>
                             <hr class="nav-link-spacer">
                         </ul>
@@ -88,6 +88,18 @@
                 $("#recipe-dropdown").on("click", () => {
                     $("#dropdown-links").toggle()
                 })
+
+                $('html').on('click', function(e) {
+                if($(e.target).closest('#landing-dropdown').length === 0) {
+                    $('#dropdown-links').hide();
+                }
+                });
+
+                $('html').on('click', function(e) {
+                if($(e.target).closest('#mobile-nav').length === 0) {
+                    $('#mobile-navbar-links').hide();
+                }
+                });
             </script>
         </header>
 

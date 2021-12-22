@@ -17,3 +17,8 @@ router.route("")
         res.send("<h1>No Results Returned</h1>")
     });
 });
+
+router.route("/appetizers")
+.get((req, res) => {
+    res.render(path.join(__dirname, "..", "views", "appetizers.hbs"));
+});

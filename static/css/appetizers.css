@@ -1,0 +1,19 @@
+#backdropColor {
+    /* background-color: black; */
+    position: relative;
+    bottom: var(--navbar-height);
+    z-index: -100;
+    /* width: 100%; */
+}
+#backdropColor svg{
+    /* min-height: 561px;
+    min-width: 1440px; */
+}
+
+#backdropColor img{
+    width: 325px;
+    position: relative;
+    bottom: 180px;
+    left: 40%;
+    filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));
+}

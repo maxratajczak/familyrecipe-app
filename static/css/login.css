@@ -7,7 +7,7 @@
     margin: 20px 0 80px 0;
 }
 #heading {
-    color: var(--font-colour);
+    color: var(--font-color);
     font-size: 2.8rem;
     text-align: center;
     cursor: default;
@@ -47,8 +47,8 @@
     font-size: 1.8rem;
     padding: 8px 5px;
     border: none;
-    border-bottom: 1px solid var(--font-colour);
-    color: var(--font-colour);
+    border-bottom: 1px solid var(--font-color);
+    color: var(--font-color);
     background-color: transparent;
     border-radius: 0;
 }
@@ -76,7 +76,7 @@
 }
 #loginFooter {
     font-size: 1.45rem;
-    color: var(--font-colour);
+    color: var(--font-color);
     cursor: default;
 }
 #loginFooter span a {
@@ -87,7 +87,7 @@
     color: #eb9d54;
 }
 .loginInput:-webkit-autofill{
-    -webkit-text-fill-color: var(--font-colour) !important;
+    -webkit-text-fill-color: var(--font-color) !important;
 }
 .loginInput:-webkit-autofill::first-line {
     font-family: 'futura-medium';

@@ -15,7 +15,7 @@
 }
 #landing-heading h1{
     font-size: 4rem;
-    color: var(--font-colour);
+    color: var(--font-color);
     font-family: 'source-serif-pro-bold', serif;
     font-style: normal;
     font-weight: normal;
@@ -76,7 +76,7 @@
 }
 .landing-card-header h1 {
     font-size: 2.5rem;
-    color: var(--font-colour);
+    color: var(--font-color);
     font-family: 'source-serif-pro-semibold', serif;
     font-style: normal;
     font-weight: normal;
@@ -87,13 +87,13 @@
 }
 .landing-card-body p{
     font-size: 1.8rem;
-    color: var(--font-colour);
+    color: var(--font-color);
     font-family: 'futura-medium', sans-serif;
     padding-bottom: 5px;
 }
 .landing-card-footer p{
     font-size: 1.8rem;
-    color: var(--font-colour);
+    color: var(--font-color);
     font-family: 'futura-light', sans-serif;
 }
 /* RECENTLY ADDED END */

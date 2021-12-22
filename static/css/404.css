@@ -5,10 +5,10 @@
     align-items: center;
 }
 #page-content h1{
-    color: var(--font-colour);
+    color: var(--font-color);
     font-size: 2.8rem;
 }
 #page-content h3{
-    color: var(--font-colour);
+    color: var(--font-color);
     font-size: 2rem;
 }

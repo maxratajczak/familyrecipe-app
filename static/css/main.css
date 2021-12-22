@@ -30,7 +30,7 @@
     --background: #fff4ed;
     /* #fff9f5 */
     --primary: #E17817;
-    --font-colour: #4A4A4A;
+    --font-color: #4A4A4A;
 
     --navbar-height: 160px;
     --navbar-margin: 7vw;
@@ -51,11 +51,11 @@
 }
 ::selection {
     color: var(--background);
-    background: var(--font-colour);
+    background: var(--font-color);
 }
 ::-moz-selection {
     color: var(--background);
-    background: var(--font-colour);
+    background: var(--font-color);
 }
 * {
     box-sizing: border-box;
@@ -182,7 +182,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     padding: 0.4em 1.5em 0.5em 3em;
     font-size: var(--navbar-link-font);
     transition: box-shadow 400ms ease;
-    color: var(--font-colour);
+    color: var(--font-color);
 }
 #navbar-search-input::placeholder {
     color: var(--nav-search-placeholder);
@@ -219,7 +219,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 /* WEBKIT AUTOFILL */
 /* #navbar-search-input:-webkit-autofill{
-    -webkit-text-fill-color: var(--font-colour) !important;
+    -webkit-text-fill-color: var(--font-color) !important;
 }
 #navbar-search-input:-webkit-autofill::first-line {
     font-family: 'futura-medium', sans-serif;
@@ -264,7 +264,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     align-items: center;
     font-size: var(--navbar-link-font-mobile);
     flex-direction: row;
-    background-color: #fff3ec9c;
+    background-color: #fff3ec3a;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     text-align: center;

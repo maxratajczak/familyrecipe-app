@@ -18,14 +18,12 @@
     border-radius: 30px;
     box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.15);
     flex-direction: column;
-    /* background-color: rgba(255, 255, 255, 0.2); */
 }
 #card-background{
     position: relative;
     top: -100%;
     height: 100%;
     z-index: -100;
-    /* background: linear-gradient(45deg, rgba(255,223,174,1) 0%, rgba(255,210,188,1) 50%, rgba(255,218,175,1) 100%); */
     background: linear-gradient(45deg, rgba(255,240,216,1) 0%, rgba(255,223,211,1) 50%, rgba(255,234,209,1) 100%);
     border-radius: 30px;
 }
@@ -113,6 +111,7 @@
 .errorField {
     background-color: rgba(255, 0, 0, 0.2);
 }
+
 @media (max-width: 640px) {
     #heading {
         font-size: 3.1em;

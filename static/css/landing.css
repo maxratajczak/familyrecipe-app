@@ -29,7 +29,6 @@
     justify-content: space-around;
 }
 .flex-space {
-    /* border: 1px dashed black; */
     flex: 0 0 33.33%;
     display: flex;
     margin-bottom: 8vw;
@@ -44,7 +43,6 @@
     width: var(--landing-card-width);
     height: var(--landing-card-height);
     border-radius: 30px;
-    /* background: linear-gradient(210.01deg, rgba(233, 227, 222, 0.4) 0%, rgba(243, 241, 240, 0.4) 100%); */
     background-color: rgba(247, 247, 247, 0.30);
     box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.08);
     margin-top: 40px;
@@ -96,7 +94,6 @@
     color: var(--font-color);
     font-family: 'futura-light', sans-serif;
 }
-/* RECENTLY ADDED END */
 
 /* BACKGROUND BLOBS */
 #background-blobs {
@@ -125,9 +122,7 @@
     position: absolute;
     top: 250vh;
 }
-/* BACKGROUND BLOBS END */
 
-/* MEDIA QUERIES */
 @media (min-width: 2049px) {
     :root {
         --recently-added-margin: 15vw;

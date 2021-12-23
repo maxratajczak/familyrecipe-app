@@ -28,7 +28,6 @@
 }
 :root {
     --background: #fff4ed;
-    /* #fff9f5 */
     --primary: #E17817;
     --font-color: #4A4A4A;
 
@@ -121,8 +120,8 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #landing-dropdown ul{
     position: absolute;
     background-color: rgba(247, 242, 236, 0.75);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin-top: 15px;
     border-radius: 15px;
     box-shadow: 0 0 20px 5px rgba(53, 53, 53, 0.09);
@@ -131,9 +130,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     justify-content: center;
     align-items: center;
     left: -15px;
-    /* opacity: 0; */
     transition: opacity 250ms ease-in-out;
-    /* pointer-events: none; */
     z-index: 100;
     display: none;
     text-align: center;
@@ -154,20 +151,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #recipe-dropdown:focus {
     outline: 0;
 }
-/* #recipe-dropdown:focus + ul {
-    pointer-events: all;
-    opacity: 1;
-} */
-/* #arrow {
-    width: 17px;
-    height: 17px;
-    background-color: var(--nav-dropdown-background);
-    opacity: 100%;
-    transform: rotate(45deg);
-    position: relative;
-    bottom: 7px;
-    margin-bottom: -17px;
-} */
 
 /* SEARCH BAR */
 #navbar-search {
@@ -217,7 +200,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     cursor: pointer;
     color: var(--primary);
 }
-/* WEBKIT AUTOFILL */
 /* #navbar-search-input:-webkit-autofill{
     -webkit-text-fill-color: var(--font-color) !important;
 }
@@ -237,7 +219,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #mobile-nav {
     display: none;
     min-height: var(--navbar-height);
-    /* justify-content: space-between; */
     flex-direction: column;
 }
 #nav-top{
@@ -249,6 +230,12 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 }
 #nav-bottom {
     margin-top: 20px;
+}
+.nav-blurred {
+    background-color: var(--background) !important;
+}
+.noScroll {
+    overflow: hidden;
 }
 #hamburger-button {
     background: none;
@@ -293,7 +280,6 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     width: 70vw;
     margin: 0 auto;
 }
-/* NAVBAR END */
 
 /* FOOTER */
 footer {
@@ -307,44 +293,31 @@ footer p {
     padding-top: 100px;
     padding-bottom: 20px;
 }
-/* FOOTER END */
 
 /* SCROLLBAR */
-/* GOOGLE CHROME */
 ::-webkit-scrollbar{
     width: var(--scroll-width);
     height: var(--scroll-height);
 }
-
 ::-webkit-scrollbar-track{
     background-color: var(--track-color);
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: var(--track-handle-color);
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--track-hover-color);
 }
-
 ::-webkit-scrollbar-corner{
     background-color: var(--track-color);
 }
-/* GOOGLE CHROME END */
-
-
-/* FIREFOX */
 *{
     scrollbar-width: var(--scroll-width);
     scrollbar-color: var(--track-handle-color) var(--track-color);
     -ms-scrollbar-color: var(--track-handle-color) var(--track-color);
     -ms-scrollbar-width: var(--scroll-width);
 }
-/* FIREFOX END */
-/* SCROLLBAR END */
 
-/* MEDIA QUERIES */
 @media (min-width: 2049px) {
     html {
         font-size: 70%;
@@ -386,4 +359,3 @@ footer p {
         --navbar-margin: 10vw;
     }
 }
-/* MEDIA QUERIES END */

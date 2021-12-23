@@ -1,19 +1,49 @@
+:root {
+    --nav-search-background: #ffffff7c;
+    --backdrop-spacing: -100px;
+    --colorFillBlockHeight: 100px;
+    --backdropColor: #E6F3C2;
+}
 #backdropColor {
-    /* background-color: black; */
+    position: relative;
+    bottom: calc(var(--navbar-height) - var(--backdrop-spacing));
+    z-index: -100;
+}
+#colorFillBlock {
+    background-color: var(--backdropColor);
+    height: var(--colorFillBlockHeight);
+    margin-bottom: calc(- var(--colorFillBlockHeight));
+    width: 100%;
     position: relative;
     bottom: var(--navbar-height);
     z-index: -100;
-    /* width: 100%; */
 }
-#backdropColor svg{
-    /* min-height: 561px;
-    min-width: 1440px; */
-}
-
 #backdropColor img{
-    width: 325px;
+    width: 20vw;
     position: relative;
-    bottom: 180px;
-    left: 40%;
+    bottom: 10vw;
+    left: 50%;
     filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));
+    -webkit-filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));;
+    transform: translate(-50%);
+}
+@media (max-width: 1440px) {
+    :root {
+        --backdrop-spacing: 0px;
+    }
+}
+@media (max-width: 1100px) {
+    :root {
+        --backdrop-spacing: 50px;
+    }
+}
+@media (max-width: 810px) {
+    :root {
+        --backdrop-spacing: 100px;
+    }
+}
+@media (max-width: 500px) {
+    :root {
+        --backdrop-spacing: 200px;
+    }
 }

@@ -1,18 +1,22 @@
 :root {
     --nav-search-background: #ffffff7c;
-    --backdrop-spacing: -100px;
-    --colorFillBlockHeight: 100px;
     --backdropColor: #E6F3C2;
+
+    --colorFillBlockHeight: 0px;
+    --backdropSpacing: -80px;
+
+    --headingCenterPlatePosition: 10vw;
 }
 #backdropColor {
     position: relative;
-    bottom: calc(var(--navbar-height) - var(--backdrop-spacing));
+    bottom: calc(var(--navbar-height) - var(--backdropSpacing));
     z-index: -100;
+    height: 100%;
 }
 #colorFillBlock {
     background-color: var(--backdropColor);
     height: var(--colorFillBlockHeight);
-    margin-bottom: calc(- var(--colorFillBlockHeight));
+    /* margin-bottom: calc(var(--colorFillBlockHeight) - var(--colorFillBlockHeight) - var(--colorFillBlockHeight)); */
     width: 100%;
     position: relative;
     bottom: var(--navbar-height);
@@ -21,29 +25,30 @@
 #backdropColor img{
     width: 20vw;
     position: relative;
-    bottom: 10vw;
+    bottom: var(--headingCenterPlatePosition);
     left: 50%;
     filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));
     -webkit-filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));;
     transform: translate(-50%);
+    margin-bottom: calc(var(--headingCenterPlatePosition) - var(--headingCenterPlatePosition) - var(--headingCenterPlatePosition));
 }
 @media (max-width: 1440px) {
     :root {
-        --backdrop-spacing: 0px;
+        --backdropSpacing: 0px;
     }
 }
 @media (max-width: 1100px) {
     :root {
-        --backdrop-spacing: 50px;
+        --colorFillBlockHeight: 50px;
     }
 }
 @media (max-width: 810px) {
     :root {
-        --backdrop-spacing: 100px;
+        --colorFillBlockHeight: 100px;
     }
 }
 @media (max-width: 500px) {
     :root {
-        --backdrop-spacing: 200px;
+        --colorFillBlockHeight: 200px;
     }
 }

@@ -2,27 +2,28 @@
     --nav-search-background: #ffffff7c;
     --backdropColor: #E6F3C2;
 
-    --colorFillBlockHeight: 0px;
+    --headerColorFillHeight: 0px;
     --backdropSpacing: -80px;
 
     --headingCenterPlatePosition: 10vw;
 }
-#backdropColor {
+#headerBackdrop {
     position: relative;
     bottom: calc(var(--navbar-height) - var(--backdropSpacing));
+    margin-bottom: calc((var(--navbar-height) - var(--backdropSpacing)) - (var(--navbar-height) - var(--backdropSpacing)) - (var(--navbar-height) - var(--backdropSpacing)));
     z-index: -100;
     height: 100%;
 }
-#colorFillBlock {
+#headerColorFill {
     background-color: var(--backdropColor);
-    height: var(--colorFillBlockHeight);
-    /* margin-bottom: calc(var(--colorFillBlockHeight) - var(--colorFillBlockHeight) - var(--colorFillBlockHeight)); */
+    height: var(--headerColorFillHeight);
+    /* margin-bottom: calc(var(--headerColorFillHeight) - var(--headerColorFillHeight) - var(--headerColorFillHeight)); */
     width: 100%;
     position: relative;
     bottom: var(--navbar-height);
     z-index: -100;
 }
-#backdropColor img{
+#headerBackdrop img{
     width: 20vw;
     position: relative;
     bottom: var(--headingCenterPlatePosition);
@@ -31,6 +32,18 @@
     -webkit-filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));;
     transform: translate(-50%);
     margin-bottom: calc(var(--headingCenterPlatePosition) - var(--headingCenterPlatePosition) - var(--headingCenterPlatePosition));
+    
+}
+#headerBackdrop h1 {
+    position: relative;
+    bottom: 150px;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 3.5rem;
+    color: var(--font-color);
+    font-family: source-serif-pro-semibold;
+    background-color: blue;
+    
 }
 @media (max-width: 1440px) {
     :root {
@@ -39,16 +52,16 @@
 }
 @media (max-width: 1100px) {
     :root {
-        --colorFillBlockHeight: 50px;
+        --headerColorFillHeight: 50px;
     }
 }
 @media (max-width: 810px) {
     :root {
-        --colorFillBlockHeight: 100px;
+        --headerColorFillHeight: 100px;
     }
 }
 @media (max-width: 500px) {
     :root {
-        --colorFillBlockHeight: 200px;
+        --headerColorFillHeight: 200px;
     }
 }

@@ -1,11 +1,15 @@
 :root {
     --nav-search-background: #ffffff7c;
-    --backdropColor: #E6F3C2;
+    --headerColor: #E6F3C2;
 
     --headerColorFillHeight: 0px;
     --backdropSpacing: -80px;
 
-    --headingCenterPlatePosition: 10vw;
+    --headerMealPosition: 12vw;
+    --headerMealSize: 20vw;
+    --headerTitle: 4.5rem;
+
+    --cardBorderRadius: 35px;
 }
 #headerBackdrop {
     position: relative;
@@ -15,7 +19,7 @@
     height: 100%;
 }
 #headerColorFill {
-    background-color: var(--backdropColor);
+    background-color: var(--headerColor);
     height: var(--headerColorFillHeight);
     /* margin-bottom: calc(var(--headerColorFillHeight) - var(--headerColorFillHeight) - var(--headerColorFillHeight)); */
     width: 100%;
@@ -24,44 +28,86 @@
     z-index: -100;
 }
 #headerBackdrop img{
-    width: 20vw;
+    width: var(--headerMealSize);
     position: relative;
-    bottom: var(--headingCenterPlatePosition);
+    bottom: var(--headerMealPosition);
     left: 50%;
-    filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));
-    -webkit-filter: drop-shadow(-20px 20px 25px rgba(0, 0, 0, 0.40));;
+    filter: drop-shadow(-12px 12px 20px rgba(0, 0, 0, 0.40));
+    -webkit-filter: drop-shadow(-12px 12px 20px rgba(0, 0, 0, 0.40));;
     transform: translate(-50%);
-    margin-bottom: calc(var(--headingCenterPlatePosition) - var(--headingCenterPlatePosition) - var(--headingCenterPlatePosition));
+    margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition));
     
 }
-#headerBackdrop h1 {
+#headerTitle {
     position: relative;
-    bottom: 150px;
+    bottom: calc(var(--headerMealPosition) + 30px);
     width: max-content;
     margin: 0 auto;
-    font-size: 3.5rem;
+    font-size: var(--headerTitle);
     color: var(--font-color);
-    font-family: source-serif-pro-semibold;
-    background-color: blue;
-    
+    font-family: 'source-serif-pro-semibold';
+}
+#cardSpace {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 100px var(--navbar-margin);
+}
+.recipeCard {
+    margin: 10px;
+    width: 450px;
+    height: 250px;
+    background-color: rgb(235, 225, 211);
+    border-radius: var(--cardBorderRadius);
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    overflow: hidden;
+    padding: 10px;
+}
+.cardSection {
+    flex-basis: 50%;
+    border-radius: var(--cardBorderRadius);
+}
+.cardSection img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--cardBorderRadius);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.267));
+}
+.cardTextSection{
+    margin: 10px;
+}
+.cardTextSection p{
+    /* background-color: blue; */
+    font-size: 20px;
 }
 @media (max-width: 1440px) {
     :root {
         --backdropSpacing: 0px;
+        --headerTitle: 4.1rem;
     }
 }
 @media (max-width: 1100px) {
     :root {
         --headerColorFillHeight: 50px;
+        --headerMealPosition: 16vw;
+        --headerMealSize: 22vw;
+        --headerTitle: 3.8rem;
     }
 }
 @media (max-width: 810px) {
     :root {
         --headerColorFillHeight: 100px;
+        --headerMealPosition: 18vw;
+        --headerMealSize: 25vw;
     }
 }
 @media (max-width: 500px) {
     :root {
         --headerColorFillHeight: 200px;
+        --headerMealPosition: 30vw;
+        --headerMealSize: 40vw;
     }
 }

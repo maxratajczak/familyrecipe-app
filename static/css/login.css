@@ -1,18 +1,18 @@
-:root {
+:root{
     --input-width: 280px;
 }
-#page-content {
+#page-content{
     display: flex;
     justify-content: center;
     margin: 20px 0 80px 0;
 }
-#heading {
+#heading{
     color: var(--font-color);
     font-size: 2.8rem;
     text-align: center;
     cursor: default;
 }
-#card {
+#card{
     align-items: center;
     display: flex;
     border-radius: 30px;
@@ -27,20 +27,20 @@
     background: linear-gradient(45deg, rgba(255,240,216,1) 0%, rgba(255,223,211,1) 50%, rgba(255,234,209,1) 100%);
     border-radius: 30px;
 }
-#card-content {
+#card-content{
     padding: 50px 30px;
 }
-#loginForm {
+#loginForm{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-.loginFieldset {
+.loginFieldset{
     border: none;
     margin: 20px 0 0 0;
 }
-.loginInput {
+.loginInput{
     width: var(--input-width);
     font-size: 1.8rem;
     padding: 8px 5px;
@@ -50,11 +50,11 @@
     background-color: transparent;
     border-radius: 0;
 }
-.loginInput:focus {
+.loginInput:focus{
     border-bottom: 1px solid var(--primary);
     outline: none;
 }
-#loginButton {
+#loginButton{
     margin: 40px 0;
     width: var(--input-width);
     border: none;
@@ -66,59 +66,59 @@
     border-radius: 10px;
     transition: background-color 150ms;
 }
-#loginButton:hover {
+#loginButton:hover{
     background-color: #da7517;
 }
-#loginButton:focus {
+#loginButton:focus{
     background-color: #cf7016;
 }
-#loginFooter {
+#loginFooter{
     font-size: 1.45rem;
     color: var(--font-color);
     cursor: default;
 }
-#loginFooter span a {
+#loginFooter span a{
     text-decoration: none;
     color: var(--primary);
 }
-#loginFooter span a:hover {
+#loginFooter span a:hover{
     color: #eb9d54;
 }
 .loginInput:-webkit-autofill{
     -webkit-text-fill-color: var(--font-color) !important;
 }
-.loginInput:-webkit-autofill::first-line {
+.loginInput:-webkit-autofill::first-line{
     font-family: 'futura-medium';
 }
 .loginInput:-webkit-autofill,
 .loginInput:-webkit-autofill:hover, 
 .loginInput:-webkit-autofill:focus, 
-.loginInput:-webkit-autofill:active {
+.loginInput:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
 }
 
-@media (max-width: 640px) {
-    #heading {
+@media (max-width: 640px){
+    #heading{
         font-size: 3.1em;
     }
-    .loginInput {
+    .loginInput{
         font-size: 2.1em;
     }
-    #loginButton {
+    #loginButton{
         font-size: 2.1em;
     }
-    #loginFooter {
+    #loginFooter{
         font-size: 1.7em;
     }
 }
-@media (max-width: 380px) {
-    :root {
+@media (max-width: 380px){
+    :root{
         --input-width: 250px;
     }
 }
-@media (max-width: 320px) {
-    :root {
+@media (max-width: 320px){
+    :root{
         --input-width: 240px;
     }
 }

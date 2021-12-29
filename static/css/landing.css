@@ -1,4 +1,4 @@
-:root {
+:root{
     --recently-added-margin: 6vw;
     --landing-card-height: 480px;
     --landing-card-width: 340px;
@@ -7,7 +7,7 @@
 }
 
 /* RECENTLY ADDED */
-#landing-heading {
+#landing-heading{
     display: flex;
     justify-content: center;
     margin-top: 4vw;
@@ -21,14 +21,14 @@
     font-weight: normal;
     cursor: default;
 }
-#recently-added {
+#recently-added{
     display: flex;
     flex-wrap: wrap;
     margin-left: var(--recently-added-margin);
     margin-right: var(--recently-added-margin);
     justify-content: space-around;
 }
-.flex-space {
+.flex-space{
     flex: 0 0 33.33%;
     display: flex;
     margin-bottom: 8vw;
@@ -36,10 +36,10 @@
     flex-wrap: wrap;
     padding: 15px;
 }
-.flex-space a {
+.flex-space a{
     text-decoration: none;
 }
-.recently-added-card {
+.recently-added-card{
     width: var(--landing-card-width);
     height: var(--landing-card-height);
     border-radius: 30px;
@@ -64,7 +64,7 @@
     z-index: 50;
     margin-bottom: -40px;
 }
-.landing-card-content {
+.landing-card-content{
     width: 100%;
     height: calc(100% - var(--landing-card-img-height) + 40px);
     padding: 25px;
@@ -72,14 +72,14 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.landing-card-header h1 {
+.landing-card-header h1{
     font-size: 2.5rem;
     color: var(--font-color);
     font-family: 'source-serif-pro-semibold', serif;
     font-style: normal;
     font-weight: normal;
 }
-.landing-card-body {
+.landing-card-body{
     position: relative;
     bottom: 20px;
 }
@@ -96,7 +96,7 @@
 }
 
 /* BACKGROUND BLOBS */
-#background-blobs {
+#background-blobs{
     display: flex;
     justify-content: space-between;
     z-index: -100;
@@ -105,15 +105,15 @@
     position: absolute;
     top: 30vh;
 }
-#left-blob {
+#left-blob{
     z-index: -100;
 }
-#right-blob {
+#right-blob{
     position: relative;
     top: 50vh;
     z-index: -100;
 }
-#additional-blobs {
+#additional-blobs{
     display: none;
     justify-content: space-between;
     z-index: -100;
@@ -123,28 +123,28 @@
     top: 250vh;
 }
 
-@media (min-width: 2049px) {
-    :root {
+@media (min-width: 2049px){
+    :root{
         --recently-added-margin: 15vw;
     }
 }
-@media (max-width: 2048px) {
-    :root {
+@media (max-width: 2048px){
+    :root{
         --recently-added-margin: 13vw;
     }
 }
-@media (max-width: 1800px) {
-    :root {
+@media (max-width: 1800px){
+    :root{
         --recently-added-margin: 7vw;
     }
 }
-@media (max-width: 1445px) {
-    :root {
+@media (max-width: 1445px){
+    :root{
         --recently-added-margin: 5vw;
     }
 }
-@media (max-width: 1280px) {
-    :root {
+@media (max-width: 1280px){
+    :root{
         --recently-added-margin: 0vw;
 
         --landing-card-height: 420px;
@@ -152,98 +152,98 @@
         --landing-card-img-height: 240px;
         --landing--card-img-width: 240px;
     }
-    .landing-card-content {
+    .landing-card-content{
         padding: 20px 10px 20px 20px;
     }
 }
-@media (max-width: 1175px) {
-    :root {
+@media (max-width: 1175px){
+    :root{
         --recently-added-margin: 10vw;
     }
 }
-@media (max-width: 1024px) {
-    :root {
+@media (max-width: 1024px){
+    :root{
         --recently-added-margin: 2vw;
     }
 }
-@media (max-width: 900px) {
-    :root {
+@media (max-width: 900px){
+    :root{
         --recently-added-margin: 0vw;
     }
-    #landing-heading {
+    #landing-heading{
         margin-bottom: 6vw;
     }
-    #landing-heading h1 {
+    #landing-heading h1{
         font-size: 3.5rem;
     }
-    #background-blobs {
+    #background-blobs{
         top: 20vw;
     }
-    #right-blob {
+    #right-blob{
         top: 80vh;
     }
 }
-@media (max-width: 795px) {
-    :root {
+@media (max-width: 795px){
+    :root{
         --recently-added-margin: 2vw;
     }
-    .flex-space {
+    .flex-space{
         padding: 5px;
     }
 }
-@media (max-width: 749px) {
-    #additional-blobs {
+@media (max-width: 749px){
+    #additional-blobs{
         display: flex;
         top: 200vh;
     }
 }
-@media (max-width: 721px) {
-    :root {
+@media (max-width: 721px){
+    :root{
         --landing-card-height: 460px;
         --landing-card-width: 320px;
         --landing-card-img-height: 260px;
         --landing--card-img-width: 260px;
     }
-    #additional-blobs {
+    #additional-blobs{
         display: flex;
     }
 }
-@media (max-width: 640px) {
-    #background-blobs {
+@media (max-width: 640px){
+    #background-blobs{
         top: 10vw;
     }
 }
-@media (max-width: 440px) {
-    :root {
+@media (max-width: 440px){
+    :root{
         --landing-card-height: 390px;
         --landing-card-width: 280px;
         --landing-card-img-height: 210px;
         --landing--card-img-width: 210px;
     }
-    #landing-heading {
+    #landing-heading{
         margin-bottom: 8vw;
     }
-    #landing-heading h1 {
+    #landing-heading h1{
         font-size: 3.8rem;
     }
-    .landing-card-content {
+    .landing-card-content{
         padding: 20px 10px 20px 20px;
     }
-    #background-blobs {
+    #background-blobs{
         top: -15vw;
     }
-    #additional-blobs {
+    #additional-blobs{
         top: 160vh;
     }
 }
-@media (max-width: 320px) {
-    :root {
+@media (max-width: 320px){
+    :root{
         --landing-card-height: 360px;
         --landing-card-width: 250px;
         --landing-card-img-height: 180px;
         --landing--card-img-width: 180px;
     }
-    .recently-added-card {
+    .recently-added-card{
         margin-top: 30px;
         margin-left: 30px;
     }
@@ -252,10 +252,10 @@
         right: 30px;
         margin-bottom: -30px;
     }
-    #landing-heading h1 {
+    #landing-heading h1{
         font-size: 3.2rem;
     }
-    #background-blobs {
+    #background-blobs{
         top: -30vw;
     }
 }

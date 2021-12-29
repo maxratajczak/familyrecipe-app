@@ -1,32 +1,32 @@
-@font-face {
+@font-face{
     font-family: source-serif-pro-bold;
     src: url(/fonts/SourceSerifPro-Bold.ttf);
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
 }
-@font-face {
+@font-face{
     font-family: source-serif-pro-semibold;
     src: url(/fonts/SourceSerifPro-SemiBold.ttf);
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
 }
-@font-face {
+@font-face{
     font-family: futura-light;
     src: url(/fonts/futura-light-bt.ttf);
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
 }
-@font-face {
+@font-face{
     font-family: futura-medium;
     src: url(/fonts/futurabq-medium.otf);
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
 }
-:root {
+:root{
     --background: #fff4ed;
     --primary: #E17817;
     --font-color: #4A4A4A;
@@ -48,38 +48,38 @@
     --scroll-width: 12px;
     --scroll-height: 12px;
 }
-::selection {
+::selection{
     color: var(--background);
     background: var(--font-color);
 }
-::-moz-selection {
+::-moz-selection{
     color: var(--background);
     background: var(--font-color);
 }
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-html {
+html{
     scroll-behavior: smooth;
     font-size: 62.50%;
 }
-body {
+body{
     background-color: var(--background);
 }
-h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
+h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     font-family: 'futura-medium', sans-serif;
 }
 
 /* NAVBAR */
-#desktop-nav {
+#desktop-nav{
     display: flex;
     height: var(--navbar-height);
     align-items: center;
     justify-content: space-between;
 }
-#navbar-logo {
+#navbar-logo{
     font-size: 3.3rem;
     margin-left: var(--navbar-margin);  
 }
@@ -88,11 +88,11 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     color: var(--primary);
     font-family: 'source-serif-pro-bold', serif;
 }
-#nav-content {
+#nav-content{
     display: flex;
     margin-right: var(--navbar-margin);
 }
-#navbar-links {
+#navbar-links{
     display: flex;
     align-items: center;
     font-size: var(--navbar-link-font);
@@ -101,7 +101,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     list-style: none;
     margin: 0 var(--navbar-link-space);
 }
-#navbar-links li a {
+#navbar-links li a{
     text-decoration: none;
     color: var(--primary);
     transition: color 400ms;
@@ -109,7 +109,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #navbar-links li a:hover{
     color: var(--navbar-link-hover);
 }
-.navbar-selected {
+.navbar-selected{
     border-bottom: 2px solid var(--primary);
     padding-bottom: 5px;
 }
@@ -140,7 +140,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     padding: 18px 5px;
     z-index: 100;
 }
-#recipe-dropdown {
+#recipe-dropdown{
     font-size: var(--navbar-link-font);
     background: none;
     border: none;
@@ -148,15 +148,15 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     text-align: center;
     z-index: 100;
 }
-#recipe-dropdown:focus {
+#recipe-dropdown:focus{
     outline: 0;
 }
 
 /* SEARCH BAR */
-#navbar-search {
+#navbar-search{
     margin-left: var(--navbar-link-space);
 }
-#navbar-search-input {
+#navbar-search-input{
     background-color: var(--nav-search-background);
     border: none;
     border-radius: 100px;
@@ -167,27 +167,27 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     transition: box-shadow 400ms ease;
     color: var(--font-color);
 }
-#navbar-search-input::placeholder {
+#navbar-search-input::placeholder{
     color: var(--nav-search-placeholder);
 }
-#navbar-search-input:hover {
+#navbar-search-input:hover{
     box-shadow: 0 0 0 1.5px rgba(128, 128, 128, 0.418);
 }
-#navbar-search-input:focus {
+#navbar-search-input:focus{
     box-shadow: 0 0 2px 1.5px #e26d009a;
     outline: none;
 }
-.search-mobile {
+.search-mobile{
     margin: 0 !important;
 }
-.search-mobile-input {
+.search-mobile-input{
     width: 95vw !important;
     box-shadow: 0 0 0 2px rgb(226, 226, 226) !important;
 }
-.search-mobile-input:focus {
+.search-mobile-input:focus{
     box-shadow: 0 0 2px 1.5px #e26d009a !important;
 }
-#navbar-search-icon {
+#navbar-search-icon{
     background: none;
     border: none;
     position: relative;
@@ -203,20 +203,20 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 /* #navbar-search-input:-webkit-autofill{
     -webkit-text-fill-color: var(--font-color) !important;
 }
-#navbar-search-input:-webkit-autofill::first-line {
+#navbar-search-input:-webkit-autofill::first-line{
     font-family: 'futura-medium', sans-serif;
     font-size: 1.5rem;
 }
 #navbar-search-input:-webkit-autofill,
 #navbar-search-input:-webkit-autofill:hover, 
 #navbar-search-input:-webkit-autofill:focus, 
-#navbar-search-input:-webkit-autofill:active {
+#navbar-search-input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
 } */
 
 /* HAMBURGER MENU */
-#mobile-nav {
+#mobile-nav{
     display: none;
     min-height: var(--navbar-height);
     flex-direction: column;
@@ -228,16 +228,16 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     margin-right: var(--navbar-margin);
     margin-top: calc((var(--navbar-height) / 2) - 3.3rem);
 }
-#nav-bottom {
+#nav-bottom{
     margin-top: 20px;
 }
-.nav-blurred {
+.nav-blurred{
     background-color: var(--background) !important;
 }
-.noScroll {
+.noScroll{
     overflow: hidden;
 }
-#hamburger-button {
+#hamburger-button{
     background: none;
     border: none;
 }
@@ -246,7 +246,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     cursor: pointer;
     color: var(--primary);
 }
-#mobile-navbar-links {
+#mobile-navbar-links{
     display: none;
     align-items: center;
     font-size: var(--navbar-link-font-mobile);
@@ -264,7 +264,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
     list-style: none;
     padding: 10px 0;
 }
-#mobile-navbar-links li a {
+#mobile-navbar-links li a{
     text-decoration: none;
     color: var(--primary);
     transition: color 400ms;
@@ -272,21 +272,21 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea {
 #mobile-navbar-links li a:hover{
     color: var(--navbar-link-hover);
 }
-.nav-link-spacer {
+.nav-link-spacer{
     border:  1px solid rgba(32, 32, 32, 0.116);
 }
-.nav-link-spacer-light {
+.nav-link-spacer-light{
     border:  1px solid rgba(51, 51, 51, 0.055);
     width: 70vw;
     margin: 0 auto;
 }
 
 /* FOOTER */
-footer {
+footer{
     height: 50px;
     cursor: default;
 }
-footer p {
+footer p{
     font-family: 'futura-light', sans-serif;
     font-size: 1.5rem;
     text-align: center;
@@ -302,10 +302,10 @@ footer p {
 ::-webkit-scrollbar-track{
     background-color: var(--track-color);
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
     background-color: var(--track-handle-color);
 }
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover{
     background-color: var(--track-hover-color);
 }
 ::-webkit-scrollbar-corner{
@@ -318,44 +318,44 @@ footer p {
     -ms-scrollbar-width: var(--scroll-width);
 }
 
-@media (min-width: 2049px) {
-    html {
+@media (min-width: 2049px){
+    html{
         font-size: 70%;
     }
-    #navbar-search-input {
+    #navbar-search-input{
         width: 325px;
         height: 55px;
     }
 }
-@media (max-width: 1024px) {
-    :root {
+@media (max-width: 1024px){
+    :root{
         --navbar-margin: 4vw;
     }
 }
-@media (max-width: 900px) {
-    :root {
+@media (max-width: 900px){
+    :root{
         --navbar-margin: 15vw;
     }
-    #navbar {
+    #navbar{
         justify-content: space-between;
     }
-    #desktop-nav {
+    #desktop-nav{
         display: none;
     }
-    #mobile-nav {
+    #mobile-nav{
         display: flex;
     }
-    #navbar-logo {
+    #navbar-logo{
         margin-left: 0;
     }
 }
-@media (max-width: 640px) {
-    html {
+@media (max-width: 640px){
+    html{
         font-size: 55%;
     }
 }
-@media (max-width: 320px) {
-    :root {
+@media (max-width: 320px){
+    :root{
         --navbar-margin: 10vw;
     }
 }

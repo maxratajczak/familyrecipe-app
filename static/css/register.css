@@ -1,18 +1,18 @@
-:root {
+:root{
     --input-width: 280px;
 }
-#page-content {
+#page-content{
     display: flex;
     justify-content: center;
     margin: 20px 0 80px 0;
 }
-#heading {
+#heading{
     color: var(--font-color);
     font-size: 2.8rem;
     text-align: center;
     cursor: default;
 }
-#card {
+#card{
     align-items: center;
     display: flex;
     border-radius: 30px;
@@ -27,24 +27,24 @@
     background: linear-gradient(45deg, rgba(255,240,216,1) 0%, rgba(255,223,211,1) 50%, rgba(255,234,209,1) 100%);
     border-radius: 30px;
 }
-#card-content {
+#card-content{
     padding: 50px 30px;
 }
-#registerForm {
+#registerForm{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-.registerFieldset {
+.registerFieldset{
     border: none;
     margin: 20px 0 0 0;
 }
-.registerFieldset:nth-child(4) {
+.registerFieldset:nth-child(4){
     border: none;
     margin: 40px 0 0 0;
 }
-.registerInput {
+.registerInput{
     width: var(--input-width);
     font-size: 1.8rem;
     padding: 8px 5px;
@@ -54,11 +54,11 @@
     background-color: transparent;
     border-radius: 0 ;
 }
-.registerInput:focus {
+.registerInput:focus{
     border-bottom: 1px solid var(--primary);
     outline: none;
 }
-#registerButton {
+#registerButton{
     margin: 40px 0;
     width: var(--input-width);
     border: none;
@@ -70,72 +70,72 @@
     border-radius: 10px;
     transition: background-color 150ms;
 }
-#registerButton:hover {
+#registerButton:hover{
     background-color: #da7517;
 }
-#registerButton:focus {
+#registerButton:focus{
     background-color: #cf7016;
 }
-#passwordRequirements {
+#passwordRequirements{
     font-size: 1.7rem;
     color: rgb(100, 100, 100);
     max-width: var(--input-width);
     margin-top: 10px;
     align-self: flex-start;
 }
-#registerFooter {
+#registerFooter{
     font-size: 1.45rem;
     color: var(--font-color);
     cursor: default;
 }
-#registerFooter span a {
+#registerFooter span a{
     text-decoration: none;
     color: var(--primary);
 }
-#registerFooter span a:hover {
+#registerFooter span a:hover{
     color: #eb9d54;
 }
 .registerInput:-webkit-autofill{
     -webkit-text-fill-color: var(--font-color) !important;
 }
-.registerInput:-webkit-autofill::first-line {
+.registerInput:-webkit-autofill::first-line{
     font-family: 'futura-medium';
 }
 .registerInput:-webkit-autofill,
 .registerInput:-webkit-autofill:hover, 
 .registerInput:-webkit-autofill:focus, 
-.registerInput:-webkit-autofill:active {
+.registerInput:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
 }
-.errorField {
+.errorField{
     background-color: rgba(255, 0, 0, 0.2);
 }
 
-@media (max-width: 640px) {
-    #heading {
+@media (max-width: 640px){
+    #heading{
         font-size: 3.1em;
     }
-    .registerInput {
+    .registerInput{
         font-size: 2.1em;
     }
-    #registerButton {
+    #registerButton{
         font-size: 2.1em;
     }
-    #registerFooter {
+    #registerFooter{
         font-size: 1.7em;
     }
-    #passwordRequirements {
+    #passwordRequirements{
         font-size: 2em;
     }
 }
-@media (max-width: 380px) {
-    :root {
+@media (max-width: 380px){
+    :root{
         --input-width: 250px;
     }
 }
-@media (max-width: 320px) {
-    :root {
+@media (max-width: 320px){
+    :root{
         --input-width: 240px;
     }
 }

@@ -1,18 +1,13 @@
 :root{
     --nav-search-background: #ffffff7c;
     --headerColor: #E6F3C2;
-    --cardColor: #FFEDE2;
 
     --headerColorFillHeight: 0px;
     --backdropSpacing: -80px;
 
     --headerMealPosition: 12vw;
-    --headerMealSize: 20vw;
+    --headerMealSize: 18vw;
     --headerTitle: 4.5rem;
-
-    --cardBorderRadius: 30px;
-    --cardWidth: 450px;
-    --cardHeight: 250px;
 }
 #headerBackdrop{
     position: relative;
@@ -24,7 +19,6 @@
 #headerColorFill{
     background-color: var(--headerColor);
     height: var(--headerColorFillHeight);
-    /* margin-bottom: calc(var(--headerColorFillHeight) - var(--headerColorFillHeight) - var(--headerColorFillHeight)); */
     width: 100%;
     position: relative;
     bottom: var(--navbar-height);
@@ -49,70 +43,6 @@
     color: var(--font-color);
     font-family: 'source-serif-pro-semibold';
 }
-#cardSpace{
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 100px var(--navbar-margin); */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--cardWidth));
-    justify-content: center;
-    margin: 150px var(--navbar-margin);
-    gap: 100px 100px;
-}
-#cardSpace a{
-    text-decoration: none;
-    color: var(--font-color);
-}
-.recipeCard{
-    z-index: -15;
-}
-.cardContent{
-    width: var(--cardWidth);
-    height: var(--cardHeight);
-    background-color: var(--cardColor);
-    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.18);
-    border-radius: var(--cardBorderRadius);
-    flex-shrink: 0;
-    flex-grow: 0;
-    display: flex;
-    overflow: hidden;
-    /* padding: 10px; */
-}
-.cardSection{
-    flex-basis: 50%;
-    border-radius: var(--cardBorderRadius);
-}
-.cardSection img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    /* border-radius: var(--cardBorderRadius); */
-    /* filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.267)); */
-    /* -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.267)); */
-}
-.cardTextSection{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-.cardHeading *{
-    font-size: 2.2rem;
-    font-family: 'source-serif-pro-semibold';
-}
-.cardBody{
-    position: relative;
-    bottom: 20px;
-}
-.cardBody *{
-    font-size: 1.7rem;
-}
-.cardFooter *{
-    font-family: 'futura-light';
-    font-size: 1.5rem;
-}
 @media (max-width: 1440px){
     :root{
         --backdropSpacing: 0px;
@@ -121,12 +51,7 @@
 }
 @media (max-width: 1200px){
     :root{
-        --cardWidth: 420px;
-        --cardHeight: 220px;
         --headerMealSize: 22vw;
-    }
-    #cardSpace {
-        gap: 100px 80px;
     }
 }
 @media (max-width: 1100px){
@@ -135,15 +60,6 @@
         --headerMealPosition: 16vw;
         --headerMealSize: 25vw;
         --headerTitle: 3.8rem;
-    }
-}
-@media (max-width: 1100px){
-    :root{
-        --cardWidth: 400px;
-        --cardHeight: 200px;
-    }
-    .cardBody{
-        bottom: 10px;
     }
 }
 @media (max-width: 810px){
@@ -158,32 +74,5 @@
         --headerColorFillHeight: 200px;
         --headerMealPosition: 30vw;
         --headerMealSize: 50vw;
-    }
-}
-@media (max-width: 430px){
-    :root{
-        --cardWidth: 380px;
-    }
-}
-@media (max-width: 400px){
-    :root{
-        --cardWidth: 350px;
-    }
-    .cardHeading *{
-        font-size: 2rem;
-    }
-    .cardTextSection{
-        padding: 20px 15px;
-    }
-}
-@media (max-width: 380px){
-    :root{
-        --cardWidth: 330px;
-        --cardHeight: 190px;
-    }
-}
-@media (max-width: 350px){
-    :root{
-        --cardWidth: 300px;
     }
 }

@@ -220,6 +220,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     display: none;
     min-height: var(--navbar-height);
     flex-direction: column;
+    z-index: 100;
 }
 #nav-top{
     display: flex;
@@ -227,15 +228,26 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     margin-left: var(--navbar-margin);
     margin-right: var(--navbar-margin);
     margin-top: calc((var(--navbar-height) / 2) - 3.3rem);
+    z-index: 100;
 }
 #nav-bottom{
     margin-top: 20px;
 }
 .nav-blurred{
     background-color: var(--background) !important;
+    z-index: 100;
 }
-.noScroll{
+.noScroll {
     overflow: hidden;
+    height: 100%;
+}
+.bodyDisabled {
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -9;
 }
 #hamburger-button{
     background: none;
@@ -251,9 +263,10 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     align-items: center;
     font-size: var(--navbar-link-font-mobile);
     flex-direction: row;
-    background-color: #fff3ec3a;
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+    /* background-color: #fff3ec3a; */
+    background-color: var(--background);
+    /* backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px); */
     text-align: center;
     position: absolute;
     z-index: 200;

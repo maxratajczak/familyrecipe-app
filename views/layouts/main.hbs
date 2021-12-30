@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="animate.min.css"> {{!-- Animate CSS --}}
         <link rel="stylesheet" href="/css/main.css">
 
+        <script type='application/javascript' src='/js/fastclick.js'></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
@@ -78,42 +79,12 @@
                     </div>
                 </div>
             </nav>
-            <script>
-                $("#hamburger-button").on("click", () => {
-                    $("#mobile-navbar-links").toggle()
-                    //$("#mobile-navbar-links").toggle().addClass("animate__animated animate__fadeIn");
-                    if ($("#mobile-nav").hasClass("nav-blurred")) {
-                        $("#mobile-nav").removeClass("nav-blurred")
-                        $("body").removeClass("noScroll")
-                    }
-                    else {
-                        $("#mobile-nav").addClass("nav-blurred")
-                        $("body").addClass("noScroll")
-                    }
-                })
-
-                $("#recipe-dropdown").on("click", () => {
-                    $("#dropdown-links").toggle()
-                })
-
-                $('html').on('click', function(e) {
-                if($(e.target).closest('#landing-dropdown').length === 0) {
-                    $('#dropdown-links').hide();
-                }
-                });
-
-                $('html').on('click', function(e) {
-                if($(e.target).closest('#mobile-nav').length === 0) {
-                    $('#mobile-navbar-links').hide();
-                    $("#mobile-nav").removeClass("nav-blurred")
-                    $("body").removeClass("noScroll")
-                }
-                });
-            </script>
+            <script src="/js/navFunctionality.js"></script>
         </header>
 
         <main>
             {{{ body }}}
+            <div class="bodyUnfocused"></div>
         </main>
         
     </body>

@@ -48,7 +48,7 @@
     margin-top: 40px;
     margin-left: 40px;
     position: relative;
-    z-index: 50;
+    z-index: -10;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
@@ -61,8 +61,8 @@
     position: relative;
     bottom: 40px;
     right: 40px;
-    z-index: 50;
     margin-bottom: -40px;
+    z-index: -5;
 }
 .landing-card-content{
     width: 100%;

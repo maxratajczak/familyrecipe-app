@@ -35,11 +35,10 @@
     position: relative;
     bottom: var(--headerMealPosition);
     left: 50%;
-    filter: drop-shadow(-12px 12px 20px rgba(0, 0, 0, 0.40));
-    -webkit-filter: drop-shadow(-12px 12px 20px rgba(0, 0, 0, 0.40));;
     transform: translate(-50%);
     margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition));
-    
+    filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));    
 }
 #headerTitle{
     position: relative;
@@ -64,6 +63,9 @@
 #cardSpace a{
     text-decoration: none;
     color: var(--font-color);
+}
+.recipeCard{
+    z-index: -15;
 }
 .cardContent{
     width: var(--cardWidth);
@@ -107,8 +109,6 @@
 .cardBody *{
     font-size: 1.7rem;
 }
-.cardFooter {
-}
 .cardFooter *{
     font-family: 'futura-light';
     font-size: 1.5rem;
@@ -119,25 +119,71 @@
         --headerTitle: 4.1rem;
     }
 }
+@media (max-width: 1200px){
+    :root{
+        --cardWidth: 420px;
+        --cardHeight: 220px;
+        --headerMealSize: 22vw;
+    }
+    #cardSpace {
+        gap: 100px 80px;
+    }
+}
 @media (max-width: 1100px){
     :root{
         --headerColorFillHeight: 50px;
         --headerMealPosition: 16vw;
-        --headerMealSize: 22vw;
+        --headerMealSize: 25vw;
         --headerTitle: 3.8rem;
+    }
+}
+@media (max-width: 1100px){
+    :root{
+        --cardWidth: 400px;
+        --cardHeight: 200px;
+    }
+    .cardBody{
+        bottom: 10px;
     }
 }
 @media (max-width: 810px){
     :root{
         --headerColorFillHeight: 100px;
         --headerMealPosition: 18vw;
-        --headerMealSize: 25vw;
+        --headerMealSize: 35vw;
     }
 }
 @media (max-width: 500px){
     :root{
         --headerColorFillHeight: 200px;
         --headerMealPosition: 30vw;
-        --headerMealSize: 40vw;
+        --headerMealSize: 50vw;
+    }
+}
+@media (max-width: 430px){
+    :root{
+        --cardWidth: 380px;
+    }
+}
+@media (max-width: 400px){
+    :root{
+        --cardWidth: 350px;
+    }
+    .cardHeading *{
+        font-size: 2rem;
+    }
+    .cardTextSection{
+        padding: 20px 15px;
+    }
+}
+@media (max-width: 380px){
+    :root{
+        --cardWidth: 330px;
+        --cardHeight: 190px;
+    }
+}
+@media (max-width: 350px){
+    :root{
+        --cardWidth: 300px;
     }
 }

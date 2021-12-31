@@ -40,7 +40,7 @@ router.route("/createrecipe")
         dataHandler.saveRecipe(recipe)
         .then((message) => {
             console.log(clc.success(message));
-            res.redirect("/");
+            res.redirect("/recipes");
         })
         .catch((error) => {console.log(clc.error(error))});
     })

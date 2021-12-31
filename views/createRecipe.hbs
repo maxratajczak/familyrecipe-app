@@ -1,26 +1,84 @@
 <link rel="stylesheet" href="/css/createRecipe.css">
 
+{{!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+<script type='application/javascript' src='/js/createRecipe.js' defer></script>
+
 <script>
     document.querySelector("title").appendChild(document.createTextNode("Create Recipe"));
 </script>
 
 <div id="card">
     <div id="content">
-        <h1 id="heading">Create Recipe</h1>
-        <div>
+        <div style="margin-bottom: 40px">
+            <h1 id="heading">Create Recipe</h1>
             <p><span class="required">*</span> Required Field</p>
         </div>
 
-        <fieldset class="createRecipeFieldset">
-            <div>
-                <label for="name">Recipe Name <span class="required">*</span></label>
-                <input type="text" name="name" id="name" class="inputField" placeholder="Recipe Name" autocomplete="off" required>
+        <form action="/user/createrecipe" method="POST" enctype="multipart/form-data">
+            <input type="number" name="recipeId" value="" hidden>
+            <input type="text" name="createdBy" value="" hidden>
+            <input type="text" name="dateCreated" value="" hidden>
+            <input type="text" name="lastUpdated" value="" hidden>
+
+            <fieldset class="createRecipeFieldset">
+                <div>
+                    <div class="inputHeader">
+                        <label for="recipeName" class="visibleLabel">Recipe Name <span class="required">*</span></label>
+                        <div class="charCountContainer"><span id="nameCounter"></span><span>/40</span></div>
+                    </div>
+                    <input type="text" name="recipeName" id="recipeName" class="inputField" placeholder="e.g. Skillet-Roasted Chicken Afritada" autocomplete="off" maxlength="40" required>
+                </div>
+                
+                <div>
+                    <label for="servingSize" class="visibleLabel">Serving Size <span class="required">*</span></label>
+                    <input type="number" name="servingSize" id="servingSize" class="inputField" placeholder="e.g. 4" autocomplete="off" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="createRecipeFieldset">
+                 <select name="recipeCategory" id="recipeCategory" required>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="appetizer">Appetizer</option>
+                    <option value="appetizer">Main</option>
+                    <option value="soup">Soup</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+            </fieldset>
+
+            <hr class="divider">
+            <div class="section">
+                <h2>Ingredients <span class="required">*</span></h2>
             </div>
-            
-            <div>
-                <label for="description">Recipe Description</label>
-                <input type="text" name="description" id="description" class="inputField" placeholder="Short Description" autocomplete="off" required>
+            <fieldset class="createRecipeFieldset ingredientsFieldset">
+                <div class="ingredientContainer">
+                    <button class="removeIngredient"><i class="fas fa-times"></i></button>
+                    <label for="ingredients" hidden>Ingredient</label>
+                    <input type="text" name="ingredients[]" id="ingredients" class="inputField" placeholder="e.g. 3 Tbsp. sweet paprika" autocomplete="off" required>
+                </div>
+                <button type="button" id="addIngredient"><i class="fas fa-plus"></i></button>
+            </fieldset>
+
+            <hr class="divider">
+            <div class="section">
+                <h2>Directions <span class="required">*</span></h2>
             </div>
-        </fieldset>
+            <fieldset class="createRecipeFieldset directionsFieldset">
+                <div class="directionContainer">
+                    <button class="removeDirection"><i class="fas fa-times"></i></button>
+                    <label for="directions" hidden>Direction</label>
+                    <input type="text" name="directions[]" id="directions" class="inputField" placeholder="e.g. Marinate chicken breasts for 3 hours" autocomplete="off" required>
+                </div>
+                <button type="button" id="addDirection"><i class="fas fa-plus"></i></button>
+            </fieldset>
+
+            <hr class="divider">
+            <div class="section">
+                <h2>Image <span class="required">*</span></h2>
+            </div>
+            <fieldset class="createRecipeFieldset">
+                <input type="file" name="imageFile" id="imageFile" required>
+            </fieldset>
+            <button type="submit" >submit</button>
+        </form>
     </div>
 </div>

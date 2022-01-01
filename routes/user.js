@@ -1,8 +1,10 @@
 const express = require("express");
 const path = require("path");
-const dataHandler = require("../js/data-handler.js");
+// const dataHandler = require("../js/data-handler.js");
 const clc = require("../js/cmdlinecolor.js");
 const router = express.Router();
+
+const userHandler = require("../js/user-handler.js");
 
 module.exports = router;
 
@@ -11,7 +13,13 @@ router.route("/register")
     res.render(path.join(__dirname, "..", "views", "register.hbs"))
 })
 .post((req, res) => {
-    
+    userHandler.registerUser(req.body)
+    .then(() => {
+        res.redirect("/");
+    })
+    .catch((err) => {
+        res.render(path.join(__dirname, "..", "views", "register.hbs"), {error: err, lastInput: req.body})
+    })
 });
 
 router.route("/login")

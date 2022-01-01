@@ -2,6 +2,10 @@
 
 <script>
     document.querySelector("title").appendChild(document.createTextNode("Register"));
+
+    $(document).on("click", "#errorCloseButton", function() {
+        $(this).closest("#errorBox").remove();
+    })
 </script>
 
 <div id="page-content">
@@ -9,21 +13,39 @@
         <div id="card">
             <div id="card-content">
                 <h1 id="heading">Create Account</h1>
+                {{#if error}}
+                <div id="errorBox">
+                    <p>Error: {{error}}</p>
+                    <button id="errorCloseButton"><i class="fas fa-times"></i></button>
+                </div>
+                {{/if}}
                 <form action="/user/register" method="POST" id="registerForm">
 
                     <fieldset class="registerFieldset">
                         <label for="firstName" hidden>First Name</label>
-                        <input type="" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" required>
+                        {{#if lastInput}}
+                        <input type="text" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" value="{{lastInput.firstName}}" required>
+                        {{else}}
+                        <input type="text" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" required>
+                        {{/if}}
                     </fieldset>
 
                     <fieldset class="registerFieldset">
                         <label for="lastName" hidden>Last Name</label>
+                        {{#if lastInput}}
+                        <input type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" value="{{lastInput.lastName}}" required>
+                        {{else}}
                         <input type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" required>
+                        {{/if}}
                     </fieldset>
 
                     <fieldset class="registerFieldset">
                         <label for="email" hidden>Email</label>
+                        {{#if lastInput}}
+                        <input type="email" name="email" id="email" class="registerInput" placeholder="Email" value="{{lastInput.email}}" required>
+                        {{else}}
                         <input type="email" name="email" id="email" class="registerInput" placeholder="Email" required>
+                        {{/if}}
                     </fieldset>
 
                     <fieldset class="registerFieldset">
@@ -37,7 +59,7 @@
                     </fieldset>
 
                     <div id="passwordRequirements">
-                        <p>Password must be 5 or more characters in length</p>
+                        <p>Note: Password must be 5 or more characters in length</p>
                     </div>
 
                     <button type="submit" id="registerButton">Register</button>

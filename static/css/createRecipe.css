@@ -22,7 +22,7 @@
 .createRecipeFieldset{
     display: flex;
     border: none;
-    margin-top: 25px;
+    margin-top: 20px;
     align-items: center;
 }
 .createRecipeFieldset div:first-of-type{
@@ -116,4 +116,66 @@
 }
 #addIngredient i, #addDirection i{
     font-size: 2.1rem;
+}
+#recipeComments{
+    margin-top: 10px;
+    min-width: 100%;
+    max-width: max-content;
+    min-height: 150px;
+    border-radius: 10px;
+    border: 2px solid var(--grey);
+    background-color: #f5edea;
+    padding: 10px;
+    font-size: 1.6rem;
+}
+#recipeComments:focus{
+    border: 2px solid var(--primary);
+    outline: none;
+}
+#recipeCategory{
+    width: 50%;
+    font-size: 1.7rem;
+    padding: 10px 15px;
+    font-family: "futura-medium";
+    background-color: #f5edea;
+    border-radius: 10px;
+    border: 2px solid var(--grey);
+    color: var(--font-color);
+}
+#imageFile{
+    font-size: 1.6rem;
+}
+#cancelButton{
+    padding: 10px 20px;
+    background-color: #e03f2a;
+    font-size: 1.7rem;
+    color: var(--background);
+    border-radius: 10px;
+    border: 2px solid #fa462e;
+    cursor: pointer;
+}
+#cancelButton a{
+    text-decoration: none;
+    color: var(--background);
+}
+#cancelButton:hover{
+    background-color: #d13824;
+}
+#cancelButton:active{
+    background-color: #c73622;
+}
+#submitButton{
+    padding: 10px 20px;
+    background-color: var(--primary);
+    font-size: 1.7rem;
+    color: var(--background);
+    border-radius: 10px;
+    border: 2px solid #fa871b;
+    cursor: pointer;
+}
+#submitButton:hover{
+    background-color: #d87315;
+}
+#submitButton:active{
+    background-color: #d16f14;
 }

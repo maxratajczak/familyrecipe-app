@@ -5,6 +5,7 @@ $("#recipeName").keyup(function() {
     $("#nameCounter").text($("#recipeName").val().length)
 })
 
+
 var ingredientInput = `<div class="ingredientContainer">
 <button class="removeIngredient"><i class="fas fa-times"></i></button>
 <label for="ingredients" hidden>Ingredient</label>

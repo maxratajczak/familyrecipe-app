@@ -166,6 +166,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     font-size: var(--navbar-link-font);
     transition: box-shadow 400ms ease;
     color: var(--font-color);
+    -webkit-appearance: inherit;
 }
 #navbar-search-input::placeholder{
     color: var(--nav-search-placeholder);

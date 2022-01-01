@@ -15,10 +15,10 @@
         </div>
 
         <form action="/user/createrecipe" method="POST" enctype="multipart/form-data">
-            <input type="number" name="recipeId" value="" hidden>
-            <input type="text" name="createdBy" value="" hidden>
-            <input type="text" name="dateCreated" value="" hidden>
-            <input type="text" name="lastUpdated" value="" hidden>
+            <input type="number" name="recipeId" value="" hidden disabled>
+            <input type="text" name="createdBy" value="" hidden disabled>
+            <input type="text" name="dateCreated" value="" hidden disabled>
+            <input type="text" name="lastUpdated" value="" hidden disabled>
 
             <fieldset class="createRecipeFieldset">
                 <div>
@@ -36,13 +36,17 @@
             </fieldset>
 
             <fieldset class="createRecipeFieldset">
-                 <select name="recipeCategory" id="recipeCategory" required>
-                    <option value="breakfast">Breakfast</option>
-                    <option value="appetizer">Appetizer</option>
-                    <option value="appetizer">Main</option>
-                    <option value="soup">Soup</option>
-                    <option value="dessert">Dessert</option>
-                </select>
+                <div style="width: 100%;">
+                    <label for="recipeCategory" class="visibleLabel">Recipe Category <span class="required">*</span></label>
+                    <select name="recipeCategory" id="recipeCategory" required>
+                        <option value="" selected disabled hidden>Select a category</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="appetizer">Appetizer</option>
+                        <option value="appetizer">Main</option>
+                        <option value="soup">Soup</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                </div>
             </fieldset>
 
             <hr class="divider">
@@ -76,9 +80,24 @@
                 <h2>Image <span class="required">*</span></h2>
             </div>
             <fieldset class="createRecipeFieldset">
+                <label for="imageFile" hidden>Image</label>
                 <input type="file" name="imageFile" id="imageFile" required>
             </fieldset>
-            <button type="submit" >submit</button>
+            
+            <hr class="divider">
+            <div class="section">
+                <h2>Comments / Notes</h2>
+            </div>
+            <fieldset class="createRecipeFieldset">
+                <label for="recipeComments" hidden>Recipe Comments/Notes</label>
+                <textarea name="recipeComments" id="recipeComments" autocomplete="off" placeholder="Add special comments, notes or instructions here"></textarea>
+            </fieldset>
+
+            <hr class="divider">
+            <fieldset class="createRecipeFieldset" style="justify-content: space-between;">
+                <button type="button" id="cancelButton"><a href="/">Cancel</a></button>
+                <button type="submit" id="submitButton">Submit Recipe</button>
+            </fieldset>
         </form>
     </div>
 </div>

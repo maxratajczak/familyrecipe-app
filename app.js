@@ -1,13 +1,19 @@
 const express = require("express");
 const multer = require("multer");
 const bodyParser = require("body-parser");
-const dataHandler = require("./js/data-handler.js");
-const clc = require("./js/cmdlinecolor.js");
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const exphbs = require("express-handlebars");
+
+//External Files
+const clc = require("./js/cmdlinecolor.js");
+const dataHandler = require("./js/data-handler.js");
+const databaseHandler = require("./js/database-handler.js");
+
+// Routes
 const userRoute = require("./routes/user.js");
 const recipesRoute = require("./routes/recipes.js");
+
 var app = express();
 
 var PORT = process.env.PORT || 8080;
@@ -22,7 +28,7 @@ var liveReloadServer = livereload.createServer();
 liveReloadServer.watch(__dirname + "/static");
 liveReloadServer.watch(__dirname + "/views");
 liveReloadServer.server.once("connection", () => {
-    setTimeout(() => { liveReloadServer.refresh("/") }, 100);
+    setTimeout(() => { liveReloadServer.refresh("/") }, 400);
 })
 
 // Express handlebars setup
@@ -50,17 +56,25 @@ app.get("*", (req, res) => {
     res.render(__dirname + "/views/404.hbs");
 });
 
-console.log(clc.notice("\n\n[Server] Listening...\n"));
-app.listen(PORT, dataHandler.initializeRecipes()
-    .then((fileData) => {
-        console.log(clc.success(`[initializeRecipes] "${dataHandler.recipeDataFile}" was opened`));
-        dataHandler.parseData(fileData)
-        .then(([message, length]) => {
-            if (length === 0) console.log(clc.warn(message));
-            else console.log(clc.success(message));
-        })
-        .catch((error) => {console.log(clc.error(error))})
-    })
-    .catch((error) => {console.log(clc.error(error))})
-    .finally(() => {onApplicationStart()})
-);
+// console.log(clc.notice("\n\n[Server] Listening...\n"));
+// app.listen(PORT, dataHandler.initializeRecipes()
+//     .then((fileData) => {
+//         console.log(clc.success(`[initializeRecipes] "${dataHandler.recipeDataFile}" was opened`));
+//         dataHandler.parseData(fileData)
+//         .then(([message, length]) => {
+//             if (length === 0) console.log(clc.warn(message));
+//             else console.log(clc.success(message));
+//         })
+//         .catch((error) => {console.log(clc.error(error))})
+//     })
+//     .catch((error) => {console.log(clc.error(error))})
+//     .finally(() => {onApplicationStart()})
+// );
+
+databaseHandler.initialize()
+.then(() => {
+    app.listen(PORT, onApplicationStart());
+})
+.catch((err) => {
+    console.log(clc.error(err));
+})

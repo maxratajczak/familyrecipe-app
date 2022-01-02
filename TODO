@@ -1,0 +1,17 @@
+
+Photo Uploading
+☐ Accept only .jpg .png .jpeg .heic
+☐ Add notice in frontend with allowed file types
+☐ Add tips for best photo
+
+Create Recipe
+☐ Responsive for mobile
+
+Register
+☐ Redirect to login with "Success" and "Proceed to login button"
+
+Account
+☐ "My Recipes" Page
+
+Navbar
+☐ Underline active link

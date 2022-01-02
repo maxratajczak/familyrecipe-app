@@ -1,9 +1,9 @@
 const express = require("express");
-const multer = require("multer");
 const bodyParser = require("body-parser");
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const exphbs = require("express-handlebars");
+const clientSession = require("client-sessions");
 
 //External Files
 const clc = require("./js/cmdlinecolor.js");
@@ -31,6 +31,17 @@ liveReloadServer.server.once("connection", () => {
     setTimeout(() => { liveReloadServer.refresh("/") }, 400);
 })
 
+// Client Session Cookies
+app.use(clientSession({
+    cookieName: "userSession",
+    secret: "bwvAKZKfAePglUFvCKXF",
+    duration: 6 * 60 * 60 * 1000, // Hour * Minute * Second * Millisecond (6 hours)
+    activeDuration: 1 * 60 * 60 * 1000, // (1 Hour)
+    cookie: {
+        ephemeral: false
+    }
+}))
+
 // Express handlebars setup
 app.set("view engine", ".hbs");
 app.engine(".hbs", exphbs.engine({
@@ -39,6 +50,11 @@ app.engine(".hbs", exphbs.engine({
 
     }
 }));
+
+app.use(function(req, res, next) {
+    res.locals.userSession = req.userSession;
+    next();
+})
 
 app.use(express.static('static'));
 app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
@@ -55,21 +71,6 @@ app.use("/user", userRoute);
 app.get("*", (req, res) => {
     res.render(__dirname + "/views/404.hbs");
 });
-
-// console.log(clc.notice("\n\n[Server] Listening...\n"));
-// app.listen(PORT, dataHandler.initializeRecipes()
-//     .then((fileData) => {
-//         console.log(clc.success(`[initializeRecipes] "${dataHandler.recipeDataFile}" was opened`));
-//         dataHandler.parseData(fileData)
-//         .then(([message, length]) => {
-//             if (length === 0) console.log(clc.warn(message));
-//             else console.log(clc.success(message));
-//         })
-//         .catch((error) => {console.log(clc.error(error))})
-//     })
-//     .catch((error) => {console.log(clc.error(error))})
-//     .finally(() => {onApplicationStart()})
-// );
 
 databaseHandler.initialize()
 .then(() => {

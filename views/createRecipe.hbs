@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="/css/createRecipe.css">
-
-{{!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 <script type='application/javascript' src='/js/createRecipe.js' defer></script>
 
 <script>
@@ -15,11 +13,6 @@
         </div>
 
         <form action="/user/createrecipe" method="POST" enctype="multipart/form-data">
-            <input type="number" name="recipeId" value="" hidden disabled>
-            <input type="text" name="createdBy" value="" hidden disabled>
-            <input type="text" name="dateCreated" value="" hidden disabled>
-            <input type="text" name="lastUpdated" value="" hidden disabled>
-
             <fieldset class="createRecipeFieldset">
                 <div>
                     <div class="inputHeader">
@@ -81,7 +74,7 @@
             </div>
             <fieldset class="createRecipeFieldset">
                 <label for="imageFile" hidden>Image</label>
-                <input type="file" name="imageFile" id="imageFile" required>
+                <input type="file" name="imageFile" id="imageFile" accept=".jpg, .jpeg, .png" required>
             </fieldset>
             
             <hr class="divider">
@@ -89,8 +82,8 @@
                 <h2>Comments / Notes</h2>
             </div>
             <fieldset class="createRecipeFieldset">
-                <label for="recipeComments" hidden>Recipe Comments/Notes</label>
-                <textarea name="recipeComments" id="recipeComments" autocomplete="off" placeholder="Add special comments, notes or instructions here"></textarea>
+                <label for="notes" hidden>Recipe Comments/Notes</label>
+                <textarea name="notes" id="notes" autocomplete="off" placeholder="Add special comments, notes or instructions here"></textarea>
             </fieldset>
 
             <hr class="divider">

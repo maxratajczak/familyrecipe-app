@@ -11,8 +11,8 @@ module.exports = {
             }
             else {
                 User.find({email: newUser.email}).exec()
-                .then((user) => {
-                    var data = user.map(value => value.toObject());
+                .then((users) => {
+                    var data = users.map(value => value.toObject());
                     if(data.length != 0) {
                         reject("Email is already in use");
                     }
@@ -30,12 +30,8 @@ module.exports = {
                                     newUserData.dateRegistered = dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A")
 
                                     newUserData.save((err) => {
-                                        if(err) {
-                                            reject(err);
-                                        }
-                                        else {
-                                            resolve();
-                                        }
+                                        if(err) reject(err);
+                                        else resolve();
                                     })
                                 }
                             })
@@ -43,8 +39,25 @@ module.exports = {
                     }
                 })
             }
-            
-            
+        })
+    },
+
+    loginUser: function(user) {
+        return new Promise((resolve, reject) => {
+            User.find({email: user.email}).exec()
+            .then((users) => {
+                var data = users.map(value => value.toObject());
+                if(data.length === 0) reject("Email has not been registered")
+                else {
+                    bcrypt.compare(user.password, data[0].password, function(err, res) {
+                        if(err) reject(err);
+                        else if(!res) reject("Password is incorrect")
+                        else {
+                            resolve(data[0]);
+                        }
+                    })
+                }
+            })
         })
     }
 }

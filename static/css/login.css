@@ -97,7 +97,38 @@
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
 }
-
+#errorBox{
+    max-width: var(--input-width);
+    height: 50px;
+    border-radius: 15px;
+    background-color: rgb(230, 121, 121);
+    border: 2px solid rgb(224, 83, 83);
+    margin-top: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    color: rgb(63, 63, 63);
+}
+#errorBox *{
+    font-size: 1.6rem;
+}
+#errorBox strong{
+    font-weight: bolder;
+}
+#errorBox button{
+    background-color: transparent;
+    padding: 8px 5px;
+    margin-top: 3px;
+    border: none;
+    cursor: pointer;
+}
+#errorBox button i{
+    font-size: 1.3em;
+    color: rgb(202, 39, 39);
+}
 @media (max-width: 640px){
     #heading{
         font-size: 3.1em;

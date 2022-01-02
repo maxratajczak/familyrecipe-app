@@ -15,14 +15,23 @@ $("#hamburger-button").click(() => {
 })
 
 // Desktop Menu
-$("#recipe-dropdown").on("click", () => {
-    $("#dropdown-links").toggle();
+$("#recipe-dropdown-btn").on("click", () => {
+    $("#recipe-dropdown-links").toggle();
+})
+
+$("#account-dropdown-btn").on("click", () => {
+    $("#account-dropdown-links").toggle();
 })
 
 // Outside Clicking
 $('html').on('click', function(e) {
-    if($(e.target).closest('#landing-dropdown').length === 0) {
-        $('#dropdown-links').hide();
+    if($(e.target).closest('#recipe-dropdown').length === 0) {
+        $('#recipe-dropdown-links').hide();
+    }
+});
+$('html').on('click', function(e) {
+    if($(e.target).closest('#account-dropdown').length === 0) {
+        $('#account-dropdown-links').hide();
     }
 });
 

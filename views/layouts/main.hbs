@@ -26,13 +26,27 @@
                     <div id="nav-content">
                         <ul id="navbar-links">
                             <li><a class="navbar-selected" href="/">Home</a></li>
+                            {{#if userSession.user}}
+                            <div id="account-dropdown">
+                                <button id="account-dropdown-btn">
+                                    <li><a>Account <i class="fas fa-caret-down"></i></a></li>
+                                </button>
+
+                                <ul id="account-dropdown-links">
+                                    <li><a href="">My Recipes</a></li>
+                                    <li><a href="/user/createrecipe">Create</a></li>
+                                    <li><a href="/user/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                            {{else}}
                             <li><a href="/user/login">Login</a></li>
-                            <div id="landing-dropdown"> 
-                                <button id="recipe-dropdown">
+                            {{/if}}
+                            <div id="recipe-dropdown"> 
+                                <button id="recipe-dropdown-btn">
                                 <li><a>Recipes <i class="fas fa-caret-down"></i></a></li>
                                 </button>
 
-                                <ul id="dropdown-links">
+                                <ul id="recipe-dropdown-links">
                                 <li><a href="/recipes/breakfast">Breakfast</a></li>
                                 <li><a href="/recipes/appetizers">Appetizers</a></li>
                                 <li><a href="/recipes/mains">Mains</a></li>
@@ -65,7 +79,15 @@
                             <hr class="nav-link-spacer">
                             <li><a href="/">Home</a></li>
                             <hr class="nav-link-spacer-light">
+                            {{#if userSession.user}}
+                            <li><a href="">My Recipes</a></li>
+                            <hr class="nav-link-spacer-light">
+                            <li><a href="/user/createrecipe">Create</a></li>
+                            <hr class="nav-link-spacer-light">
+                            <li><a href="/user/logout">Logout</a></li>
+                            {{else}}
                             <li><a href="/user/login">Login</a></li>
+                            {{/if}}
                             <hr class="nav-link-spacer">
                             <li><a href="/recipes/breakfast">Breakfast</a></li>
                             <hr class="nav-link-spacer-light">

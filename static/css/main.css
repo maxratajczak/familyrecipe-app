@@ -113,11 +113,11 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     border-bottom: 2px solid var(--primary);
     padding-bottom: 5px;
 }
-#landing-dropdown{
+#recipe-dropdown, #account-dropdown{
     position: relative;
     z-index: 100;
 }
-#landing-dropdown ul{
+#recipe-dropdown ul, #account-dropdown ul{
     position: absolute;
     background-color: rgba(247, 242, 236, 0.75);
     backdrop-filter: blur(10px);
@@ -129,18 +129,20 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    left: -15px;
+    left: -10px;
     transition: opacity 250ms ease-in-out;
     z-index: 100;
     display: none;
     text-align: center;
-    
 }
-#landing-dropdown ul li{
+#account-dropdown ul{
+    width: max-content;
+}
+#recipe-dropdown ul li, #account-dropdown ul li{
     padding: 18px 5px;
     z-index: 100;
 }
-#recipe-dropdown{
+#recipe-dropdown-btn, #account-dropdown-btn{
     font-size: var(--navbar-link-font);
     background: none;
     border: none;
@@ -148,7 +150,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     text-align: center;
     z-index: 100;
 }
-#recipe-dropdown:focus{
+#recipe-dropdown-btn:focus, #account-dropdown-btn:focus{
     outline: 0;
 }
 

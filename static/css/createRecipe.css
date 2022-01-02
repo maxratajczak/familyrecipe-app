@@ -117,7 +117,7 @@
 #addIngredient i, #addDirection i{
     font-size: 2.1rem;
 }
-#recipeComments{
+#notes{
     margin-top: 10px;
     min-width: 100%;
     max-width: max-content;
@@ -128,7 +128,7 @@
     padding: 10px;
     font-size: 1.6rem;
 }
-#recipeComments:focus{
+#notes:focus{
     border: 2px solid var(--primary);
     outline: none;
 }

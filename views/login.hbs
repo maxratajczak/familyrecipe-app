@@ -2,6 +2,10 @@
 
 <script>
     document.querySelector("title").appendChild(document.createTextNode("Login"));
+
+    $(document).on("click", "#errorCloseButton", function() {
+        $(this).closest("#errorBox").remove();
+    })
 </script>
 
 <div id="page-content">
@@ -9,6 +13,12 @@
         <div id="card">
             <div id="card-content">
                 <h1 id="heading">Login</h1>
+                {{#if error}}
+                <div id="errorBox">
+                    <p>{{error}}</p>
+                    <button id="errorCloseButton"><i class="fas fa-times"></i></button>
+                </div>
+                {{/if}}
                 <form action="/user/login" method="POST" id="loginForm">
 
                     <fieldset class="loginFieldset">

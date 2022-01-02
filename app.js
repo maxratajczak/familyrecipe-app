@@ -7,8 +7,9 @@ const clientSession = require("client-sessions");
 
 //External Files
 const clc = require("./js/cmdlinecolor.js");
-const dataHandler = require("./js/data-handler.js");
+// const dataHandler = require("./js/data-handler.js");
 const databaseHandler = require("./js/database-handler.js");
+const userHandler = require("./js/user-handler.js");
 
 // Routes
 const userRoute = require("./routes/user.js");
@@ -62,7 +63,36 @@ app.use(express.static(__dirname + '/node_modules/animate.css/'));
 app.use(bodyParser.urlencoded({ extended: true }));  
 
 app.get("/", (req, res) => {
-    res.render(__dirname + "/views/landing.hbs");
+    recipe = [
+        {
+            _id: "61d1deeb796150c600183349",
+            recipeName: "Oven Roasted Chicken",
+            servingSize: 5,
+            ingredients: [
+                "hey",
+                "this is one",
+                "two"
+            ],
+            directions: [
+                "step 1",
+                "step 2"
+            ],
+            createdBy: "61d09c039a023c4ea630db4c",
+            imageFile: "61d1deeb796150c600183348.webp",
+            ingredientCount: 3,
+            directionCount: 2
+        },   
+    ]
+
+    userHandler.getUserById(recipe[0].createdBy).then((user) => {
+        recipe[0].userFirstName = user.firstName
+        recipe[0].userLastName = user.lastName
+        res.render(__dirname + "/views/landing.hbs", {recipe: recipe});
+
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 });
 
 app.use("/recipes", recipesRoute);

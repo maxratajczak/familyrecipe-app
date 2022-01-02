@@ -12,7 +12,7 @@ module.exports = {
             else {
                 User.find({email: newUser.email}).exec()
                 .then((users) => {
-                    var data = users.map(value => value.toObject());
+                    var data = users.map(value => value.toObject())
                     if(data.length != 0) {
                         reject("Email is already in use");
                     }
@@ -46,7 +46,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             User.find({email: user.email}).exec()
             .then((users) => {
-                var data = users.map(value => value.toObject());
+                var data = users.map(value => value.toObject())
                 if(data.length === 0) reject("Email has not been registered")
                 else {
                     bcrypt.compare(user.password, data[0].password, function(err, res) {
@@ -56,6 +56,23 @@ module.exports = {
                             resolve(data[0]);
                         }
                     })
+                }
+            })
+        })
+    },
+
+    getUserById: function(userId) {
+        return new Promise((resolve, reject) => {
+            User.find({_id: userId}).exec()
+            .then((users) => {
+                var data = users.map(value => value.toObject())
+                if(data.length === 0) reject("No users match the provided id")
+                else {
+                    var user = {
+                        firstName: data[0].firstName,
+                        lastName: data[0].lastName
+                    }
+                    resolve(user);
                 }
             })
         })

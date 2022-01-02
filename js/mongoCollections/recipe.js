@@ -16,6 +16,8 @@ let recipeSchema = new mongoose.Schema({
     "directions": [{
         type: String
     }],
+    "ingredientCount": Number,
+    "directionCount": Number,
     "notes": String
 })
 

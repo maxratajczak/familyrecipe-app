@@ -14,6 +14,15 @@ module.exports = {
                 newRecipe.dateCreated = dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A");
                 newRecipe.lastUpdated = newRecipe.dateCreated
                 newRecipe.imageFile = image;
+                newRecipe.ingredientCount = 0;
+                newRecipe.directionCount = 0;
+
+                recipe.ingredients.forEach(element => {
+                    newRecipe.ingredientCount++;
+                });
+                recipe.directions.forEach(element => {
+                    newRecipe.directionCount++;
+                });
 
                 newRecipe.save((err) => {
                     if(err) reject("Could not save recipe")
@@ -24,5 +33,7 @@ module.exports = {
                 reject("User not logged in")
             }
         })
-    }
+    },
+    
+    
 }

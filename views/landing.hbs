@@ -8,126 +8,29 @@
     <div id="landing-heading">
         <h1>Recently Added</h1>
     </div>
+    {{#each recipe}}
     <div id="recently-added">
         <div class="flex-space">
             <a href="">
                 <div class="recently-added-card">
-                    <img src="/images/breakfast.jpg" alt="">
+                    <img src="/images/recipeImages/{{imageFile}}" alt="">
                     <div class="landing-card-content">
                         <div class="landing-card-header">
-                            <h1>Waffles & Parfait</h1>
+                            <h1>{{recipeName}}</h1>
                         </div>
                         <div class="landing-card-body">
-                            <p>7 Ingredients</p>
-                            <p>8 Steps</p>
+                            <p>{{ingredientCount}} Ingredients</p>
+                            <p>{{directionCount}} Steps</p>
                         </div>
                         <div class="landing-card-footer">
-                            <p>Max Ratajczak</p>
+                            <p>{{userFirstName}} {{userLastName}}</p>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
+        {{/each}}
 
-        <div class="flex-space">
-            <a href="">
-                <div class="recently-added-card">
-                    <img src="/images/tomatoChicken.webp" alt="">
-                    <div class="landing-card-content">
-                        <div class="landing-card-header">
-                            <h1>Pulled Chicken Rice Dish</h1>
-                        </div>
-                        <div class="landing-card-body">
-                            <p>8 Ingredients</p>
-                            <p>7 Steps</p>
-                        </div>
-                        <div class="landing-card-footer">
-                            <p>Max R.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="flex-space">
-            <a href="">
-                <div class="recently-added-card">
-                    <img src="/images/mains.jpg" alt="">
-                    <div class="landing-card-content">
-                        <div class="landing-card-header">
-                            <h1>Shrimp Rice Bowl</h1>
-                        </div>
-                        <div class="landing-card-body">
-                            <p>5 Ingredients</p>
-                            <p>10 Steps</p>
-                        </div>
-                        <div class="landing-card-footer">
-                            <p>Nicole Ratajczak</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="flex-space">
-            <a href="">
-                <div class="recently-added-card">
-                    <img src="/images/soups.jpg" alt="">
-                    <div class="landing-card-content">
-                        <div class="landing-card-header">
-                            <h1>Red Lentil Soup</h1>
-                        </div>
-                        <div class="landing-card-body">
-                            <p>5 Ingredients</p>
-                            <p>6 Steps</p>
-                        </div>
-                        <div class="landing-card-footer">
-                            <p>Gabbie Ratajczak</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="flex-space">
-            <a href="">
-                <div class="recently-added-card">
-                    <img src="/images/desserts.jpg" alt="">
-                    <div class="landing-card-content">
-                        <div class="landing-card-header">
-                            <h1>Double Fudge Brownies</h1>
-                        </div>
-                        <div class="landing-card-body">
-                            <p>8 Ingredients</p>
-                            <p>10 Steps</p>
-                        </div>
-                        <div class="landing-card-footer">
-                            <p>Julia Morawska</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="flex-space">
-            <a href="">
-                <div class="recently-added-card">
-                    <img src="/images/breakfast.jpg" alt="">
-                    <div class="landing-card-content">
-                        <div class="landing-card-header">
-                            <h1>Waffles and Fruit Bowls</h1>                                    
-                        </div>
-                        <div class="landing-card-body">
-                            <p>4 Ingredients</p>
-                            <p>2 Steps</p>
-                        </div>
-                        <div class="landing-card-footer">
-                            <p>Gabbie Ratajczak</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
     </div>
 </section>
 

@@ -143,7 +143,41 @@
     color: var(--font-color);
 }
 #imageFile{
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+#imageFileLabel {
+    font-size: 1.5rem;
+    background-color: rgb(155, 217, 238);
+    color: var(--font-color);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: "futura";
+    border-radius: 10px;
+    border: 2px solid rgb(126, 179, 197);
+    user-select: none;
+}
+#imageFileLabel:hover {
+    background-color: rgb(144, 207, 228);
+}
+#imageFileLabel:active {
+    background-color: rgb(138, 199, 219);
+}
+#filePath{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: var(--font-color);
+}
+#filePath span{
+    color: black;
+    font-style: italic;
 }
 #cancelButton{
     padding: 10px 20px;
@@ -178,4 +212,63 @@
 }
 #submitButton:active{
     background-color: #d16f14;
+}
+#finishButtons{
+    justify-content: space-between;
+}
+@media (max-width: 750px){
+    :root{
+        --input-width: 320px;
+    }
+    .createRecipeFieldset{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .createRecipeFieldset div:first-of-type{
+        margin-right: 0px;
+    }
+    .createRecipeFieldset:first-of-type div:nth-child(2){
+        margin-top: 20px;
+    }
+    #card {
+        padding: 40px 30px;
+    }
+    #recipeCategory{
+        width: var(--input-width);
+    }
+    #finishButtons{
+        justify-content: space-between !important;
+        flex-direction: row;
+    }
+}
+@media (max-width: 640px){
+    #card {
+        padding: 30px 15px;
+    }
+}
+@media (max-width: 400px){
+    :root{
+        --input-width: 300px;
+    }
+    #card {
+        padding: 30px 20px;
+    }
+}
+@media (max-width: 350px){
+    :root{
+        --input-width: 280px;
+    }
+    #card {
+        padding: 30px 15px;
+        margin: 10px;
+    }
+}
+@media (max-width: 330px){
+    :root{
+        --input-width: 275px;
+    }
+    #card {
+        padding: 30px 10px;
+        margin: 10px;
+    }
 }

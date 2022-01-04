@@ -12,19 +12,19 @@
             <p><span class="required">*</span> Required Field</p>
         </div>
 
-        <form action="/user/createrecipe" method="POST" enctype="multipart/form-data">
+        <form id="createRecipeForm" action="/user/createrecipe" method="POST" enctype="multipart/form-data">
             <fieldset class="createRecipeFieldset">
                 <div>
                     <div class="inputHeader">
                         <label for="recipeName" class="visibleLabel">Recipe Name <span class="required">*</span></label>
                         <div class="charCountContainer"><span id="nameCounter"></span><span>/40</span></div>
                     </div>
-                    <input type="text" name="recipeName" id="recipeName" class="inputField" placeholder="e.g. Skillet-Roasted Chicken Afritada" autocomplete="off" maxlength="40" required>
+                    <input enterkeyhint="next" type="text" name="recipeName" id="recipeName" class="inputField" placeholder="e.g. Skillet-Roasted Chicken Afritada" autocomplete="off" maxlength="40"required>
                 </div>
                 
                 <div>
                     <label for="servingSize" class="visibleLabel">Serving Size <span class="required">*</span></label>
-                    <input type="number" name="servingSize" id="servingSize" class="inputField" placeholder="e.g. 4" autocomplete="off" required>
+                    <input enterkeyhint="next" type="number" name="servingSize" id="servingSize" class="inputField" placeholder="e.g. 4" autocomplete="off" required>
                 </div>
             </fieldset>
 
@@ -46,36 +46,39 @@
             <div class="section">
                 <h2>Ingredients <span class="required">*</span></h2>
             </div>
-            <fieldset class="createRecipeFieldset ingredientsFieldset">
+            <div class="createRecipeFieldset ingredientsFieldset">
                 <div class="ingredientContainer">
-                    <button class="removeIngredient"><i class="fas fa-times"></i></button>
+                    <i tabindex="0" class="fas fa-times removeIngredient"></i>
                     <label for="ingredients" hidden>Ingredient</label>
-                    <input type="text" name="ingredients[]" id="ingredients" class="inputField" placeholder="e.g. 3 Tbsp. sweet paprika" autocomplete="off" required>
+                    <input enterkeyhint="next" type="text" name="ingredients[]" id="ingredients" class="inputField" placeholder="e.g. 3 Tbsp. sweet paprika" autocomplete="off" required>
                 </div>
                 <button type="button" id="addIngredient"><i class="fas fa-plus"></i></button>
-            </fieldset>
+            </div>
 
             <hr class="divider">
             <div class="section">
                 <h2>Directions <span class="required">*</span></h2>
             </div>
-            <fieldset class="createRecipeFieldset directionsFieldset">
+            <div class="createRecipeFieldset directionsFieldset">
                 <div class="directionContainer">
-                    <button class="removeDirection"><i class="fas fa-times"></i></button>
+                    <i tabindex="0" class="fas fa-times removeDirection"></i>
                     <label for="directions" hidden>Direction</label>
-                    <input type="text" name="directions[]" id="directions" class="inputField" placeholder="e.g. Marinate chicken breasts for 3 hours" autocomplete="off" required>
+                    <input enterkeyhint="next" type="text" name="directions[]" id="directions" class="inputField" placeholder="e.g. Marinate chicken breasts for 3 hours" autocomplete="off" required>
                 </div>
-                <button type="button" id="addDirection"><i class="fas fa-plus"></i></button>
-            </fieldset>
+                <button type="button" id="addDirection" enterkeyhint="done"><i class="fas fa-plus"></i></button>
+            </div>
 
             <hr class="divider">
             <div class="section">
                 <h2>Image <span class="required">*</span></h2>
+                <p>Accepted file types: png, jpeg, jpg, heic, heif, webp</p>
+                <p>Max upload size: 10mb</p>
             </div>
             <fieldset class="createRecipeFieldset">
-                <label for="imageFile" hidden>Image</label>
-                <input type="file" name="imageFile" id="imageFile" required>
+                <label for="imageFile" id="imageFileLabel">Upload a Photo</label>
+                <input type="file" name="imageFile" id="imageFile" accept="image/*" required>
             </fieldset>
+            <p id="filePath">File Selected: <span></span></p>
             
             <hr class="divider">
             <div class="section">
@@ -87,9 +90,13 @@
             </fieldset>
 
             <hr class="divider">
-            <fieldset class="createRecipeFieldset" style="justify-content: space-between;">
-                <button type="button" id="cancelButton"><a href="/">Cancel</a></button>
-                <button type="submit" id="submitButton">Submit Recipe</button>
+            <fieldset class="createRecipeFieldset" id="finishButtons">
+                <div>
+                    <button type="button" id="cancelButton"><a href="/">Cancel</a></button>
+                </div>
+                <div>
+                    <button type="submit" id="submitButton" />Submit</button>
+                </div>
             </fieldset>
         </form>
     </div>

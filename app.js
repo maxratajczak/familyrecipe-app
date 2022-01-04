@@ -78,7 +78,7 @@ app.get("/", (req, res) => {
                 "step 2"
             ],
             createdBy: "61d09c039a023c4ea630db4c",
-            imageFile: "61d1deeb796150c600183348.webp",
+            imageFile: "61d379b89f9a308f9c5f3f2f.webp",
             ingredientCount: 3,
             directionCount: 2
         },   

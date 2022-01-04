@@ -9,7 +9,6 @@ let recipeSchema = new mongoose.Schema({
     "lastUpdated": String,
     "recipeName": String,
     "servingSize": Number,
-    "imageFile": String,
     "ingredients": [{
         type: String
     }],
@@ -18,7 +17,11 @@ let recipeSchema = new mongoose.Schema({
     }],
     "ingredientCount": Number,
     "directionCount": Number,
-    "notes": String
+    "notes": String,
+    "image": {
+        "imageFile": String,
+        "fileSize": Number
+    }
 })
 
 const Recipe = mongoose.model("recipes", recipeSchema);

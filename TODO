@@ -1,14 +1,15 @@
 
 Photo Uploading
-☐ Accept only .jpg .png .jpeg .heic
-☐ Add notice in frontend with allowed file types
+✔ Accept only .jpg .png .jpeg .heic .heif .webp @done(22-01-03 16:20)
+✔ Add notice in frontend with allowed file types @done(22-01-03 16:20)
 ☐ Add tips for best photo
 
 Create Recipe
-☐ Responsive for mobile
+✔ Responsive for mobile @done(22-01-03 17:21)
+☐ Error box if process fails
 
 Register
-☐ Redirect to login with "Success" and "Proceed to login button"
+✔ Redirect to login with "Success" and "Proceed to login button" @done(22-01-03 20:11)
 
 Account
 ☐ "My Recipes" Page

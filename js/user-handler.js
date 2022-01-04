@@ -31,7 +31,9 @@ module.exports = {
 
                                     newUserData.save((err) => {
                                         if(err) reject(err);
-                                        else resolve();
+                                        else {
+                                            resolve(true)
+                                        }
                                     })
                                 }
                             })

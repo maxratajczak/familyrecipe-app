@@ -12,6 +12,12 @@
     <div>
         <div id="card">
             <div id="card-content">
+                {{#if success}}
+                <div id="successBox">
+                    <h1 id="heading">Registration Successful</h1>
+                    <a id="proceedToLogin" href="/user/login">Proceed to Login</a>
+                </div>
+                {{else}}
                 <h1 id="heading">Create Account</h1>
                 {{#if error}}
                 <div id="errorBox">
@@ -68,6 +74,7 @@
                         <p>Already have an account? <span><a href="/user/login">Login</a></span></p>
                     </div>
                 </form>
+                {{/if}}
             </div>
         </div>
         <div id="card-background"></div>

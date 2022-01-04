@@ -1,8 +1,6 @@
 const express = require("express")
 const multer = require("multer");
 const path = require("path");
-const mongoose = require("mongoose");
-const sharp = require("sharp");
 
 const clc = require("../js/cmdlinecolor.js");
 const userHandler = require("../js/user-handler.js");
@@ -18,33 +16,15 @@ function authorizeUser(req, res, next) {
     else next();
 }
 
-function processRecipeImage(image) {
-    const directory = "./static/images/recipeImages/";
-    const fileName = mongoose.Types.ObjectId() + ".webp";
-
-    sharp(image.buffer)
-    .withMetadata()
-    .webp({
-        quality: 80,
-    })
-    .resize({
-        width: 1080,
-        withoutEnlargement: true
-    })
-    .toFile(directory + fileName, (err) => {
-        console.log(clc.error(err));
-    });
-    return fileName;
-}
-
 router.route("/register")
 .get((req, res) => {
     res.render(path.join(__dirname, "..", "views", "register.hbs"))
 })
 .post((req, res) => {
     userHandler.registerUser(req.body)
-    .then(() => {
-        res.redirect("/user/login");
+    .then((success) => {
+        if (success) res.render(path.join(__dirname, "..", "views", "register.hbs"), {success: success})
+        else res.render(path.join(__dirname, "..", "views", "register.hbs"))
     })
     .catch((err) => {
         res.render(path.join(__dirname, "..", "views", "register.hbs"), {error: err, lastInput: req.body})
@@ -53,7 +33,7 @@ router.route("/register")
 
 router.route("/login")
 .get((req, res) => {
-    if(req.userSession.user) res.redirect("/user/createrecipe")
+    if(req.userSession.user) res.redirect("/user/myrecipes")
     else res.render(path.join(__dirname, "..", "views", "login.hbs"));
 })
 .post((req, res) => {
@@ -65,7 +45,7 @@ router.route("/login")
             lastName: user.lastName,
             email: user.email
         }
-        res.redirect("/");
+        res.redirect("/user/myrecipes")
     })
     .catch((err) => {
         res.render(path.join(__dirname, "..", "views", "login.hbs"), {error: err})
@@ -83,8 +63,7 @@ router.route("/createrecipe")
     res.render(path.join(__dirname , '..' , "views" , "createRecipe.hbs"));
 })
 .post(authorizeUser, upload.single("imageFile"), (req, res) => {
-    var fileName = processRecipeImage(req.file);
-    recipeHandler.createRecipe(req.body, fileName, req.userSession.user)
+    recipeHandler.createRecipe(req.body, req.file, req.userSession.user)
     .then(() => {
         
     })

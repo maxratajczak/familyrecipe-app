@@ -143,6 +143,29 @@
     font-size: 1.3em;
     color: rgb(202, 39, 39);
 }
+#successBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#proceedToLogin{
+    margin-top: 20px;
+    width: max-content;
+    font-size: 1.7rem;
+    border-radius: 10px;
+    background-color: var(--primary);
+    border: 2px solid #fa871b;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: rgba(255,240,216,1);
+}
+#proceedToLogin:hover{
+    background-color: #d87315;
+}
+#proceedToLogin:active{
+    background-color: #d16f14;
+}
 @media (max-width: 640px){
     #heading{
         font-size: 3.1em;

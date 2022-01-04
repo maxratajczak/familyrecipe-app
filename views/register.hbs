@@ -14,7 +14,7 @@
             <div id="card-content">
                 {{#if success}}
                 <div id="successBox">
-                    <h1 id="heading">Registration Successful</h1>
+                    <h1 id="heading">Account Created</h1>
                     <a id="proceedToLogin" href="/user/login">Proceed to Login</a>
                 </div>
                 {{else}}
@@ -30,38 +30,38 @@
                     <fieldset class="registerFieldset">
                         <label for="firstName" hidden>First Name</label>
                         {{#if lastInput}}
-                        <input type="text" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" value="{{lastInput.firstName}}" required>
+                        <input enterkeyhint="next" type="text" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" value="{{lastInput.firstName}}" required>
                         {{else}}
-                        <input type="text" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" required>
+                        <input enterkeyhint="next" type="text" name="firstName" id="firstName" class="registerInput" placeholder="First Name" autocomplete="off" required>
                         {{/if}}
                     </fieldset>
 
                     <fieldset class="registerFieldset">
                         <label for="lastName" hidden>Last Name</label>
                         {{#if lastInput}}
-                        <input type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" value="{{lastInput.lastName}}" required>
+                        <input enterkeyhint="next" type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" value="{{lastInput.lastName}}" required>
                         {{else}}
-                        <input type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" required>
+                        <input enterkeyhint="next" type="text" name="lastName" id="lastName" class="registerInput" placeholder="Last Name" autocomplete="off" required>
                         {{/if}}
                     </fieldset>
 
                     <fieldset class="registerFieldset">
                         <label for="email" hidden>Email</label>
                         {{#if lastInput}}
-                        <input type="email" name="email" id="email" class="registerInput" placeholder="Email" value="{{lastInput.email}}" required>
+                        <input enterkeyhint="next" type="email" name="email" id="email" class="registerInput" placeholder="Email" value="{{lastInput.email}}" required>
                         {{else}}
-                        <input type="email" name="email" id="email" class="registerInput" placeholder="Email" required>
+                        <input enterkeyhint="next" type="email" name="email" id="email" class="registerInput" placeholder="Email" required>
                         {{/if}}
                     </fieldset>
 
                     <fieldset class="registerFieldset">
-                        <label for="password1" hidden>Password</label>
-                        <input type="password" name="password1" id="password1" class="registerInput" placeholder="Password" minlength="5" required>
+                        <label enterkeyhint="next" for="password1" hidden>Password</label>
+                        <input enterkeyhint="next" type="password" name="password1" id="password1" class="registerInput" placeholder="Password" minlength="5" required>
                     </fieldset>
 
                     <fieldset class="registerFieldset">
-                        <label for="password2" hidden>Confirm Password</label>
-                        <input type="password" name="password2" id="password2" class="registerInput" placeholder="Confirm Password" minlength="5" required>
+                        <label enterkeyhint="done" for="password2" hidden>Confirm Password</label>
+                        <input enterkeyhint="done" type="password" name="password2" id="password2" class="registerInput" placeholder="Confirm Password" minlength="5" required>
                     </fieldset>
 
                     <div id="passwordRequirements">

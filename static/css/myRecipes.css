@@ -1,0 +1,136 @@
+:root{
+    --cardHeight: 350px;
+    --cardWidth: 220px;
+    --cardColor: #FFEDE2;
+    --cardBorderRadius: 30px;
+}
+#main-content-norecipes{
+    margin: 0 var(--navbar-margin);
+}
+#welcomeBox h1{
+    font-size: 2.8rem;
+    color: var(--font-color);
+}
+#noRecipeBox{
+    margin-top: 100px;
+    padding: 30px;
+    height: var(--cardHeight);
+    width: var(--cardWidth);
+    background-color: #ebdfd7;
+    border-radius: 30px;
+    border: 2px solid #ddd1ca;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#noRecipeBox h2{
+    font-size: 2rem;
+    color: var(--font-color);
+    text-align: center;
+}
+#noRecipeBox h2:nth-child(2){
+    position: relative;
+    bottom: 25px;
+}
+#createRecipeBtn{
+    text-decoration: none;
+    background-color: var(--primary);
+    color: #ebdfd7;
+    padding: 10px 20px;
+    font-size: 1.7rem;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid #fa871b;
+}
+#createRecipeBtn:hover, .editButton:hover{
+    background-color: #d87315;
+}
+#createRecipeBtn:active, .editButton:active{
+    background-color: #d16f14;
+}
+#main-content-recipes{
+    margin: 0 var(--navbar-margin);
+}
+#card-space{
+    margin: 100px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--cardWidth));
+    gap: 100px 80px;
+    justify-content: space-between;
+}
+.cardContent{
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    background-color: var(--cardColor);
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.18);
+    border-radius: var(--cardBorderRadius);
+    display: flex;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-direction: column;
+}
+.cardSection-top{
+    border-radius: var(--cardBorderRadius);
+    height: 50%;
+}
+.cardSection-top img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.cardSection-bottom{
+    border-radius: var(--cardBorderRadius);
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cardSection-bottom h1{
+    font-family: 'source-serif-pro-semibold';
+    color: var(--font-color);
+    text-align: center;
+}
+.editButton{
+    color: var(--cardColor);
+    text-decoration: none;
+    font-size: 1.7rem;
+    align-self: center;
+    background-color: var(--primary);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 2px solid #fa871b;
+}
+@media (max-width: 900px){
+    #main-content-norecipes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 770px){
+    #card-space{
+        justify-content: center;
+        gap: 50px 50px;
+    }
+}
+@media (max-width: 640px){
+    :root {
+        --cardHeight: 370px;
+        --cardWidth: 240px;
+    }
+    .cardSection-bottom h1{
+        font-size: 2.2rem;
+    }
+    .editButton{
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 440px){
+    :root {
+        --cardHeight: 400px;
+        --cardWidth: 260px;
+    }
+}

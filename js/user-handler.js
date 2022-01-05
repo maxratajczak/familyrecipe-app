@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const dayjs = require("dayjs");
+const { v4: uuidv4 } = require('uuid');
 const {User} = require("./mongoCollections/user.js");
 
 module.exports = {
@@ -23,7 +24,7 @@ module.exports = {
                                 if(err) reject(err);
                                 else {
                                     let newUserData = new User(newUser);
-                                    newUserData._id = mongoose.Types.ObjectId();
+                                    newUserData._id = uuidv4();
                                     newUserData.password = hashedPassword;
 
                                     var presentDate = dayjs();

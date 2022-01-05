@@ -14,6 +14,7 @@ const userHandler = require("./js/user-handler.js");
 // Routes
 const userRoute = require("./routes/user.js");
 const recipesRoute = require("./routes/recipes.js");
+const recipeHandler = require("./js/recipe-handler.js");
 
 var app = express();
 
@@ -50,7 +51,7 @@ app.engine(".hbs", exphbs.engine({
     helpers : {
 
     }
-}));
+}))
 
 app.use(function(req, res, next) {
     res.locals.userSession = req.userSession;
@@ -63,37 +64,13 @@ app.use(express.static(__dirname + '/node_modules/animate.css/'));
 app.use(bodyParser.urlencoded({ extended: true }));  
 
 app.get("/", (req, res) => {
-    recipe = [
-        {
-            _id: "61d1deeb796150c600183349",
-            recipeName: "Oven Roasted Chicken",
-            servingSize: 5,
-            ingredients: [
-                "hey",
-                "this is one",
-                "two"
-            ],
-            directions: [
-                "step 1",
-                "step 2"
-            ],
-            createdBy: "61d09c039a023c4ea630db4c",
-            imageFile: "61d379b89f9a308f9c5f3f2f.webp",
-            ingredientCount: 3,
-            directionCount: 2
-        },   
-    ]
-
-    userHandler.getUserById(recipe[0].createdBy).then((user) => {
-        recipe[0].userFirstName = user.firstName
-        recipe[0].userLastName = user.lastName
-        res.render(__dirname + "/views/landing.hbs", {recipe: recipe});
-
+    recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {
+        res.render(__dirname + "/views/landing.hbs", {recipe: recipes});
     })
     .catch((err) => {
-        console.log(err);
+        res.render(__dirname + "/views/landing.hbs", {error: err});
     })
-});
+})
 
 app.use("/recipes", recipesRoute);
 app.use("/user", userRoute);

@@ -43,6 +43,17 @@
     color: var(--font-color);
     font-family: 'source-serif-pro-semibold';
 }
+#errorBox{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+#errorBox h1{
+    font-size: 2.8rem;
+    color: var(--font-color);
+    position: relative;
+    left: 15px;
+}
 @media (max-width: 1440px){
     :root{
         --backdropSpacing: 0px;

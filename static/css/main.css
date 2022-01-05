@@ -186,6 +186,9 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
 .search-mobile-input{
     width: 95vw !important;
     box-shadow: 0 0 0 2px rgb(226, 226, 226) !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    font-size: 0.7em !important;
 }
 .search-mobile-input:focus{
     box-shadow: 0 0 2px 1.5px #e26d009a !important;
@@ -202,6 +205,11 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     font-size: 1.9rem;
     cursor: pointer;
     color: var(--primary);
+}
+.mobileSearchIcon{
+    font-size: 1.7em !important;
+    position: relative !important;
+    left: 5px !important;
 }
 /* #navbar-search-input:-webkit-autofill{
     -webkit-text-fill-color: var(--font-color) !important;
@@ -368,6 +376,15 @@ footer p{
 @media (max-width: 640px){
     html{
         font-size: 55%;
+    }
+    .mobileSearchIcon{
+        font-size: 1.6em !important;
+        position: relative !important;
+        left: 8px !important;
+        top: 0px !important;
+    }
+    .search-mobile-input{
+        font-size: 0.75em !important;
     }
 }
 @media (max-width: 320px){

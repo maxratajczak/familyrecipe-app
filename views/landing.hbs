@@ -3,17 +3,21 @@
 <script>
     document.querySelector("title").appendChild(document.createTextNode("Home"));
 </script>
-
+{{#if error}}
+<div id="errorBox">
+    <h1>{{error}}</h1>
+</div>
+{{else}}
 <section>
     <div id="landing-heading">
         <h1>Recently Added</h1>
     </div>
-    {{#each recipe}}
     <div id="recently-added">
+        {{#each recipe}}
         <div class="flex-space">
             <a href="">
                 <div class="recently-added-card">
-                    <img src="/images/recipeImages/{{imageFile}}" alt="">
+                    <img src="/images/recipeImages/{{image.imageFile}}" alt="">
                     <div class="landing-card-content">
                         <div class="landing-card-header">
                             <h1>{{recipeName}}</h1>
@@ -23,7 +27,7 @@
                             <p>{{directionCount}} Steps</p>
                         </div>
                         <div class="landing-card-footer">
-                            <p>{{userFirstName}} {{userLastName}}</p>
+                            <p>{{createdBy.firstName}} {{createdBy.lastName}}</p>
                         </div>
                     </div>
                 </div>
@@ -55,3 +59,4 @@
 {{!-- <footer>
     <p>Designed and Created by Max Ratajczak</p>
 </footer> --}}
+{{/if}}

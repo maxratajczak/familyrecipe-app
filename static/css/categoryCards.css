@@ -24,7 +24,7 @@
     width: var(--cardWidth);
     height: var(--cardHeight);
     background-color: var(--cardColor);
-    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.18);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.18);
     border-radius: var(--cardBorderRadius);
     flex-shrink: 0;
     flex-grow: 0;
@@ -58,6 +58,9 @@
 .cardBody{
     position: relative;
     bottom: 20px;
+}
+.cardBody p:nth-child(2){
+    margin-top: 5px;
 }
 .cardBody *{
     font-size: 1.7rem;

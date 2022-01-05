@@ -12,7 +12,10 @@ const router = express.Router();
 module.exports = router;
 
 function authorizeUser(req, res, next) {
-    if(!req.userSession.user) res.redirect("/user/login");
+    if(!req.userSession.user) {
+        req.userSession.reset();
+        res.redirect("/user/login");
+    }
     else next();
 }
 
@@ -41,11 +44,8 @@ router.route("/login")
     .then((user) => {
         req.userSession.user = {
             _id: user._id,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email
         }
-        res.redirect("/user/myrecipes")
+        res.redirect("/")
     })
     .catch((err) => {
         res.render(path.join(__dirname, "..", "views", "login.hbs"), {error: err})
@@ -63,11 +63,26 @@ router.route("/createrecipe")
     res.render(path.join(__dirname , '..' , "views" , "createRecipe.hbs"));
 })
 .post(authorizeUser, upload.single("imageFile"), (req, res) => {
-    recipeHandler.createRecipe(req.body, req.file, req.userSession.user)
+    recipeHandler.createRecipe(req.body, req.file, req.userSession.user._id)
     .then(() => {
-        
+        res.redirect("/user/myrecipes")
     })
     .catch((err) => {
         
+    })
+})
+
+router.route("/myrecipes")
+.get(authorizeUser, (req, res) => {
+    recipeHandler.getRecipesByUserId(req.userSession.user._id).then((recipes) => {
+        res.render(path.join(__dirname , '..' , "views" , "myRecipes.hbs"), {recipe: recipes});
+    })
+    .catch((err) => {
+        userHandler.getUserById(req.userSession.user._id).then((user) => {
+            res.render(path.join(__dirname , '..' , "views" , "myRecipes.hbs"), {error: err, user: user});
+        })
+        .catch((err) => {
+            res.redirect("/user/login")
+        })
     })
 })

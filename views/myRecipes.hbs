@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/myRecipes.css">
+{{!-- <link rel="stylesheet" href="/css/categoryCards.css"> --}}
+
+<script>
+    document.querySelector("title").appendChild(document.createTextNode("My Recipes"));
+</script>
+{{#if error}}
+<div id="main-content-norecipes">
+    <div id="welcomeBox">
+        <h1>👋 Hey {{user.firstName}}, here are your recipes...</h1>
+    </div>
+    <div id="noRecipeBox">
+        <h2>You have no recipes 🙁 😮</h2>
+        <h2>Add one below!</h2>
+        <a id="createRecipeBtn" href="/user/createrecipe">Create a Recipe</a>
+    </div>
+</div>
+{{else}}
+<div id="main-content-recipes">
+    <div id="welcomeBox">
+        <h1>👋 Hey {{recipe.firstName}}, here are your recipes...</h1>
+    </div>
+    <div id="card-space">
+        {{#each recipe.recipes}}
+        <div class="recipeCard">
+            <div class="cardContent">
+                <div class="cardSection-top">
+                    <img src="/images/recipeImages/{{image.imageFile}}" alt="">
+                    
+                </div>
+                <div class="cardSection-bottom">
+                    <h1>{{recipeName}}</h1>
+                    <a class="editButton" href="">Edit Recipe</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+{{/if}}

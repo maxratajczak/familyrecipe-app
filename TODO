@@ -3,6 +3,7 @@ Photo Uploading
 ✔ Accept only .jpg .png .jpeg .heic .heif .webp @done(22-01-03 16:20)
 ✔ Add notice in frontend with allowed file types @done(22-01-03 16:20)
 ☐ Add tips for best photo
+☐ Photo description field
 
 Create Recipe
 ✔ Responsive for mobile @done(22-01-03 17:21)
@@ -12,7 +13,33 @@ Register
 ✔ Redirect to login with "Success" and "Proceed to login button" @done(22-01-03 20:11)
 
 Account
-☐ "My Recipes" Page
+✔ "My Recipes" Page @done(22-01-04 19:02)
 
 Navbar
 ☐ Underline active link
+
+Recipe Handler
+✔ Get recipe by category @done(22-01-04 14:31)
+✔ Get recently added recipes @done(22-01-04 20:23)
+
+Bug Fixes
+☐ Change all directories to use "path" module
+☐ Make cookie session & extend time shorter
+
+Recipe Cards
+☐ Change plural and singular endings for steps & directions
+
+Search Function
+☐ Search results page
+
+Edit Recipe
+☐ Edit recipe page
+
+Category Pages
+☐ Breakfast page
+☐ Mains page
+☐ Soups page
+☐ Desserts page
+
+Recipe Page
+☐ Individual recipe page

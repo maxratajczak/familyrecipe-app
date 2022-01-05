@@ -4,10 +4,16 @@ let recipeSchema = new mongoose.Schema({
     "_id": {
         "type": String,
     },
-    "createdBy": String,
+    "createdBy": {
+        "userId": String,
+        "firstName": String,
+        "lastName": String
+    },
     "dateCreated": String,
+    "dateCreatedAsDateNum": Number,
     "lastUpdated": String,
     "recipeName": String,
+    "recipeCategory": String,
     "servingSize": Number,
     "ingredients": [{
         type: String

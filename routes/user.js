@@ -70,7 +70,7 @@ router.route("/createrecipe")
             res.status(200).redirect("/user/myrecipes")
         })
         .catch((err) => {
-            res.redirect("/")
+            res.send(err)
         })
     }
     else res.redirect("/user/login")

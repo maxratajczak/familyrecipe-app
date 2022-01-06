@@ -61,23 +61,26 @@ app.use(function(req, res, next) {
     res.locals.userSession = req.userSession;
     next();
 }) 
-
 app.get("/", (req, res) => {
-    recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {
-        res.render(__dirname + "/views/landing.hbs", {recipe: recipes});
-    })
-    .catch((err) => {
-        res.render(__dirname + "/views/landing.hbs", {error: err});
-    })
+    res.send("Homepage")
 })
 
-app.use("/recipes", recipesRoute);
-app.use("/recipe", recipeRoute);
-app.use("/user", userRoute);
+// app.get("/", (req, res) => {
+//     recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {
+//         res.render(__dirname + "/views/landing.hbs", {recipe: recipes});
+//     })
+//     .catch((err) => {
+//         res.render(__dirname + "/views/landing.hbs", {error: err});
+//     })
+// })
 
-app.get("*", (req, res) => {
-    res.render(__dirname + "/views/404.hbs");
-});
+// app.use("/recipes", recipesRoute);
+// app.use("/recipe", recipeRoute);
+// app.use("/user", userRoute);
+
+// app.get("*", (req, res) => {
+//     res.render(__dirname + "/views/404.hbs");
+// });
 
 databaseHandler.initialize()
 .then((message) => {

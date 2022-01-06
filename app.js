@@ -17,6 +17,10 @@ const recipeRoute = require("./routes/recipe.js");
 const recipeHandler = require("./js/recipe-handler.js");
 
 var app = express();
+app.use(express.static('static'));
+app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
+app.use(express.static(__dirname + '/node_modules/animate.css/'));
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 var PORT = process.env.PORT || 8080;
 
@@ -56,12 +60,7 @@ app.engine(".hbs", exphbs.engine({
 app.use(function(req, res, next) {
     res.locals.userSession = req.userSession;
     next();
-})
-
-app.use(express.static('static'));
-app.use(express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
-app.use(express.static(__dirname + '/node_modules/animate.css/'));
-app.use(bodyParser.urlencoded({ extended: true }));  
+}) 
 
 app.get("/", (req, res) => {
     recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {

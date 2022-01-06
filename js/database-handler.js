@@ -6,10 +6,10 @@ function initialize() {
     return new Promise((resolve, reject) => {
         mongoose.connect(dbURI)
         .then(() => {
-            resolve();
+            resolve("\n[MongoDB] Database Connected!");
         })
         .catch((err) => {
-            reject(err);
+            reject("\n[MongoDB] " + err);
         })
     })
 }

@@ -6,10 +6,6 @@
     --cardHeight: 250px;
 }
 #cardSpace{
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 100px var(--navbar-margin); */
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--cardWidth));
     justify-content: center;
@@ -85,6 +81,11 @@
     }
     .cardBody{
         bottom: 10px;
+    }
+}
+@media (max-width: 600px){
+    #cardSpace {
+        gap: 60px 80px;
     }
 }
 @media (max-width: 430px){

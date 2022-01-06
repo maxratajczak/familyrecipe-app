@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/categoryCards.css">
+<link rel="stylesheet" href="/css/searchResults.css">
+
+<span class="query" hidden>{{query}}</span>
+
+<script>
+    var query = document.querySelector(".query").textContent;
+    document.querySelector("title").appendChild(document.createTextNode(`Search Results for "${query}"`));
+</script>
+
+<div>
+    {{#if error}}
+    <div id="errorBox">
+        <h1>{{error}}</h1>
+    </div>
+
+    {{else}}
+    <div id="noticeBox">
+        <h1>Search results for "{{query}}"</h1>
+    </div>
+    {{#if recipe1}}
+    <div id="cardSpaceOne">
+            <div class="recipeCard">
+                <a href="/">
+                    <div class="cardContent">
+                        <div class="cardSection">
+                            <img src="/images/recipeImages/{{recipe1.image.imageFile}}" alt="">
+                        </div>
+                        <div class="cardSection">
+                            <div class="cardTextSection">
+                                <div class="cardHeading">
+                                    <h1>{{recipe1.recipeName}}</h1>
+                                </div>
+                                <div class="cardBody">
+                                    <p>{{recipe1.ingredientCount}} Ingredients</p>
+                                    <p>{{recipe1.directionCount}} Steps</p>
+                                </div>
+                                <div class="cardFooter">
+                                    <p>{{recipe1.createdBy.firstName}} {{createdBy.lastName}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    </div>
+    {{else}}
+    <div id="cardSpace">
+        {{#each recipe}}
+            <div class="recipeCard">
+                <a href="/">
+                    <div class="cardContent">
+                        <div class="cardSection">
+                            <img src="/images/recipeImages/{{image.imageFile}}" alt="">
+                        </div>
+                        <div class="cardSection">
+                            <div class="cardTextSection">
+                                <div class="cardHeading">
+                                    <h1>{{recipeName}}</h1>
+                                </div>
+                                <div class="cardBody">
+                                    <p>{{ingredientCount}} Ingredients</p>
+                                    <p>{{directionCount}} Steps</p>
+                                </div>
+                                <div class="cardFooter">
+                                    <p>{{createdBy.firstName}} {{createdBy.lastName}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    {{/if}}
+</div>

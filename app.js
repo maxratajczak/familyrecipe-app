@@ -7,13 +7,13 @@ const clientSession = require("client-sessions");
 
 //External Files
 const clc = require("./js/cmdlinecolor.js");
-// const dataHandler = require("./js/data-handler.js");
 const databaseHandler = require("./js/database-handler.js");
 const userHandler = require("./js/user-handler.js");
 
 // Routes
 const userRoute = require("./routes/user.js");
 const recipesRoute = require("./routes/recipes.js");
+const recipeRoute = require("./routes/recipe.js");
 const recipeHandler = require("./js/recipe-handler.js");
 
 var app = express();
@@ -21,7 +21,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 function onApplicationStart() {
-    console.log(clc.notice("\n[Server] Initialized. Starting on port " + PORT + "..."));
+    console.log(clc.notice("[Server] Starting on port " + PORT + "..."));
 }
 
 // Live reload for frontend & backend refresh with nodemon
@@ -30,15 +30,15 @@ var liveReloadServer = livereload.createServer();
 liveReloadServer.watch(__dirname + "/static");
 liveReloadServer.watch(__dirname + "/views");
 liveReloadServer.server.once("connection", () => {
-    setTimeout(() => { liveReloadServer.refresh("/") }, 400);
+    setTimeout(() => { liveReloadServer.refresh("/") }, 300);
 })
 
 // Client Session Cookies
 app.use(clientSession({
     cookieName: "userSession",
-    secret: "bwvAKZKfAePglUFvCKXF",
-    duration: 6 * 60 * 60 * 1000, // Hour * Minute * Second * Millisecond (6 hours)
-    activeDuration: 1 * 60 * 60 * 1000, // (1 Hour)
+    secret: "bwvAKZKfAePglUFvCKXFkajwnfSLaKANWsmsalsWNnaklslkWndoALna",
+    duration: 2 * 60 * 60 * 1000, // Hour * Minute * Second * Millisecond (2 hours)
+    activeDuration: 0 * 30 * 60 * 1000, // (30 Min)
     cookie: {
         ephemeral: false
     }
@@ -73,6 +73,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/recipes", recipesRoute);
+app.use("/recipe", recipeRoute);
 app.use("/user", userRoute);
 
 app.get("*", (req, res) => {
@@ -80,7 +81,8 @@ app.get("*", (req, res) => {
 });
 
 databaseHandler.initialize()
-.then(() => {
+.then((message) => {
+    console.log(clc.success(message));
     app.listen(PORT, onApplicationStart());
 })
 .catch((err) => {

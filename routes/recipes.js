@@ -7,9 +7,19 @@ const recipeHandler = require("../js/recipe-handler.js")
 const router = express.Router();
 module.exports = router;
 
-router.route("")
+router.route("/search")
 .get((req, res) => {
-    res.redirect("/")
+    if(!req.query.q) res.redirect("/")
+    else {
+        recipeHandler.getRecipeBySearch(req.query.q)
+        .then((recipes) => {
+            if(recipes.length === 1) res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {recipe1: recipes[0], query: req.query.q});
+            else res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {recipe: recipes, query: req.query.q});
+        })
+        .catch((err) => {
+            res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {error: err});
+        })
+    }
 });
 
 router.route("/appetizers")

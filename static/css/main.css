@@ -155,10 +155,10 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
 }
 
 /* SEARCH BAR */
-#navbar-search{
+.navbar-search{
     margin-left: var(--navbar-link-space);
 }
-#navbar-search-input{
+.navbar-search-input{
     background-color: var(--nav-search-background);
     border: none;
     border-radius: 100px;
@@ -170,13 +170,13 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     color: var(--font-color);
     -webkit-appearance: inherit;
 }
-#navbar-search-input::placeholder{
+.navbar-search-input::placeholder{
     color: var(--nav-search-placeholder);
 }
-#navbar-search-input:hover{
+.navbar-search-input:hover{
     box-shadow: 0 0 0 1.5px rgba(128, 128, 128, 0.418);
 }
-#navbar-search-input:focus{
+.navbar-search-input:focus{
     box-shadow: 0 0 2px 1.5px #e26d009a;
     outline: none;
 }
@@ -193,7 +193,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
 .search-mobile-input:focus{
     box-shadow: 0 0 2px 1.5px #e26d009a !important;
 }
-#navbar-search-icon{
+.navbar-search-icon{
     background: none;
     border: none;
     position: relative;
@@ -201,7 +201,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     right: -3.8rem;
     top: 2px;
 }
-#navbar-search-icon i{
+.navbar-search-icon i{
     font-size: 1.9rem;
     cursor: pointer;
     color: var(--primary);
@@ -211,17 +211,17 @@ h1,h2,h3,h4,h5,h6,p,span,li,ul,a,button,input,textarea{
     position: relative !important;
     left: 5px !important;
 }
-/* #navbar-search-input:-webkit-autofill{
+/* .navbar-search-input:-webkit-autofill{
     -webkit-text-fill-color: var(--font-color) !important;
 }
-#navbar-search-input:-webkit-autofill::first-line{
+.navbar-search-input:-webkit-autofill::first-line{
     font-family: 'futura-medium', sans-serif;
     font-size: 1.5rem;
 }
-#navbar-search-input:-webkit-autofill,
-#navbar-search-input:-webkit-autofill:hover, 
-#navbar-search-input:-webkit-autofill:focus, 
-#navbar-search-input:-webkit-autofill:active{
+.navbar-search-input:-webkit-autofill,
+.navbar-search-input:-webkit-autofill:hover, 
+.navbar-search-input:-webkit-autofill:focus, 
+.navbar-search-input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
     box-shadow: 0 0 0 30px var(--nav-search-background) inset !important;
 } */
@@ -346,7 +346,7 @@ footer p{
     html{
         font-size: 70%;
     }
-    #navbar-search-input{
+    .navbar-search-input{
         width: 325px;
         height: 55px;
     }

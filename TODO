@@ -24,13 +24,13 @@ Recipe Handler
 
 Bug Fixes
 ☐ Change all directories to use "path" module
-☐ Make cookie session & extend time shorter
+✔ Make cookie session & extend time shorter @done(22-01-05 12:27)
 
 Recipe Cards
 ☐ Change plural and singular endings for steps & directions
 
 Search Function
-☐ Search results page
+✔ Search results page @done(22-01-05 20:15)
 
 Edit Recipe
 ☐ Edit recipe page

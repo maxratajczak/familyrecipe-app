@@ -56,10 +56,10 @@
                             </div>
                             
                         </ul>
-                        <form id="navbar-search" action="/recipes" method="POST">
-                            <button id="navbar-search-icon" type="submit"><i class="fas fa-search"></i></button>
-                            <label for="navbar-search-input" hidden></label>
-                            <input id="navbar-search-input" type="text" name="search" placeholder="Search recipes..." autocomplete="off">
+                        <form class="navbar-search" action="/recipes/search" method="GET">
+                            <button class="navbar-search-icon" type="submit"><i class="fas fa-search"></i></button>
+                            <label for="searchBar" hidden></label>
+                            <input id="searchBar" class="navbar-search-input" type="text" name="q" placeholder="Search recipes..." autocomplete="off">
                         </form>  
                     </div>
                 </div>
@@ -72,10 +72,10 @@
                     <div id="nav-bottom">
                         <ul id="mobile-navbar-links">
                             <li>
-                                <form id="navbar-search" class="search-mobile" action="/recipes" method="POST">
-                                    <button id="navbar-search-icon" type="submit"><i class="fas fa-search mobileSearchIcon"></i></button>
-                                    <label for="navbar-search-input" hidden></label>
-                                    <input id="navbar-search-input" class="search-mobile-input" type="text" name="search" placeholder="Search recipes..." autocomplete="off">
+                                <form class="navbar-search search-mobile" action="/recipes/search" method="GET">
+                                    <button class="navbar-search-icon" type="submit"><i class="fas fa-search mobileSearchIcon"></i></button>
+                                    <label for="searchBar" hidden></label>
+                                    <input id="searchBar" class="navbar-search-input search-mobile-input" type="text" name="q" placeholder="Search recipes..." autocomplete="off">
                                 </form> 
                             </li>
                             <hr class="nav-link-spacer">

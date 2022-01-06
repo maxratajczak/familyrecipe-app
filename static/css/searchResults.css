@@ -1,0 +1,46 @@
+#errorBox{
+    padding: 10px;
+}
+#errorBox h1{
+    color: var(--font-color);
+    margin: 80px 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 2.8rem;
+}
+#cardSpace{
+    margin-top: 80px;
+    justify-content: center;
+}
+#cardSpaceOne{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+.recipeCard a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+#noticeBox h1{
+    margin: 50px var(--navbar-margin) 0 var(--navbar-margin);
+    font-size: 2.8rem;
+    color: var(--font-color);
+    text-align: center;
+}
+@media (max-width: 960px){
+    #cardSpace{
+        margin: 80px 10px;
+        justify-content: center;
+    }
+    #noticeBox h1{
+        text-align: center;
+    }
+}
+@media (max-width: 700px){
+    #noticeBox h1{
+        margin-top: 20px;
+    }
+    #cardSpace{
+        margin-top: 50px;
+    }
+}

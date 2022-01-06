@@ -3,7 +3,7 @@ const dayjs = require("dayjs");
 const path = require("path");
 const sharp = require("sharp");
 const clc = require("./cmdlinecolor.js");
-const {Recipe} = require("./mongoCollections/recipe.js");
+const { Recipe } = require("./mongoCollections/recipe.js");
 const { User } = require("./mongoCollections/user.js");
 
 function processRecipeImage(image, fileName) {
@@ -86,21 +86,18 @@ module.exports = {
 
     getRecipesByCategory: function(category) {
         return new Promise((resolve, reject) => {
-            Recipe.find({recipeCategory: category}).exec()
+            Recipe.find({recipeCategory: category}).sort({dateCreatedAsDateNum: -1}).exec()
             .then((recipes) => {
                 var data = recipes.map(value => value.toObject())
                 if(data.length === 0) reject("No recipes available")
-                else {
-                    console.log(data);
-                    resolve(data);
-                }
+                else resolve(data);
             })
         })
     },
 
     getRecipesByUserId: function(userId) {
         return new Promise((resolve, reject) => {
-            Recipe.find({"createdBy.userId": userId}).exec()
+            Recipe.find({"createdBy.userId": userId}).sort({dateCreatedAsDateNum: -1}).exec()
             .then((recipes) => {
                 var userRecipes = {}
                 userRecipes.recipes = recipes.map(value => value.toObject())
@@ -120,18 +117,29 @@ module.exports = {
 
     getRecentlyAddedRecipes: function(howMany) {
         return new Promise((resolve, reject) => {
-            Recipe.find({}).sort({dateCreatedAsDateNum: -1}).exec()
+            Recipe.find({}).sort({dateCreatedAsDateNum: -1}).limit(howMany).exec()
             .then((recipes) => {
                 var data = recipes.map(value => value.toObject())
                 if(data.length === 0) reject("No recipes")
                 else {
-                    let topRecipes = [];
-                    for(let i = 0; i < howMany; i++) {
-                        topRecipes.push(data[i]);
-                        if(typeof topRecipes[i] == "undefined") topRecipes.pop();
-                    }
-                    resolve(topRecipes);
+                    // let topRecipes = [];
+                    // for(let i = 0; i < howMany; i++) {
+                    //     topRecipes.push(data[i]);
+                    //     if(typeof topRecipes[i] == "undefined") topRecipes.pop();
+                    // }
+                    resolve(data);
                 }
+            })
+        })
+    },
+
+    getRecipeBySearch: function(query) {
+        return new Promise((resolve, reject) => {
+            Recipe.find({$text: {$search: query}}).exec()
+            .then((recipes) => {
+                var data = recipes.map(value => value.toObject())
+                if(data.length === 0) reject(`We couldn't find any recipes for "${query}"`);
+                else resolve(data)
             })
         })
     }

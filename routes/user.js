@@ -67,10 +67,10 @@ router.route("/createrecipe")
     if(req.userSession.user) {
         recipeHandler.createRecipe(req.body, req.file, req.userSession.user._id)
         .then(() => {
-            res.redirect("/user/myrecipes")
+            res.status(200).redirect("/user/myrecipes")
         })
         .catch((err) => {
-            
+            res.redirect("/")
         })
     }
     else res.redirect("/user/login")

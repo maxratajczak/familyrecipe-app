@@ -1,7 +1,0 @@
-{
-  "watch": ["server", "client"],
-  "ignore_watch" : ["node_modules", "static/images/recipeImages"],
-  "watch_options": {
-    "followSymlinks": false
-  }
-}

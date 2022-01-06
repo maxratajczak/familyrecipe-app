@@ -26,7 +26,7 @@ function processRecipeImage(image, fileName) {
             sharp(image.buffer)
             .withMetadata()
             .webp({
-                quality: 80,
+                quality: 70,
             })
             .resize({
                 width: 1080,

@@ -60,16 +60,21 @@ router.route("/logout")
 
 router.route("/createrecipe")
 .get(authorizeUser, (req, res) => {
-    res.render(path.join(__dirname , '..' , "views" , "createRecipe.hbs"));
+    if(req.userSession.user) res.render(path.join(__dirname , '..' , "views" , "createRecipe.hbs"));
+    else res.redirect("/user/login")
 })
 .post(authorizeUser, upload.single("imageFile"), (req, res) => {
-    recipeHandler.createRecipe(req.body, req.file, req.userSession.user._id)
-    .then(() => {
-        res.redirect("/user/myrecipes")
-    })
-    .catch((err) => {
-        
-    })
+    if(req.userSession.user) {
+        recipeHandler.createRecipe(req.body, req.file, req.userSession.user._id)
+        .then(() => {
+            res.redirect("/user/myrecipes")
+        })
+        .catch((err) => {
+            
+        })
+    }
+    else res.redirect("/user/login")
+
 })
 
 router.route("/myrecipes")

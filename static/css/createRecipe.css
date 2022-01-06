@@ -216,6 +216,19 @@
 #finishButtons{
     justify-content: space-between;
 }
+#imageTemplate{
+    margin-top: 20px;
+}
+#imageTemplate div h3{
+    font-size: 2rem;
+    color: var(--font-color);
+}
+#imageTemplate img{
+    margin-top: 10px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
 @media (max-width: 750px){
     :root{
         --input-width: 320px;

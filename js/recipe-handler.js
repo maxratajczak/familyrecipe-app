@@ -142,6 +142,19 @@ module.exports = {
                 else resolve(data)
             })
         })
+    },
+
+    getRecipeById: function(recipeId) {
+        return new Promise((resolve, reject) => {
+            Recipe.find({_id: recipeId}).exec()
+            .then((recipes) => {
+                var data = recipes.map(value => value.toObject())
+                if(data.length === 0) reject("No recipes for given ID");
+                else {
+                    resolve(data[0]);
+                }
+            })
+        })
     }
-    
+     
 }

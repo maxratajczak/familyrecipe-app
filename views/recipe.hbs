@@ -1,6 +1,30 @@
 <link rel="stylesheet" href="/css/recipe.css">
 
+<span class="recipeName" hidden>{{recipe.recipeName}}</span>
+
 <script>
-    document.querySelector("title").appendChild(document.createTextNode("Appetizers"));
+    var recipeName = document.querySelector(".recipeName").textContent;
+    document.querySelector("title").appendChild(document.createTextNode(`${recipeName}`));
 </script>
 
+<div id="recipeContent">
+    <div id="topContent">
+        <div>
+            <h1 id="recipeName">{{recipe.recipeName}}</h1>
+            <h3 id="createdBy">By {{recipe.createdBy.firstName}} {{recipe.createdBy.lastName}}</h3>
+            <h4 id="dateCreated">{{recipe.parsedDateCreated}}</h4>
+        </div>
+        <div>
+            <img id="recipeImage" src="/images/recipeImages/{{recipe.image.imageFile}}" alt="">
+        </div>
+    </div>
+
+    <div id="mainContent">
+        {{#each recipe.ingredients}}
+        <ol>
+            <li>{{this}}</li>
+        </ol>
+        {{/each}}
+    </div>
+
+</div>

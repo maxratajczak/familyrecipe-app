@@ -1,0 +1,29 @@
+:root{
+    --imageWidth: 400px;
+}
+#recipeContent{
+    margin: 80px var(--navbar-margin);
+}
+#topContent{
+    display: flex;
+    justify-content: space-between;
+}
+#recipeImage{
+    width: var(--imageWidth);
+    border-radius: 15px;
+}
+#recipeName{
+    font-size: 4rem;
+    font-family: "source-serif-pro-semibold";
+    color: var(--font-color);
+}
+#createdBy{
+    margin-top: 25px;
+    font-size: 1.9rem;
+    color: var(--font-color);
+}
+#dateCreated{
+    margin-top: 5px;
+    font-size: 1.4rem;
+    color: var(--font-color);
+}

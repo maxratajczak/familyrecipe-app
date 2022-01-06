@@ -17,7 +17,7 @@ router.route("/search")
             else res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {recipe: recipes, query: req.query.q});
         })
         .catch((err) => {
-            res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {error: err});
+            res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {error: err, query: req.query.q});
         })
     }
 });

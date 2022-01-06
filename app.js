@@ -29,13 +29,13 @@ function onApplicationStart() {
 }
 
 // Live reload for frontend & backend refresh with nodemon
-app.use(connectLiveReload());
-var liveReloadServer = livereload.createServer();
-liveReloadServer.watch(__dirname + "/static");
-liveReloadServer.watch(__dirname + "/views");
-liveReloadServer.server.once("connection", () => {
-    setTimeout(() => { liveReloadServer.refresh("/") }, 300);
-})
+// app.use(connectLiveReload());
+// var liveReloadServer = livereload.createServer();
+// liveReloadServer.watch(__dirname + "/static");
+// liveReloadServer.watch(__dirname + "/views");
+// liveReloadServer.server.once("connection", () => {
+//     setTimeout(() => { liveReloadServer.refresh("/") }, 300);
+// })
 
 // Client Session Cookies
 app.use(clientSession({

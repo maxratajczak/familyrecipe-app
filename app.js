@@ -49,20 +49,24 @@ app.use(function(req, res, next) {
 })
 
 app.get("/", (req, res) => {
-    recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {
-        res.render(__dirname + "/views/landing.hbs", {recipe: recipes})
-    })
-    .catch((err) => {
-        res.render(__dirname + "/views/landing.hbs", {error: err})
-    })
+    res.send("Website still in development")
 })
 
-app.use("/recipes", recipesRoute);
-app.use("/recipe", recipeRoute);
-app.use("/user", userRoute);
-app.get("*", (req, res) => {
-    res.render(__dirname + "/views/404.hbs");
-})
+// app.get("/", (req, res) => {
+//     recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {
+//         res.render(__dirname + "/views/landing.hbs", {recipe: recipes})
+//     })
+//     .catch((err) => {
+//         res.render(__dirname + "/views/landing.hbs", {error: err})
+//     })
+// })
+
+// app.use("/recipes", recipesRoute);
+// app.use("/recipe", recipeRoute);
+// app.use("/user", userRoute);
+// app.get("*", (req, res) => {
+//     res.render(__dirname + "/views/404.hbs");
+// })
 
 databaseHandler.initialize()
 .then((message) => {

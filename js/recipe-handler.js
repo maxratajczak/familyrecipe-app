@@ -121,14 +121,7 @@ module.exports = {
             .then((recipes) => {
                 var data = recipes.map(value => value.toObject())
                 if(data.length === 0) reject("No recipes")
-                else {
-                    // let topRecipes = [];
-                    // for(let i = 0; i < howMany; i++) {
-                    //     topRecipes.push(data[i]);
-                    //     if(typeof topRecipes[i] == "undefined") topRecipes.pop();
-                    // }
-                    resolve(data);
-                }
+                else resolve(data);
             })
         })
     },
@@ -150,9 +143,7 @@ module.exports = {
             .then((recipes) => {
                 var data = recipes.map(value => value.toObject())
                 if(data.length === 0) reject("No recipes for given ID");
-                else {
-                    resolve(data[0]);
-                }
+                else resolve(data[0]);
             })
         })
     }

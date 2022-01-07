@@ -1,8 +1,6 @@
 const express = require("express")
 const multer = require("multer");
 const path = require("path");
-
-const clc = require("../js/cmdlinecolor.js");
 const userHandler = require("../js/user-handler.js");
 const recipeHandler = require("../js/recipe-handler.js");
 
@@ -26,8 +24,7 @@ router.route("/register")
 .post((req, res) => {
     userHandler.registerUser(req.body)
     .then((success) => {
-        if (success) res.render(path.join(__dirname, "..", "views", "register.hbs"), {success: success})
-        else res.render(path.join(__dirname, "..", "views", "register.hbs"))
+        res.render(path.join(__dirname, "..", "views", "register.hbs"), {success: success})
     })
     .catch((err) => {
         res.render(path.join(__dirname, "..", "views", "register.hbs"), {error: err, lastInput: req.body})
@@ -45,7 +42,7 @@ router.route("/login")
         req.userSession.user = {
             _id: user._id,
         }
-        res.redirect("/")
+        res.redirect("/");
     })
     .catch((err) => {
         res.render(path.join(__dirname, "..", "views", "login.hbs"), {error: err})
@@ -55,7 +52,7 @@ router.route("/login")
 router.route("/logout")
 .get((req, res) => {
     req.userSession.reset();
-    res.redirect("/");
+    res.redirect("/user/login");
 })
 
 router.route("/createrecipe")
@@ -70,16 +67,17 @@ router.route("/createrecipe")
             res.redirect("/user/myrecipes")
         })
         .catch((err) => {
-            res.send(err)
+            res.render(path.join(__dirname , '..' , "views" , "createRecipe.hbs"), {error: err});
         })
     }
-    else res.redirect("/user/login")
+    else res.redirect("/user/logout")
 
 })
 
 router.route("/myrecipes")
 .get(authorizeUser, (req, res) => {
-    recipeHandler.getRecipesByUserId(req.userSession.user._id).then((recipes) => {
+    recipeHandler.getRecipesByUserId(req.userSession.user._id)
+    .then((recipes) => {
         res.render(path.join(__dirname , '..' , "views" , "myRecipes.hbs"), {recipe: recipes});
     })
     .catch((err) => {
@@ -87,7 +85,7 @@ router.route("/myrecipes")
             res.render(path.join(__dirname , '..' , "views" , "myRecipes.hbs"), {error: err, user: user});
         })
         .catch((err) => {
-            res.redirect("/user/login")
+            res.redirect("/user/logout");
         })
     })
 })

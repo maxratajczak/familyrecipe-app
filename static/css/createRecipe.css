@@ -229,6 +229,14 @@
     border: 2px solid black;
     border-radius: 5px;
 }
+#errorBox {
+    background-color: rgb(255, 132, 132);
+    padding: 10px;
+    border-radius: 10px;
+}
+#errorBox h2{
+    color: rgb(167, 1, 1);
+}
 @media (max-width: 750px){
     :root{
         --input-width: 320px;

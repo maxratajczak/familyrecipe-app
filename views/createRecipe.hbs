@@ -11,6 +11,11 @@
             <h1 id="heading">Create Recipe</h1>
             <p><span class="required">*</span> Required Field</p>
         </div>
+        {{#if error}}
+        <div id="errorBox">
+            <h2>{{error}}</h2>
+        </div>
+        {{/if}}
 
         <form id="createRecipeForm" action="/user/createrecipe" method="POST" enctype="multipart/form-data">
             <fieldset class="createRecipeFieldset">

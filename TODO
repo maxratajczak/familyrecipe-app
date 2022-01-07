@@ -24,6 +24,7 @@ Recipe Handler
 
 Bug Fixes
 ☐ Change all directories to use "path" module
+✔ Fix image jumping glitch @done(22-01-06 21:19)
 ✔ Make cookie session & extend time shorter @done(22-01-05 12:27)
 
 Recipe Cards

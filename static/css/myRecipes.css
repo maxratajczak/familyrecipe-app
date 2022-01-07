@@ -74,11 +74,15 @@
 .cardSection-top{
     border-radius: var(--cardBorderRadius);
     height: 50%;
+    overflow: hidden;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    justify-items: center;
 }
 .cardSection-top img{
     object-fit: cover;
     width: 100%;
-    height: 100%;
 }
 .cardSection-bottom{
     border-radius: var(--cardBorderRadius);

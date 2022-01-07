@@ -35,10 +35,14 @@
 .cardSection img{
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: auto;
     /* border-radius: var(--cardBorderRadius); */
     /* filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.267)); */
     /* -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.267)); */
+}
+.imageSection{
+    display: flex;
+    align-items: center;
 }
 .cardTextSection{
     padding: 20px;

@@ -24,7 +24,7 @@
                 <a href="/recipe/{{recipe1._id}}">
                     <div class="cardContent">
                         <div class="cardSection imageSection">
-                            <img src="/images/recipeImages/{{recipe1.image.imageFile}}" alt="">
+                            <div style="background-image: url('/images/recipeImages/{{recipe1.image.imageFile}}');"></div>
                         </div>
                         <div class="cardSection">
                             <div class="cardTextSection">
@@ -50,8 +50,8 @@
             <div class="recipeCard">
                 <a href="/recipe/{{_id}}">
                     <div class="cardContent">
-                        <div class="cardSection">
-                            <img src="/images/recipeImages/{{image.imageFile}}" alt="">
+                        <div class="cardSection imageSection">
+                            <div style="background-image: url('/images/recipeImages/{{image.imageFile}}');"></div>
                         </div>
                         <div class="cardSection">
                             <div class="cardTextSection">

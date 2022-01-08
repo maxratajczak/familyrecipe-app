@@ -14,6 +14,7 @@ Register
 
 Account
 ✔ "My Recipes" Page @done(22-01-04 19:02)
+✔ Auto capitalize when creating account @done(22-01-08 17:05)
 
 Navbar
 ✘ Underline active link @cancelled(22-01-06 20:22)
@@ -24,10 +25,11 @@ Recipe Handler
 
 Bug Fixes
 ☐ Change all directories to use "path" module
-☐ Fix image jumping on "My Recipes" Page
-☐ Fix image size on categoryCard
+✔ Fix image jumping on "My Recipes" Page @done(22-01-08 15:27)
+✔ Fix image size on categoryCard @done(22-01-08 15:27)
 ✔ Fix image jumping glitch @done(22-01-06 21:19)
 ✔ Make cookie session & extend time shorter @done(22-01-05 12:27)
+✔ Fix search function @done(22-01-08 16:49)
 
 Recipe Cards
 ☐ Change plural and singular endings for steps & directions
@@ -39,10 +41,11 @@ Edit Recipe
 ☐ Edit recipe page
 
 Category Pages
-☐ Breakfast page
-☐ Mains page
-☐ Soups page
-☐ Desserts page
+☐ ALT to headerPlates
+✔ Breakfast page @done(22-01-08 18:25)
+✔ Mains page @done(22-01-08 18:25)
+✔ Soups page @done(22-01-08 18:49)
+✔ Desserts page @done(22-01-08 18:49)
 
 Recipe Page
-☐ Individual recipe page
+✔ Individual recipe page @done(22-01-08 16:49)

@@ -1,12 +1,12 @@
 :root{
     --nav-search-background: #ffffff7c;
-    --headerColor: #E6F3C2;
+    --headerColor: #D5EDFF;
 
     --headerColorFillHeight: 0px;
-    --backdropSpacing: -80px;
+    --backdropSpacing: 0px;
 
-    --headerMealPosition: 13vw;
-    --headerMealSize: 18vw;
+    --headerMealPosition: 18vw;
+    --headerMealSize: 17vw;
     --headerTitle: 5rem;
 }
 #headerBackdrop{
@@ -29,9 +29,9 @@
     position: relative;
     bottom: var(--headerMealPosition);
     left: 50%;
-    transform: translate(-50%);
-    margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition));
-    filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));
+    transform: translate(-52%);
+    /* margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition)); */
+    filter: drop-shadow(13px 13px 12px rgba(0, 0, 0, 0.3));
     -webkit-filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));    
 }
 #headerTitle{
@@ -54,6 +54,10 @@
     position: relative;
     left: 15px;
 }
+#cardSpace{
+    position: relative;
+    bottom: var(--headerMealPosition);
+}
 @media (max-width: 1440px){
     :root{
         --backdropSpacing: 0px;
@@ -67,23 +71,23 @@
 }
 @media (max-width: 1100px){
     :root{
-        --headerColorFillHeight: 50px;
-        --headerMealPosition: 16vw;
+        --headerColorFillHeight: 80px;
+        --headerMealPosition: 23vw;
         --headerMealSize: 25vw;
         --headerTitle: 3.8rem;
     }
 }
 @media (max-width: 810px){
     :root{
-        --headerColorFillHeight: 100px;
-        --headerMealPosition: 18vw;
+        --headerColorFillHeight: 150px;
+        --headerMealPosition: 28vw;
         --headerMealSize: 35vw;
     }
 }
 @media (max-width: 500px){
     :root{
         --headerColorFillHeight: 200px;
-        --headerMealPosition: 30vw;
+        --headerMealPosition: 38vw;
         --headerMealSize: 50vw;
     }
 }

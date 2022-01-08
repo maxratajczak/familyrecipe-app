@@ -29,7 +29,6 @@ let recipeSchema = new mongoose.Schema({
         "fileSize": Number
     }
 })
-recipeSchema.index({"recipeName": "text"});
 
 const Recipe = mongoose.model("recipes", recipeSchema);
 

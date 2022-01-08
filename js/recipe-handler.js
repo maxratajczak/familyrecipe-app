@@ -56,29 +56,36 @@ module.exports = {
                         newRecipe.createdBy.userId = userId;
                         newRecipe.createdBy.firstName = data[0].firstName;
                         newRecipe.createdBy.lastName = data[0].lastName;
+
+                        var presentDate = dayjs();
+                        newRecipe.dateCreated = dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A");
+                        newRecipe.lastUpdated = newRecipe.dateCreated;
+                        newRecipe.dateCreatedAsDateNum = Date.now()
+                        newRecipe.ingredientCount = 0;
+                        newRecipe.directionCount = 0;
+                        
+                        if(newRecipe.ingredients.length === 0) reject("You must have at least 1 ingredient")
+                        else {
+                            for(var i = 0; i < recipe.ingredients.length; i++) newRecipe.ingredientCount++;
+
+                            if(newRecipe.directions.length === 0) reject("You must have at least 1 direction")
+                            else {
+                                for(var i = 0; i < recipe.directions.length; i++) newRecipe.directionCount++;
+
+                                newRecipe.image.imageFile = mongoose.Types.ObjectId() + ".webp";
+                                processRecipeImage(imageFile, newRecipe.image.imageFile)
+                                .then((newFileSize) => {
+                                    newRecipe.image.fileSize = newFileSize;
+                                    newRecipe.save((err) => {
+                                        if(err) reject("Could not save recipe")
+                                        else resolve();
+                                    })
+                                })
+                                .catch((err) => {reject(err)})
+                            }
+                        }
                     }
                 })
-
-                var presentDate = dayjs();
-                newRecipe.dateCreated = dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A");
-                newRecipe.lastUpdated = newRecipe.dateCreated;
-                newRecipe.dateCreatedAsDateNum = Date.now()
-
-                newRecipe.ingredientCount = 0;
-                newRecipe.directionCount = 0;
-                if(newRecipe.ingredients.length != 0) for(var i = 0; i < recipe.ingredients.length; i++) newRecipe.ingredientCount++;
-                if(newRecipe.directions.length != 0) for(var i = 0; i < recipe.directions.length; i++) newRecipe.directionCount++;
-                
-                newRecipe.image.imageFile = mongoose.Types.ObjectId() + ".webp";
-                processRecipeImage(imageFile, newRecipe.image.imageFile)
-                .then((newFileSize) => {
-                    newRecipe.image.fileSize = newFileSize;
-                    newRecipe.save((err) => {
-                        if(err) reject("Could not save recipe")
-                        else resolve();
-                    })
-                })
-                .catch((err) => {reject(err)})
             }
             else reject("User not logged in")
         })
@@ -128,11 +135,19 @@ module.exports = {
 
     getRecipeBySearch: function(query) {
         return new Promise((resolve, reject) => {
-            Recipe.find({$text: {$search: query}}).exec()
+            var newQueryArr = query.toLowerCase().split(' ').filter(String);
+            Recipe.find({}).sort({dateCreatedAsDateNum: -1}).exec()
             .then((recipes) => {
                 var data = recipes.map(value => value.toObject())
-                if(data.length === 0) reject(`We couldn't find any recipes for "${query}"`);
-                else resolve(data)
+                if(data.length === 0) reject("No recipes exist")
+                else {
+                    var filteredRecipes = data.filter(recipe => {
+                        let recipeNameArr = recipe.recipeName.toLowerCase().split(' ').filter(String);
+                        return newQueryArr.some(word => recipeNameArr.includes(word));
+                    })
+                    if(filteredRecipes.length === 0) reject(`We couldn't find any recipes for "${query}"`);
+                    else resolve(filteredRecipes);
+                }
             })
         })
     },

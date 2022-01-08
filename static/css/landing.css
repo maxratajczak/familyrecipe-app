@@ -44,7 +44,7 @@
     height: var(--landing-card-height);
     border-radius: 30px;
     background-color: rgba(255, 246, 238, 0.3);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.08);
     margin-top: 40px;
     margin-left: 40px;
     position: relative;
@@ -63,14 +63,18 @@
     height: var(--landing-card-img-height);
     overflow: hidden;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.20);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+}
+.imageBox div{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 .recently-added-card img{
     object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 .landing-card-content{
     width: 100%;
@@ -159,10 +163,10 @@
     :root{
         --recently-added-margin: 0vw;
 
-        --landing-card-height: 420px;
+        /* --landing-card-height: 420px;
         --landing-card-width: 310px;
         --landing-card-img-height: 240px;
-        --landing-card-img-width: 240px;
+        --landing-card-img-width: 240px; */
     }
     .landing-card-content{
         padding: 20px 10px 20px 20px;

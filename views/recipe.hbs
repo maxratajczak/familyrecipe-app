@@ -8,23 +8,43 @@
 </script>
 
 <div id="recipeContent">
-    <div id="topContent">
+    <div id="leftSize">
         <div>
             <h1 id="recipeName">{{recipe.recipeName}}</h1>
             <h3 id="createdBy">By {{recipe.createdBy.firstName}} {{recipe.createdBy.lastName}}</h3>
             <h4 id="dateCreated">{{recipe.parsedDateCreated}}</h4>
         </div>
-        <div>
-            <img id="recipeImage" src="/images/recipeImages/{{recipe.image.imageFile}}" alt="">
+        <div id="portraitImgOrientation">
+            <img class="recipeImage" src="/images/recipeImages/{{recipe.image.imageFile}}" alt="">
+        </div>
+        <div id="ingredientsBox">
+            <h1 id="ingredientTitle">Ingredients</h1>
+            <div id="ingredients">
+                {{#each recipe.ingredients}}
+                <p>{{incIndex @index}}. {{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+        <div id="directionsBox">
+            <h1 id="directionsTitle">Directions</h1>
+            <div id="directions">
+                {{#each recipe.directions}}
+                <p>{{incIndex @index}}. {{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+        {{#if recipe.notes}}
+        <div id="notesBox">
+            <h1 id="notesTitle">Notes</h1>
+            <div id="notes">
+                <p>{{recipe.notes}}</p>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    <div id="rightSide">
+        <div id="landscapeImgOrientation">
+            <img class="recipeImage" src="/images/recipeImages/{{recipe.image.imageFile}}" alt="">
         </div>
     </div>
-
-    <div id="mainContent">
-        {{#each recipe.ingredients}}
-        <ol>
-            <li>{{this}}</li>
-        </ol>
-        {{/each}}
-    </div>
-
 </div>

@@ -26,6 +26,8 @@ module.exports = {
                                     let newUserData = new User(newUser);
                                     newUserData._id = uuidv4();
                                     newUserData.password = hashedPassword;
+                                    newUserData.firstName = newUserData.firstName[0].toUpperCase() + newUserData.firstName.substring(1);
+                                    newUserData.lastName = newUserData.lastName[0].toUpperCase() + newUserData.lastName.substring(1);
 
                                     var presentDate = dayjs();
                                     newUserData.dateRegistered = dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A")

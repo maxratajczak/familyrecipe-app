@@ -2,23 +2,26 @@
     --imageWidth: 400px;
 }
 #recipeContent{
-    margin: 80px var(--navbar-margin);
-}
-#topContent{
+    margin: 50px var(--navbar-margin);
     display: flex;
     justify-content: space-between;
+    flex-wrap: none;
+    margin-bottom: 150px;
 }
-#recipeImage{
+.recipeImage{
     width: var(--imageWidth);
     border-radius: 15px;
 }
+#portraitImgOrientation{
+    display: none;
+}
 #recipeName{
-    font-size: 4rem;
+    font-size: 4.2rem;
     font-family: "source-serif-pro-semibold";
     color: var(--font-color);
 }
 #createdBy{
-    margin-top: 25px;
+    margin-top: 10px;
     font-size: 1.9rem;
     color: var(--font-color);
 }
@@ -26,4 +29,61 @@
     margin-top: 5px;
     font-size: 1.4rem;
     color: var(--font-color);
+}
+#ingredientTitle, #directionsTitle, #notesTitle{
+    font-size: 3rem;
+    color: var(--font-color);
+}
+#ingredientsBox{
+    margin-top: 100px;
+}
+#directionsBox, #notesBox{
+    margin-top: 50px;
+}
+#ingredients, #directions, #notes{
+    margin-top: 20px;
+    font-size: 1.7rem;
+}
+#ingredients p, #directions p, #notes p{
+    margin-top: 10px;
+    color: var(--font-color);
+}
+@media (max-width: 1000px){
+    #landscapeImgOrientation{
+        display: none;
+    }
+    #portraitImgOrientation{
+        display: block;
+        margin-top: 50px;
+    }
+    #recipeContent{
+        margin-top: 0px;
+    }
+    #ingredientsBox{
+        margin-top: 50px;
+    }
+    .recipeImage{
+        width: 70%;
+    }
+    #ingredients, #directions, #notes{
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 900px){
+    .recipeImage{
+        width: 80%;
+    }
+}
+@media (max-width: 650px){
+    .recipeImage{
+        width: 100%;
+    }
+    #ingredients, #directions, #notes{
+        font-size: 1.9rem;
+    }
+}
+@media (max-width: 650px){
+    #recipeName{
+        font-size: 3.8rem;
+    }
 }

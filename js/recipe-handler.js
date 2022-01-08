@@ -5,6 +5,7 @@ const sharp = require("sharp");
 const clc = require("./cmdlinecolor.js");
 const { Recipe } = require("./mongoCollections/recipe.js");
 const { User } = require("./mongoCollections/user.js");
+const uuid = require('uuid');
 
 function processRecipeImage(image, fileName) {
     return new Promise((resolve, reject) => {
@@ -72,7 +73,7 @@ module.exports = {
                             else {
                                 for(var i = 0; i < recipe.directions.length; i++) newRecipe.directionCount++;
 
-                                newRecipe.image.imageFile = mongoose.Types.ObjectId() + ".webp";
+                                newRecipe.image.imageFile = uuidv4() + ".webp";
                                 processRecipeImage(imageFile, newRecipe.image.imageFile)
                                 .then((newFileSize) => {
                                     newRecipe.image.fileSize = newFileSize;

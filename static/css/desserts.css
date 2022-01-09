@@ -47,6 +47,8 @@
     display: flex;
     justify-content: center;
     margin-top: 80px;
+    position: relative;
+    bottom: calc(var(--headerMealPosition) - 20px);
 }
 #errorBox h1{
     font-size: 2.8rem;
@@ -56,7 +58,8 @@
 }
 #cardSpace{
     position: relative;
-    bottom: calc(var(--headerMealPosition) - 20px);}
+    bottom: calc(var(--headerMealPosition) - 20px);
+}
 @media (max-width: 1440px){
     :root{
         --backdropSpacing: 0px;

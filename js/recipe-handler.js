@@ -26,6 +26,7 @@ function processRecipeImage(image, fileName) {
             const directory = (path.join(".", "static", "images", "recipeImages") + "/")
             sharp(image.buffer)
             .withMetadata()
+            .rotate()
             .webp({
                 quality: 70,
             })

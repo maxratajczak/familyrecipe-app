@@ -5,7 +5,7 @@ const sharp = require("sharp");
 const clc = require("./cmdlinecolor.js");
 const { Recipe } = require("./mongoCollections/recipe.js");
 const { User } = require("./mongoCollections/user.js");
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 function processRecipeImage(image, fileName) {
     return new Promise((resolve, reject) => {

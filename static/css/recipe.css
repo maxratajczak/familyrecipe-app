@@ -45,9 +45,12 @@
     font-size: 1.9rem;
 }
 #ingredients p, #directions p, #notes p{
-    margin-top: 15px;
+    margin-top: 20px;
     color: var(--font-color);
     max-width: 80ch;
+}
+#ingredients p, #directions p:nth-child(2n){
+    color: #2e2e2e;
 }
 @media (max-width: 1000px){
     #landscapeImgOrientation{

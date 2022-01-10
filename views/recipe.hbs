@@ -17,11 +17,14 @@
         <div id="portraitImgOrientation">
             <img class="recipeImage" src="/images/recipeImages/{{recipe.image.imageFile}}" alt="{{recipe.image.imageAlt}}">
         </div>
+        <div id="servingSize">
+            <h2>{{recipe.servingSize}} SERVINGS</h2>
+        </div>
         <div id="ingredientsBox">
             <h1 id="ingredientTitle">Ingredients</h1>
             <div id="ingredients">
                 {{#each recipe.ingredients}}
-                <p>- {{this}}</p>
+                <p>{{this}}</p>
                 {{/each}}
             </div>
         </div>
@@ -41,6 +44,9 @@
             </div>
         </div>
         {{/if}}
+        <div id="lastUpdated">
+            <h4>LAST UPDATED: {{recipe.parsedLastUpdated}}</h4>
+        </div>
     </div>
     <div id="rightSide">
         <div id="landscapeImgOrientation">

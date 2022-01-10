@@ -35,7 +35,7 @@
     color: var(--font-color);
 }
 #ingredientsBox{
-    margin-top: 100px;
+    margin-top: 20px;
 }
 #directionsBox, #notesBox{
     margin-top: 50px;
@@ -49,6 +49,24 @@
     color: var(--font-color);
     max-width: 80ch;
 }
+#servingSize{
+    font-family: "futura-light";
+    color: var(--background);
+    font-size: 1rem;
+    margin-top: 100px;
+    background-color: var(--font-color);
+    width: max-content;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+}
+#servingSize h2{
+    font-family: 'futura-light', sans-serif;
+}
+#lastUpdated{
+    margin-top: 80px;
+    color: var(--font-color);
+    font-size: 1.6rem;
+}
 @media (max-width: 1000px){
     #landscapeImgOrientation{
         display: none;
@@ -60,7 +78,7 @@
     #recipeContent{
         margin-top: 0px;
     }
-    #ingredientsBox{
+    #servingSize{
         margin-top: 50px;
     }
     .recipeImage{

@@ -27,7 +27,7 @@
 }
 #dateCreated{
     margin-top: 5px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--font-color);
 }
 #ingredientTitle, #directionsTitle, #notesTitle{
@@ -48,9 +48,6 @@
     margin-top: 20px;
     color: var(--font-color);
     max-width: 80ch;
-}
-#ingredients p:nth-child(2n), #directions p:nth-child(2n){
-    color: #2e2e2e;
 }
 @media (max-width: 1000px){
     #landscapeImgOrientation{

@@ -47,6 +47,7 @@
 #ingredients p, #directions p, #notes p{
     margin-top: 15px;
     color: var(--font-color);
+    max-width: 100ch;
 }
 @media (max-width: 1000px){
     #landscapeImgOrientation{

@@ -29,7 +29,8 @@
 :root{
     --background: #fff4ed;
     --primary: #E17817;
-    --font-color: #4A4A4A;
+    --font-color: #3a3a3a;
+    /* --font-color: #4A4A4A; */
 
     --navbar-height: 160px;
     --navbar-margin: 7vw;

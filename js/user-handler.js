@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const dayjs = require("dayjs");
 const { v4: uuidv4 } = require('uuid');
 const { User } = require("./mongoCollections/user.js");
+const { Recipe } = require("./mongoCollections/recipe.js");
 
 module.exports = {
     registerUser: function(newUser) {
@@ -79,6 +80,23 @@ module.exports = {
                     }
                     resolve(user);
                 }
+            })
+        })
+    },
+
+    verifyUserForRecipe: function(userID, recipeID) {
+        return new Promise((resolve, reject) => {
+            this.getUserById(userID)
+            .then(() => {
+                Recipe.find({_id: recipeID, "createdBy.userId": userID}).exec()
+                .then((recipes) => {
+                    var data = recipes.map(value => value.toObject())
+                    if(data.length === 0) reject("Recipe not found for user")
+                    else resolve()
+                })
+            })
+            .catch((err) => {
+                reject(err)
             })
         })
     }

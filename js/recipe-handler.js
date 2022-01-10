@@ -78,6 +78,7 @@ module.exports = {
                                 processRecipeImage(imageFile, newRecipe.image.imageFile)
                                 .then((newFileSize) => {
                                     newRecipe.image.fileSize = newFileSize;
+                                    newRecipe.image.imageAlt = recipe.imageAlt
                                     newRecipe.save((err) => {
                                         if(err) reject("Could not save recipe")
                                         else resolve();
@@ -90,6 +91,79 @@ module.exports = {
                 })
             }
             else reject("User not logged in")
+        })
+    },
+
+    updateRecipe: function(recipe, imageFile) {
+        return new Promise((resolve, reject) => {
+            var presentDate = dayjs();
+            var ingredientCount = 0;
+            var directionCount = 0;
+            if(!recipe.ingredients) reject("You must have at least 1 ingredient")
+            else {
+                for(var i = 0; i < recipe.ingredients.length; i++) ingredientCount++;
+                if(!recipe.directions) reject("You must have at least 1 direction")
+                else {
+                    for(var i = 0; i < recipe.directions.length; i++) directionCount++;
+                    if(!imageFile) {
+
+                        Recipe.findByIdAndUpdate(recipe._id,
+                            {
+                            recipeName: recipe.recipeName,
+                            servingSize: recipe.servingSize,
+                            recipeCategory: recipe.recipeCategory,
+                            ingredients: recipe.ingredients,
+                            directions: recipe.directions,
+                            notes: recipe.notes,
+                            lastUpdated: dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A"),
+                            ingredientCount: ingredientCount,
+                            directionCount: directionCount,
+                            $set: {"image.imageAlt": recipe.imageAlt}
+                            
+                        }, function (err, doc) {
+                            if(err) reject("Unable to update recipe");
+                            else resolve("Recipe successfully updated");
+                        })
+                    }
+                    else {
+                        var newImageID = uuidv4() + ".webp";
+                        processRecipeImage(imageFile, newImageID)
+                        .then((imageFileSize) => {
+                            var newImgObj = {
+                                imageFile: newImageID,
+                                fileSize: imageFileSize,
+                                imageAlt: recipe.imageAlt
+                            }
+                            Recipe.findByIdAndUpdate(recipe._id,
+                                {
+                                recipeName: recipe.recipeName,
+                                servingSize: recipe.servingSize,
+                                recipeCategory: recipe.recipeCategory,
+                                ingredients: recipe.ingredients,
+                                directions: recipe.directions,
+                                notes: recipe.notes,
+                                lastUpdated: dayjs(presentDate).format("dddd MMMM DD YYYY hh:mm:ss A"),
+                                ingredientCount: ingredientCount,
+                                directionCount: directionCount,
+                                image: newImgObj
+                            }, function (err, doc) {
+                                if(err) reject("Unable to update recipe");
+                                else resolve("Recipe successfully updated");
+                            })
+                        })
+                        .catch((err) => { reject(err) })
+                    }
+                }
+            }   
+        })
+    },
+
+    deleteRecipe: function(recipeID) {
+        return new Promise((resolve, reject) => {
+            Recipe.findByIdAndDelete(recipeID, function(err) {
+                if(err) reject(err);
+                else resolve("Recipe deleted");
+            })
         })
     },
 

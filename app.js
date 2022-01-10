@@ -46,6 +46,16 @@ app.engine(".hbs", exphbs.engine({
     helpers: {
         incIndex: function(value, option) {
             return parseInt(value) + 1;
+        },
+        equal: function (lvalue, rvalue, options) {
+            if (arguments.length < 3)
+                throw new Error("Handlebars Helper equal needs 2 parameters");
+            if (lvalue != rvalue) {
+                return options.inverse(this);
+            } 
+            else {
+                return options.fn(this);
+            }
         }
     }
 }))
@@ -61,6 +71,10 @@ app.use(function(req, res, next) {
 
 app.get("/", (req, res) => {
     recipeHandler.getRecentlyAddedRecipes(6).then((recipes) => {
+        recipes.forEach(element => {
+            if(element.ingredientCount === 1) element.oneIngredient = true;
+            if(element.directionCount === 1) element.oneDirection = true;
+        });
         res.render(__dirname + "/views/landing.hbs", {recipe: recipes})
     })
     .catch((err) => {

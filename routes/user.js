@@ -89,3 +89,51 @@ router.route("/myrecipes")
         })
     })
 })
+
+router.route("/editrecipe/:id")
+.get(authorizeUser, (req, res) => {
+    userHandler.verifyUserForRecipe(req.userSession.user._id, req.params.id).then(() => {
+        recipeHandler.getRecipeById(req.params.id).then((recipe) => {
+            res.render(path.join(__dirname , '..' , "views" , "editRecipe.hbs"), {recipe: recipe});
+        })
+        .catch((err) => {
+            res.send(err);
+        })
+    })
+    .catch((err) => {
+        res.redirect("/")
+    })
+})
+.post(authorizeUser, upload.single("imageFile"), (req, res) => {
+    userHandler.verifyUserForRecipe(req.userSession.user._id, req.params.id).then(() => {
+        recipeHandler.updateRecipe(req.body, req.file).then((message) => {
+            res.redirect("/user/myrecipes")
+        })
+        .catch((err) => {
+            recipeHandler.getRecipeById(req.params.id).then((recipe) => {
+                res.render(path.join(__dirname , '..' , "views" , "editRecipe.hbs"), {error: err, recipe: recipe});
+            })
+            .catch((err) => {
+                res.send(err);
+            })
+        })
+    })
+    .catch((err) => {
+        res.redirect("/")
+    })
+});
+
+router.route("/deleterecipe/:id")
+.get(authorizeUser, (req, res) => {
+    userHandler.verifyUserForRecipe(req.userSession.user._id, req.params.id).then(() => {
+        recipeHandler.deleteRecipe(req.params.id).then((message) => {
+            res.redirect("/user/myrecipes")
+        })
+        .catch((err) => {
+            res.send(err);
+        })
+    })
+    .catch((err) => {
+        res.redirect("/")
+    })
+});

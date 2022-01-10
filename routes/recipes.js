@@ -13,6 +13,10 @@ router.route("/search")
     else {
         recipeHandler.getRecipeBySearch(req.query.q)
         .then((recipes) => {
+            recipes.forEach(element => {
+                if(element.ingredientCount === 1) element.oneIngredient = true;
+                if(element.directionCount === 1) element.oneDirection = true;
+            });
             if(recipes.length === 1) res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {recipe1: recipes[0], query: req.query.q});
             else res.render(path.join(__dirname, "..", "views", "searchResults.hbs"), {recipe: recipes, query: req.query.q});
         })
@@ -26,6 +30,10 @@ router.route("/appetizers")
 .get((req, res) => {
     recipeHandler.getRecipesByCategory("appetizer")
     .then((recipes) => {
+        recipes.forEach(element => {
+            if(element.ingredientCount === 1) element.oneIngredient = true;
+            if(element.directionCount === 1) element.oneDirection = true;
+        });
         res.render(path.join(__dirname, "..", "views", "appetizers.hbs"), {recipe: recipes});
     })
     .catch((err) => {
@@ -37,6 +45,10 @@ router.route("/breakfast")
 .get((req, res) => {
     recipeHandler.getRecipesByCategory("breakfast")
     .then((recipes) => {
+        recipes.forEach(element => {
+            if(element.ingredientCount === 1) element.oneIngredient = true;
+            if(element.directionCount === 1) element.oneDirection = true;
+        });
         res.render(path.join(__dirname, "..", "views", "breakfast.hbs"), {recipe: recipes});
     })
     .catch((err) => {
@@ -48,6 +60,10 @@ router.route("/mains")
 .get((req, res) => {
     recipeHandler.getRecipesByCategory("main")
     .then((recipes) => {
+        recipes.forEach(element => {
+            if(element.ingredientCount === 1) element.oneIngredient = true;
+            if(element.directionCount === 1) element.oneDirection = true;
+        });
         res.render(path.join(__dirname, "..", "views", "mains.hbs"), {recipe: recipes});
     })
     .catch((err) => {
@@ -59,6 +75,10 @@ router.route("/soups")
 .get((req, res) => {
     recipeHandler.getRecipesByCategory("soup")
     .then((recipes) => {
+        recipes.forEach(element => {
+            if(element.ingredientCount === 1) element.oneIngredient = true;
+            if(element.directionCount === 1) element.oneDirection = true;
+        });
         res.render(path.join(__dirname, "..", "views", "soups.hbs"), {recipe: recipes});
     })
     .catch((err) => {
@@ -70,6 +90,10 @@ router.route("/desserts")
 .get((req, res) => {
     recipeHandler.getRecipesByCategory("dessert")
     .then((recipes) => {
+        recipes.forEach(element => {
+            if(element.ingredientCount === 1) element.oneIngredient = true;
+            if(element.directionCount === 1) element.oneDirection = true;
+        });
         res.render(path.join(__dirname, "..", "views", "desserts.hbs"), {recipe: recipes});
     })
     .catch((err) => {

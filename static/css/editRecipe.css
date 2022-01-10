@@ -1,0 +1,15 @@
+#updateButton{
+    padding: 10px 20px;
+    background-color: #2daa0e;
+    font-size: 1.7rem;
+    color: var(--background);
+    border-radius: 10px;
+    border: 2px solid #33c210;
+    cursor: pointer;
+}
+#updateButton:hover{
+    background-color: #2aa00c;
+}
+#updateButton:active{
+    background-color: #2a9c0d;
+}

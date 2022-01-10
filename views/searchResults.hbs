@@ -32,8 +32,8 @@
                                     <h1>{{recipe1.recipeName}}</h1>
                                 </div>
                                 <div class="cardBody">
-                                    <p>{{recipe1.ingredientCount}} Ingredients</p>
-                                    <p>{{recipe1.directionCount}} Steps</p>
+                                    <p>{{recipe1.ingredientCount}} {{#if recipe1.oneIngredient}}Ingredient{{else}}Ingredients{{/if}}</p>
+                                    <p>{{recipe1.directionCount}} {{#if recipe1.oneDirection}}Step{{else}}Steps{{/if}}</p>
                                 </div>
                                 <div class="cardFooter">
                                     <p>{{recipe1.createdBy.firstName}} {{recipe1.createdBy.lastName}}</p>
@@ -59,8 +59,8 @@
                                     <h1>{{recipeName}}</h1>
                                 </div>
                                 <div class="cardBody">
-                                    <p>{{ingredientCount}} Ingredients</p>
-                                    <p>{{directionCount}} Steps</p>
+                                    <p>{{ingredientCount}} {{#if oneIngredient}}Ingredient{{else}}Ingredients{{/if}}</p>
+                                    <p>{{directionCount}} {{#if oneDirection}}Step{{else}}Steps{{/if}}</p>
                                 </div>
                                 <div class="cardFooter">
                                     <p>{{createdBy.firstName}} {{createdBy.lastName}}</p>

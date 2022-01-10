@@ -26,7 +26,8 @@ let recipeSchema = new mongoose.Schema({
     "notes": String,
     "image": {
         "imageFile": String,
-        "fileSize": Number
+        "fileSize": Number,
+        "imageAlt": String
     }
 })
 

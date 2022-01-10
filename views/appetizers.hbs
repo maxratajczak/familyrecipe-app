@@ -33,7 +33,7 @@
             <a href="/recipe/{{_id}}">
                 <div class="cardContent">
                     <div class="cardSection imageSection">
-                            <div style="background-image: url('/images/recipeImages/{{image.imageFile}}');"></div>
+                        <div style="background-image: url('/images/recipeImages/{{image.imageFile}}');"></div>
                     </div>
                     <div class="cardSection">
                         <div class="cardTextSection">
@@ -41,8 +41,8 @@
                                 <h1>{{recipeName}}</h1>
                             </div>
                             <div class="cardBody">
-                                <p>{{ingredientCount}} Ingredients</p>
-                                <p>{{directionCount}} Steps</p>
+                                <p>{{ingredientCount}} {{#if oneIngredient}}Ingredient{{else}}Ingredients{{/if}}</p>
+                                <p>{{directionCount}} {{#if oneDirection}}Step{{else}}Steps{{/if}}</p>
                             </div>
                             <div class="cardFooter">
                                 <p>{{createdBy.firstName}} {{createdBy.lastName}}</p>

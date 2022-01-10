@@ -237,6 +237,9 @@
 #errorBox h2{
     color: rgb(167, 1, 1);
 }
+#imageAlt{
+    width: 100%;
+}
 @media (max-width: 750px){
     :root{
         --input-width: 320px;

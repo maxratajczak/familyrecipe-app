@@ -25,8 +25,8 @@
                             <h1>{{recipeName}}</h1>
                         </div>
                         <div class="landing-card-body">
-                            <p>{{ingredientCount}} Ingredients</p>
-                            <p>{{directionCount}} Steps</p>
+                            <p>{{ingredientCount}} {{#if oneIngredient}}Ingredient{{else}}Ingredients{{/if}}</p>
+                            <p>{{directionCount}} {{#if oneDirection}}Step{{else}}Steps{{/if}}</p>
                         </div>
                         <div class="landing-card-footer">
                             <p>{{createdBy.firstName}} {{createdBy.lastName}}</p>

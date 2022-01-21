@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
     next();
 })
 
-imagePreload(["./static/images/categoryContent/appetizers/headerPlate.png"], {});
+imagePreload(["./static/images/categoryContent/appetizers/headerPlate.png"]);
 
 // app.get("/", (req, res) => {
 //     res.send("Website still in development")

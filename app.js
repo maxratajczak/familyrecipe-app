@@ -7,6 +7,7 @@ const clientSession = require("client-sessions");
 const clc = require("./js/cmdlinecolor.js");
 const databaseHandler = require("./js/database-handler.js");
 const recipeHandler = require("./js/recipe-handler.js");
+const imagePreload = require("image-preload");
 
 // Routes
 const userRoute = require("./routes/user.js");
@@ -64,6 +65,8 @@ app.use(function(req, res, next) {
     res.locals.userSession = req.userSession;
     next();
 })
+
+imagePreload(["./static/images/categoryContent/appetizers/headerPlate.png"], {});
 
 // app.get("/", (req, res) => {
 //     res.send("Website still in development")

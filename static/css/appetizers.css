@@ -12,7 +12,7 @@
 #headerBackdrop{
     position: relative;
     bottom: calc(var(--navbar-height) - var(--backdropSpacing));
-    margin-bottom: calc((var(--navbar-height) - var(--backdropSpacing)) - (var(--navbar-height) - var(--backdropSpacing)) - (var(--navbar-height) - var(--backdropSpacing)));
+    margin-bottom: calc((var(--navbar-height) - var(--backdropSpacing)) - (var(--navbar-height) - var(--backdropSpacing)) - (var(--navbar-height) - var(--backdropSpacing)) - var(--headerMealPosition));
     z-index: -100;
     height: 100%;
 }
@@ -24,7 +24,7 @@
     bottom: var(--navbar-height);
     z-index: -100;
 }
-#headerBackdrop img{
+/* #headerBackdrop img{
     width: var(--headerMealSize);
     position: relative;
     bottom: var(--headerMealPosition);
@@ -33,7 +33,7 @@
     margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition));
     filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));
     -webkit-filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));  
-}
+} */
 .headerImage {
     width: var(--headerMealSize);
     height: var(--headerMealSize);
@@ -41,7 +41,7 @@
     bottom: var(--headerMealPosition);
     left: 50%;
     transform: translate(-52%);
-    margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition));
+    /* margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition) - 200px); */
     filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));
     -webkit-filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));  
     background-size: contain;

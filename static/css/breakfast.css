@@ -36,7 +36,7 @@
 }
 .headerImage {
     width: var(--headerMealSize);
-    height: 300px;
+    height: var(--headerMealSize);
     position: relative;
     bottom: var(--headerMealPosition);
     left: 50%;

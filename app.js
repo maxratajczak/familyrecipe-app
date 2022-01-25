@@ -34,9 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(clientSession({
     cookieName: "userSession",
     secret: "bwvAKZKfAePglUFvCKXFkajwnfSLaKANWsmsalsWNnaklslkWndoALna",
-    duration: 4 * 60 * 60 * 1000, // Hour * Minute * Second * Millisecond
-    activeDuration: 1 * 30 * 60 * 1000, // 30 Min
-    cookie: { ephemeral: false }
+    duration: 8 * 60 * 60 * 1000, // Hour * Minute * Second * Millisecond
+    activeDuration: 4 * 60 * 60 * 1000 // 30 Min
 }))
 
 // Express handlebars setup

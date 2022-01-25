@@ -40,8 +40,8 @@
     position: relative;
     bottom: var(--headerMealPosition);
     left: 50%;
-    transform: translate(-50%);
-    margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition));
+    transform: translate(-52%);
+    margin-bottom: calc(var(--headerMealPosition) - var(--headerMealPosition) - var(--headerMealPosition) - 200px);
     filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));
     -webkit-filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.3));  
     background-size: contain;
